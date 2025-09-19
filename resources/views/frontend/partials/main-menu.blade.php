@@ -56,7 +56,7 @@
             </a>
         </li>
     @endforelse
-
+{{-- 
     <ul class="tg-header-top__social text-end header_language">
         @if (allLanguages()?->where('status', 1)->count() > 1)
             <li class="language-select-item select_item">
@@ -77,5 +77,5 @@
                 </form>
             </li>
         @endif
-    </ul>
+    </ul> --}}
 </ul>
