@@ -99,11 +99,13 @@
                 var previousValue = $select.val();
                 console.log('here1');
     
-                $('.nice-select.select_js').on("change", function (e) {
-                    console.log('here2');
-                    
+                $form.find("select.select_js").on("change", function () {
+                    console.log("here2");
+
                     var currentValue = $(this).val();
-                    if (currentValue !== previousValue) $form.trigger("submit");
+                    if (currentValue !== previousValue) {
+                        $form.trigger("submit");
+                    }
                     previousValue = currentValue;
                 });
             }
