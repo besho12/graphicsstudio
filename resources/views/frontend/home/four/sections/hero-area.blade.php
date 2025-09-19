@@ -18,10 +18,10 @@
                                 </span>
                             </a>
                         </div>
-                        <div class="hero-thumb-group img-custom-anim-right wow">
+                        {{-- <div class="hero-thumb-group img-custom-anim-right wow">
                             <img class="img1" src="{{ asset($hero?->global_content?->image_two) }}" alt="img">
                             <p>{{__('More than')}} {{ $hero?->content?->total_customers }} {{__('trusted customers')}}</p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
