@@ -26,7 +26,7 @@
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-button">
                             {{-- @include('frontend.partials.cart-menu') --}}
-                            @auth('web')
+                            {{-- @auth('web')
                                 <a href="{{ route('dashboard') }}" class="btn">
                                     <span class="link-effect text-uppercase">
                                         <span class="effect-1">{{ __('Dashboard') }}</span>
@@ -40,7 +40,7 @@
                                         <span class="effect-1">{{ __('Sign In') }}</span>
                                     </span>
                                 </a>
-                            @endauth
+                            @endauth --}}
                         </div>
                     </div>
                 </div>
