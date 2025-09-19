@@ -86,4 +86,24 @@
 
 </ul>
 
-@include('admin.partials.javascripts')
+<script src="{{ asset('global/js/jquery-3.7.1.min.js') }}"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            setupChangeHandler("#setLanguageHeader");
+            setupChangeHandler("#setCurrencyHeader");
+            $("form").attr("autocomplete", "off");
+        });
+        function setupChangeHandler(formSelector) {
+            var $form = $(formSelector);
+            var $select = $form.find("select");
+            var previousValue = $select.val();
+
+            $select.on("change", function (e) {
+                var currentValue = $(this).val();
+                if (currentValue !== previousValue) $form.trigger("submit");
+                previousValue = currentValue;
+            });
+        }
+    })(jQuery);
+</script>
