@@ -697,6 +697,10 @@ p.ajax-response.error {
     /* top: 50px; */
 }
 
+.main-menu .select_js  .list {
+    display: grid;
+}
+
 .checkout_modal .modal-header {
     line-height: 30px;
     padding: 20px;
