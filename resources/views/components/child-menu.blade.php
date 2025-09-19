@@ -3,11 +3,11 @@
         {{ $menu['open_new_tab'] ? 'target="_blank"' : '' }}>
         {{ $menu['label'] }}
     </a>
-    @if (!empty($menu['child']))
+    {{-- @if (!empty($menu['child']))
         <ul class="sub-menu">
             @foreach ($menu['child'] as $child)
                 <x-child-menu :menu="$child" />
             @endforeach
         </ul>
-    @endif
+    @endif --}}
 </li>

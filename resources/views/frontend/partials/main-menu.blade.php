@@ -37,13 +37,13 @@
                     </span>
                 </a>
 
-                @if ($has_child)
+                {{-- @if ($has_child)
                     <ul class="sub-menu">
                         @foreach ($menu['child'] as $child)
                             <x-child-menu :menu="$child" />
                         @endforeach
                     </ul>
-                @endif
+                @endif --}}
             </li>
         @endif
     @empty

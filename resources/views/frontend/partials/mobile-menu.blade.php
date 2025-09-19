@@ -35,13 +35,13 @@
                                 {{ $menu['label'] }}
                             </a>
 
-                            @if ($is_child)
+                            {{-- @if ($is_child)
                                 <ul class="sub-menu">
                                     @foreach ($menu['child'] as $child)
                                         <x-child-menu :menu="$child" />
                                     @endforeach
                                 </ul>
-                            @endif
+                            @endif --}}
                             
                         </li>
                     @endif
