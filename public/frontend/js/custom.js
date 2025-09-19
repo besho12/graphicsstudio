@@ -386,6 +386,7 @@ function openSharePopup(url, platform) {
     ("use strict");
     $(document).ready(function () {
         setupChangeHandler("#setLanguageHeader");
+        setupChangeHandler("#setLanguageHeader2");
         setupChangeHandler("#setCurrencyHeader");
         $("form").attr("autocomplete", "off");
     });

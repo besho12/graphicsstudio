@@ -85,33 +85,3 @@
 
 
 </ul>
-
-<script src="{{ asset('global/js/jquery-3.7.1.min.js') }}"></script>
-<script>
-    (function ($) {
-        $(document).ready(function () {
-            console.log('here0');
-            setupChangeHandler("#setLanguageHeader2");
-            $("form").attr("autocomplete", "off");
-            function setupChangeHandler(formSelector) {
-                var $form = $(formSelector);
-                var $select = $form.find("select");
-                var previousValue = $select.val();
-                console.log('here1');
-    
-                $form.find("select.select_js").on("change", function () {
-                    console.log("here2");
-
-                    var currentValue = $(this).val();
-                    if (currentValue !== previousValue) {
-                        $form.trigger("submit");
-                    }
-                    previousValue = currentValue;
-                });
-            }
-        });
-    })(jQuery);
-
-//find .option.sected and get its data-value
-                //then find select tag with class .select_js then unselect all options and make the option with value coming from the prev data-value as selected
-</script>
