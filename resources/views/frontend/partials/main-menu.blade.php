@@ -90,6 +90,7 @@
 <script>
     (function ($) {
         $(document).ready(function () {
+            console.log('here0');
             setupChangeHandler("#setLanguageHeader");
             setupChangeHandler("#setCurrencyHeader");
             $("form").attr("autocomplete", "off");
@@ -98,8 +99,10 @@
             var $form = $(formSelector);
             var $select = $form.find("select");
             var previousValue = $select.val();
+            console.log('here1');
 
             $select.on("change", function (e) {
+                console.log('here2');
                 var currentValue = $(this).val();
                 if (currentValue !== previousValue) $form.trigger("submit");
                 previousValue = currentValue;
