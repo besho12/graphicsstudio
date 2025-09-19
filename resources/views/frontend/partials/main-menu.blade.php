@@ -56,4 +56,45 @@
             </a>
         </li>
     @endforelse
+
+    <ul class="tg-header-top__social text-end header_language">
+        @if (allLanguages()?->where('status', 1)->count() > 1)
+            <li class="language-select-item select_item">
+                <form id="setLanguageHeader" action="{{ route('set-language') }}" method="get">
+                    <select class="select_js" name="code">
+                        @forelse (allLanguages()?->where('status', 1) as $language)
+                            <option value="{{ $language->code }}"
+                                {{ getSessionLanguage() == $language->code ? 'selected' : '' }}>
+                                {{ $language->name }}
+                            </option>
+                        @empty
+                            <option value="en"
+                                {{ getSessionLanguage() == 'en' ? 'selected' : '' }}>
+                                {{ __('English') }}
+                            </option>
+                        @endforelse
+                    </select>
+                </form>
+            </li>
+        @endif
+        @if (allCurrencies()?->where('status', 'active')->count() > 1 && $setting?->is_shop)
+            <li class="select_item">
+                <form id="setCurrencyHeader" action="{{ route('set-currency') }}" method="get">
+                    <select class="select_js" name="currency">
+                        @forelse (allCurrencies()?->where('status', 'active') as $currency)
+                            <option value="{{ $currency->currency_code }}"
+                                {{ getSessionCurrency() == $currency->currency_code ? 'selected' : '' }}>
+                                {{ $currency->currency_name }}
+                            </option>
+                        @empty
+                            <option value="USD"
+                                {{ getSessionCurrency() == 'USD' ? 'selected' : '' }}>
+                                {{ __('USD') }}
+                            </option>
+                        @endforelse
+                    </select>
+                </form>
+            </li>
+        @endif
+    </ul>
 </ul>
