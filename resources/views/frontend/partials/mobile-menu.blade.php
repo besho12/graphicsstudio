@@ -29,21 +29,21 @@
                             </ul>
                         </li>
                     @else
-                        {{-- <li class="{{ $is_child ? 'menu-item-has-children' : '' }}">
+                        <li class="{{ $is_child ? 'menu-item-has-children' : '' }}">
                             <a href="{{ $menu['link'] == '#' || empty($menu['link']) ? 'javascript:;' : url($menu['link']) }}"
                                 {{ $menu['open_new_tab'] ? 'target="_blank"' : '' }} class="text-uppercase">
                                 {{ $menu['label'] }}
                             </a>
 
-                            @if ($is_child)
+                            {{-- @if ($is_child)
                                 <ul class="sub-menu">
                                     @foreach ($menu['child'] as $child)
                                         <x-child-menu :menu="$child" />
                                     @endforeach
                                 </ul>
-                            @endif
+                            @endif --}}
                             
-                        </li> --}}
+                        </li>
                     @endif
                 @endforeach
             </ul>

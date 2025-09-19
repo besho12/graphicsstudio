@@ -27,7 +27,7 @@
                 </ul>
             </li>
         @else
-            {{-- <li
+            <li
                 class="{{ $has_child ? 'menu-item-has-children' : '' }} {{ url()->current() == url($menu['link']) ? 'active' : '' }}">
                 <a href="{{ $menu['link'] == '#' || empty($menu['link']) ? 'javascript:;' : url($menu['link']) }}"
                     class="text-uppercase" {{ $menu['open_new_tab'] ? 'target="_blank"' : '' }}>
@@ -37,14 +37,14 @@
                     </span>
                 </a>
 
-                @if ($has_child)
+                {{-- @if ($has_child)
                     <ul class="sub-menu">
                         @foreach ($menu['child'] as $child)
                             <x-child-menu :menu="$child" />
                         @endforeach
                     </ul>
-                @endif
-            </li> --}}
+                @endif --}}
+            </li>
         @endif
     @empty
         <li class="menu-item-has-children">
