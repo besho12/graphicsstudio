@@ -43,7 +43,7 @@
     @include('frontend.partials.mobile-menu')
 
     <!-- header-top-area start-->
-    <div class="wsus_topbar">
+    <div class="wsus_topbar" style="display: none;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 col-xl-6 d-none d-lg-block">

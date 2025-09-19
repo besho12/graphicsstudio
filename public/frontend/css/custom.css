@@ -694,7 +694,7 @@ p.ajax-response.error {
 
 .nav-header {
     z-index: 5;
-    top: 50px;
+    /* top: 50px; */
 }
 
 .checkout_modal .modal-header {
