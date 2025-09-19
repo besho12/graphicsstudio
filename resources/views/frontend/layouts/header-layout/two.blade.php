@@ -15,7 +15,7 @@
                             @include('frontend.partials.main-menu')
                         </nav>
                         <div class="navbar-right d-inline-flex d-lg-none">
-                            @include('frontend.partials.cart-menu')
+                            {{-- @include('frontend.partials.cart-menu') --}}
                             <button type="button" class="menu-toggle sidebar-btn" aria-label="hamburger">
                                 <span class="line"></span>
                                 <span class="line"></span>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-button">
-                            @include('frontend.partials.cart-menu')
+                            {{-- @include('frontend.partials.cart-menu') --}}
                             @auth('web')
                                 <a href="{{ route('dashboard') }}" class="btn">
                                     <span class="link-effect text-uppercase">
