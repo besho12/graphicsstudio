@@ -63,7 +63,7 @@
     <ul class="tg-header-top__social text-end header_language">
         @if (allLanguages()?->where('status', 1)->count() > 1)
             <li class="language-select-item select_item">
-                <form id="setLanguageHeader" action="{{ route('set-language') }}" method="get">
+                <form id="setLanguageHeader2" action="{{ route('set-language') }}" method="get">
                     <select class="select_js" name="code">
                         @forelse (allLanguages()?->where('status', 1) as $language)
                             <option value="{{ $language->code }}"
@@ -91,8 +91,7 @@
     (function ($) {
         $(document).ready(function () {
             console.log('here0');
-            setupChangeHandler("#setLanguageHeader");
-            setupChangeHandler("#setCurrencyHeader");
+            setupChangeHandler("#setLanguageHeader2");
             $("form").attr("autocomplete", "off");
         });
         function setupChangeHandler(formSelector) {
@@ -101,12 +100,16 @@
             var previousValue = $select.val();
             console.log('here1');
 
-            $select.on("change", function (e) {
+            $('.nice-select.select_js').on("change", function (e) {
                 console.log('here2');
+                
                 var currentValue = $(this).val();
                 if (currentValue !== previousValue) $form.trigger("submit");
                 previousValue = currentValue;
             });
         }
     })(jQuery);
+
+//find .option.sected and get its data-value
+                //then find select tag with class .select_js then unselect all options and make the option with value coming from the prev data-value as selected
 </script>
