@@ -93,21 +93,21 @@
             console.log('here0');
             setupChangeHandler("#setLanguageHeader2");
             $("form").attr("autocomplete", "off");
+            function setupChangeHandler(formSelector) {
+                var $form = $(formSelector);
+                var $select = $form.find("select");
+                var previousValue = $select.val();
+                console.log('here1');
+    
+                $('.nice-select.select_js').on("change", function (e) {
+                    console.log('here2');
+                    
+                    var currentValue = $(this).val();
+                    if (currentValue !== previousValue) $form.trigger("submit");
+                    previousValue = currentValue;
+                });
+            }
         });
-        function setupChangeHandler(formSelector) {
-            var $form = $(formSelector);
-            var $select = $form.find("select");
-            var previousValue = $select.val();
-            console.log('here1');
-
-            $('.nice-select.select_js').on("change", function (e) {
-                console.log('here2');
-                
-                var currentValue = $(this).val();
-                if (currentValue !== previousValue) $form.trigger("submit");
-                previousValue = currentValue;
-            });
-        }
     })(jQuery);
 
 //find .option.sected and get its data-value
