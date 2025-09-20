@@ -37,10 +37,7 @@
                 <div class="col-xl-8">
                     <h3 class="mt-5">Service Projects</h3>
                     @forelse ($service->projects as $index => $project)
-                    @php
-                        $col_size = $col_sizes[$index % count($col_sizes)];
-                    @endphp
-                        <div class="col-lg-{{ $col_size }} filter-item">
+                        <div class="col-lg-6 filter-item">
                             <div class="portfolio-wrap mt-140 {{ $index == 0 ? 'mt-lg-140' : ($index == 1 ? 'mt-lg-0' : '') }}">
                                 <div class="portfolio-thumb wow img-custom-anim-top" data-wow-duration="1.5s"
                                     data-wow-delay="0.2s">
