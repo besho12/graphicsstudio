@@ -278,9 +278,6 @@ class HomePageController extends Controller {
         }])
         ->with([
             'projects.translations',
-            'projects.images' => function ($query) {
-                $query->limit(1);
-            }
         ])
         ->active()->where('slug', $slug)->first();
 

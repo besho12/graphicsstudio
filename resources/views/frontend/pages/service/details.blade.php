@@ -36,14 +36,38 @@
                 </div>
                 <div class="col-xl-8">
                     <h3 class="mt-5">Service Projects</h3>
-                    <div class="projects row align-items-center justify-content-center">
-                        @foreach($service['projects'] as $project)
-                            <div class="col-xl-6 mt-4">
-                                <img class="w-100" src="{{ asset($project?->images[0]?->small_image) }}" alt="{{ $project?->images[0]?->small_image }}">                        
-                                <p>{{ $project->title }}</p>                            
+                    @forelse ($projects as $index => $project)
+                    @php
+                        $col_size = $col_sizes[$index % count($col_sizes)];
+                    @endphp
+                        <div class="col-lg-{{ $col_size }} filter-item">
+                            <div class="portfolio-wrap mt-140 {{ $index == 0 ? 'mt-lg-140' : ($index == 1 ? 'mt-lg-0' : '') }}">
+                                <div class="portfolio-thumb wow img-custom-anim-top" data-wow-duration="1.5s"
+                                    data-wow-delay="0.2s">
+                                    <a href="{{ route('single.portfolio', $project?->slug) }}">
+                                        <img src="{{ asset($project?->image) }}" alt="{{ $project?->title }}">
+                                    </a>
+                                </div>
+                                <div class="portfolio-details">
+                                    <ul class="portfolio-meta">
+                                        <li><a href="javascript:;">{{ $project?->project_category }}</a></li>
+                                    </ul>
+                                    <h3 class="portfolio-title"><a
+                                            href="{{ route('single.portfolio', $project?->slug) }}">{{ $project?->title }}</a>
+                                    </h3>
+                                    <a href="{{ route('single.portfolio', $project?->slug) }}" class="link-btn">
+                                        <span class="link-effect">
+                                            <span class="effect-1">{{ __('View Project') }}</span>
+                                            <span class="effect-1">{{ __('View Project') }}</span>
+                                        </span>
+                                        <img src="{{ asset('frontend/images/arrow-left-top.svg') }}" alt="icon">
+                                    </a>
+                                </div>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @empty
+                        <x-data-not-found />
+                    @endforelse
                 </div>
             </div>
         </div>
