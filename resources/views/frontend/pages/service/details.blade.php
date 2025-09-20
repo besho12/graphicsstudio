@@ -38,7 +38,7 @@
                     <h3 class="mt-5">Service Projects</h3>
                     <div class="projects row align-items-center justify-content-center">
                         @foreach($service['projects'] as $project)
-                            <div class="col-xl-6 mb-5">
+                            <div class="col-xl-6 mt-4">
                                 <img class="w-100" src="{{ asset($project?->images[0]?->small_image) }}" alt="{{ $project?->images[0]?->small_image }}">                        
                                 <p>{{ $project->title }}</p>                            
                             </div>
