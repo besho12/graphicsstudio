@@ -1,6 +1,6 @@
 {
     "Language": true,
-    "Blog": false,
+    "Blog": true,
     "GlobalSetting": true,
     "Currency": true,
     "BasicPayment": true,
