@@ -275,7 +275,9 @@ class HomePageController extends Controller {
         $service = Service::select('id', 'slug', 'image','created_at')->with([
             'translation' => function ($query) {
             $query->select('service_id', 'title','description','seo_title', 'seo_description');
-        }])->active()->where('slug', $slug)->first();
+        }])
+        ->with(['projects.translations'])
+        ->active()->where('slug', $slug)->first();
 
         if (!$service) {
             abort(404);

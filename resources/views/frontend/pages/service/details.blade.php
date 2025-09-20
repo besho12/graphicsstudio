@@ -34,6 +34,13 @@
                         {!! clean(replaceImageSources($service?->description)) !!}
                     </div>
                 </div>
+                <div class="col-xl-12">
+                    <div class="projects">
+                        @foreach($service['projects'] as $project)
+                            <span>{{ $project }}</span>                            
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </div>
