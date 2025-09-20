@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-xl-8">
                     <div class="row">
-                        <h3 class="mt-5">Service Projects</h3>
+                        <h3 class="mt-5 mb-5">Service Projects</h3>
                         @forelse ($service->projects as $index => $project)
                             <div class="col-lg-6 filter-item">
                                 <div class="portfolio-wrap {{ $index == 0 ? 'mt-lg-140' : ($index == 1 ? 'mt-lg-0' : '') }}" style="margin-top: 100px;">
