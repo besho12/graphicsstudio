@@ -37,7 +37,8 @@
                 <div class="col-xl-12">
                     <div class="projects">
                         @foreach($service['projects'] as $project)
-                            <span>{{ $project }}</span>                            
+                            <span>{{ $project->title }}</span>                            
+                            <span>{{ $project->description }}</span>                            
                         @endforeach
                     </div>
                 </div>
