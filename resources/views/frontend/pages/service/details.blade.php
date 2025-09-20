@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-xl-8">
                     <h3 class="mt-5">Service Projects</h3>
-                    @forelse ($projects as $index => $project)
+                    @forelse ($service->projects as $index => $project)
                     @php
                         $col_size = $col_sizes[$index % count($col_sizes)];
                     @endphp
