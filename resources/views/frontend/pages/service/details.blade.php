@@ -34,37 +34,39 @@
                         {!! clean(replaceImageSources($service?->description)) !!}
                     </div>
                 </div>
-                <div class="col-xl-8">
-                    <h3 class="mt-5">Service Projects</h3>
-                    @forelse ($service->projects as $index => $project)
-                        <div class="col-lg-6 filter-item">
-                            <div class="portfolio-wrap mt-140 {{ $index == 0 ? 'mt-lg-140' : ($index == 1 ? 'mt-lg-0' : '') }}">
-                                <div class="portfolio-thumb wow img-custom-anim-top" data-wow-duration="1.5s"
-                                    data-wow-delay="0.2s">
-                                    <a href="{{ route('single.portfolio', $project?->slug) }}">
-                                        <img src="{{ asset($project?->image) }}" alt="{{ $project?->title }}">
-                                    </a>
-                                </div>
-                                <div class="portfolio-details">
-                                    <ul class="portfolio-meta">
-                                        <li><a href="javascript:;">{{ $project?->project_category }}</a></li>
-                                    </ul>
-                                    <h3 class="portfolio-title"><a
-                                            href="{{ route('single.portfolio', $project?->slug) }}">{{ $project?->title }}</a>
-                                    </h3>
-                                    <a href="{{ route('single.portfolio', $project?->slug) }}" class="link-btn">
-                                        <span class="link-effect">
-                                            <span class="effect-1">{{ __('View Project') }}</span>
-                                            <span class="effect-1">{{ __('View Project') }}</span>
-                                        </span>
-                                        <img src="{{ asset('frontend/images/arrow-left-top.svg') }}" alt="icon">
-                                    </a>
+                <div class="row">
+                    <div class="col-xl-8">
+                        <h3 class="mt-5">Service Projects</h3>
+                        @forelse ($service->projects as $index => $project)
+                            <div class="col-lg-6 filter-item">
+                                <div class="portfolio-wrap mt-140 {{ $index == 0 ? 'mt-lg-140' : ($index == 1 ? 'mt-lg-0' : '') }}">
+                                    <div class="portfolio-thumb wow img-custom-anim-top" data-wow-duration="1.5s"
+                                        data-wow-delay="0.2s">
+                                        <a href="{{ route('single.portfolio', $project?->slug) }}">
+                                            <img src="{{ asset($project?->image) }}" alt="{{ $project?->title }}">
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-details">
+                                        <ul class="portfolio-meta">
+                                            <li><a href="javascript:;">{{ $project?->project_category }}</a></li>
+                                        </ul>
+                                        <h3 class="portfolio-title"><a
+                                                href="{{ route('single.portfolio', $project?->slug) }}">{{ $project?->title }}</a>
+                                        </h3>
+                                        <a href="{{ route('single.portfolio', $project?->slug) }}" class="link-btn">
+                                            <span class="link-effect">
+                                                <span class="effect-1">{{ __('View Project') }}</span>
+                                                <span class="effect-1">{{ __('View Project') }}</span>
+                                            </span>
+                                            <img src="{{ asset('frontend/images/arrow-left-top.svg') }}" alt="icon">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @empty
-                        <x-data-not-found />
-                    @endforelse
+                        @empty
+                            <x-data-not-found />
+                        @endforelse
+                    </div>
                 </div>
             </div>
         </div>
