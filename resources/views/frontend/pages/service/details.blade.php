@@ -38,7 +38,7 @@
                     <div class="projects">
                         @foreach($service['projects'] as $project)
                             <span>{{ $project->title }}</span>                            
-                            <span>{{ $project->images[0]['small_image'] }}</span>                            
+                            <img class="w-100" src="{{ asset($project?->images[0]?->small_image) }}" alt="{{ $project?->images[0]?->small_image }}">                        
                         @endforeach
                     </div>
                 </div>
