@@ -34,11 +34,11 @@
                         {!! clean(replaceImageSources($service?->description)) !!}
                     </div>
                 </div>
-                <div class="col-xl-12">
+                <div class="col-xl-8">
                     <h2>Service Projects</h2>
                     <div class="projects row align-items-center justify-content-center">
                         @foreach($service['projects'] as $project)
-                            <div class="col-xl-3 col-sm-6">
+                            <div class="col-xl-6">
                                 <img class="w-100" src="{{ asset($project?->images[0]?->small_image) }}" alt="{{ $project?->images[0]?->small_image }}">                        
                                 <span>{{ $project->title }}</span>                            
                             </div>
