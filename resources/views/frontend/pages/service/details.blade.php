@@ -38,7 +38,7 @@
                     <div class="projects">
                         @foreach($service['projects'] as $project)
                             <span>{{ $project->title }}</span>                            
-                            <span>{{ $project->description }}</span>                            
+                            <span>{{ $project->images }}</span>                            
                         @endforeach
                     </div>
                 </div>
