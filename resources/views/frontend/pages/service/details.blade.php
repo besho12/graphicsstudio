@@ -37,8 +37,10 @@
                 <div class="col-xl-12">
                     <div class="projects">
                         @foreach($service['projects'] as $project)
-                            <span>{{ $project->title }}</span>                            
-                            <img class="w-100" src="{{ asset($project?->images[0]?->small_image) }}" alt="{{ $project?->images[0]?->small_image }}">                        
+                            <div class="col-xl-3 col-sm-6">
+                                <span>{{ $project->title }}</span>                            
+                                <img class="w-100" src="{{ asset($project?->images[0]?->small_image) }}" alt="{{ $project?->images[0]?->small_image }}">                        
+                            </div>
                         @endforeach
                     </div>
                 </div>
