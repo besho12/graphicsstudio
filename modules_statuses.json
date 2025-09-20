@@ -1,13 +1,13 @@
 {
     "Language": true,
-    "Blog": true,
+    "Blog": false,
     "GlobalSetting": true,
-    "Currency": true,
+    "Currency": false,
     "BasicPayment": true,
     "Subscription": true,
     "PageBuilder": true,
     "Customer": true,
-    "NewsLetter": true,
+    "NewsLetter": false,
     "ContactMessage": true,
     "Order": true,
     "Coupon": true,
@@ -15,7 +15,7 @@
     "OurTeam": true,
     "Testimonial": true,
     "Faq": true,
-    "CustomMenu": true,
+    "CustomMenu": false,
     "SocialLink": true,
     "Sitemap": true,
     "SiteAppearance": true,
@@ -26,6 +26,6 @@
     "Marquee": true,
     "Location": true,
     "Award": true,
-    "Shop": true,
+    "Shop": false,
     "Installer": true
 }
