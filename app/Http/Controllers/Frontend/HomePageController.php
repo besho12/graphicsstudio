@@ -276,7 +276,12 @@ class HomePageController extends Controller {
             'translation' => function ($query) {
             $query->select('service_id', 'title','description','seo_title', 'seo_description');
         }])
-        ->with(['projects.translations','projects.images'])
+        ->with([
+            'projects.translations',
+            'projects.images' => function ($query) {
+                $query->limit(1);
+            }
+        ])
         ->active()->where('slug', $slug)->first();
 
         if (!$service) {
