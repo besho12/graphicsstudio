@@ -34,8 +34,8 @@
                         {!! clean(replaceImageSources($service?->description)) !!}
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-8">
+                <div class="col-xl-8">
+                    <div class="row">
                         <h3 class="mt-5">Service Projects</h3>
                         @forelse ($service->projects as $index => $project)
                             <div class="col-lg-6 filter-item">
