@@ -48,7 +48,7 @@
                                 </div>
                             </li>
                         @endif
-                        @if (Module::isEnabled('Currency') && allCurrencies()?->where('status', 'active')->count() > 1  && $setting?->is_shop)
+                        @if (1 == 2 && Module::isEnabled('Currency') && allCurrencies()?->where('status', 'active')->count() > 1  && $setting?->is_shop)
                             <li class="set-currency-header dropdown border rounded-2 mx-2"><a href="javascript:;" data-bs-toggle="dropdown"
                                     class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                                     <div class="d-sm-none d-lg-inline-block">

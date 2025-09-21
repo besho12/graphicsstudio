@@ -67,7 +67,7 @@
                         </div>
                     @endadminCan
                     @if ($setting?->is_shop)
-                        @if (Module::isEnabled('Currency') && checkAdminHasPermission('currency.view'))
+                        @if (Module::isEnabled('Currency') && 1 == 2 && checkAdminHasPermission('currency.view'))
                             <div class="col-lg-6">
                                 <div class="card card-large-icons">
                                     <div class="text-white card-icon bg-primary">
