@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\AddonsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\RolesController;
+use App\Http\Controllers\Admin\AddonsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Auth\NewPasswordController;
+use Modules\Service\app\Http\Controllers\ServiceController;
 use App\Http\Controllers\Admin\TinymceImageUploadController;
 use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
@@ -25,8 +26,11 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'translatio
     /* End admin auth route */
 
     Route::middleware(['auth:admin'])->group(function () {
-        Route::get('/', fn() => to_route('admin.dashboard'));
-        Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+        Route::get('/', fn() => to_route('admin.service.index')); // <-- redirect to service
+        Route::get('dashboard', fn() => to_route('admin.service.index')); // <-- redirect to service
+
+        // Example service route
+        Route::get('service', [ServiceController::class, 'index'])->name('service.index');
 
         Route::controller(AdminProfileController::class)->group(function () {
             Route::get('edit-profile', 'edit_profile')->name('edit-profile');
