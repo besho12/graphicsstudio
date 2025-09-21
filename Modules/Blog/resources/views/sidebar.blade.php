@@ -1,4 +1,4 @@
-@if (Module::isEnabled('Blog') && Route::has('admin.blogs.index'))
+@if (Module::isEnabled('Blog') && Route::has('admin.blogs.index') && 1 == 2)
     <li
         class="nav-item dropdown {{ isRoute(['admin.blogs.*', 'admin.blog-category.*', 'admin.blog-comment.*'], 'active') }}">
         <a href="javascript:void()" class="nav-link has-dropdown"><i
