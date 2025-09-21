@@ -40,7 +40,7 @@
                     @include('ourteam::sidebar')
                 @endif
 
-                @if (Module::isEnabled('Customer') && checkAdminHasPermission('customer.view'))
+                @if (Module::isEnabled('Customer') && 1 == 2 && checkAdminHasPermission('customer.view'))
                     @include('customer::sidebar')
                 @endif
             @endif
@@ -57,7 +57,7 @@
                     checkAdminHasPermission('social.link.management'))
                 <li class="menu-header">{{ __('Manage Website') }}</li>
 
-                @if (Module::isEnabled('CustomMenu') && checkAdminHasPermission('menu.view'))
+                @if (Module::isEnabled('CustomMenu') && 1 == 2 && checkAdminHasPermission('menu.view'))
                     @include('custommenu::sidebar')
                 @endif
 
