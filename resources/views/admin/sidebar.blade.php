@@ -83,7 +83,7 @@
                     checkAdminHasPermission('product.category.management') ||
                     checkAdminHasPermission('product.management') ||
                     checkAdminHasPermission('product.review.management'))
-                @if ($setting?->is_shop)
+                @if ($setting?->is_shop  && 1 == 2)
                     <li class="menu-header">{{ __('Shop') }}</li>
 
                     <li
