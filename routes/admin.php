@@ -10,7 +10,6 @@ use App\Http\Controllers\Admin\TinymceImageUploadController;
 use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
-use Modules\Service\app\Http\Controllers\ServiceController;
 
 /*  End Admin panel Controller  */
 
@@ -27,7 +26,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'translatio
 
     Route::middleware(['auth:admin'])->group(function () {
         Route::get('/', fn() => to_route('admin.dashboard'));
-        Route::get('dashboard', [ServiceController::class, 'index']);
+        Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
         Route::controller(AdminProfileController::class)->group(function () {
             Route::get('edit-profile', 'edit_profile')->name('edit-profile');
