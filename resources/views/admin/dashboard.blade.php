@@ -3,9 +3,9 @@
     <title>{{ __('Dashboard') }}</title>
 @endsection
 @use('Carbon\Carbon', 'Carbon')
-{{-- @section('admin-content')
+@section('admin-content')
     <div class="main-content">
-        <div class="row position-relative">
+        {{-- <div class="row position-relative">
             @if (Route::is('admin.dashboard') && ($checkCrentials = checkCrentials()))
                 @foreach ($checkCrentials as $checkCrential)
                     @if ($checkCrential->status)
@@ -466,10 +466,10 @@
                 </div>
             @endif
         </section>
-    </div>
-@endsection --}}
+    </div> --}}
+@endsection
 
-{{-- @push('js')
+@push('js')
     @if (checkAdminHasPermission('dashboard.view') && $setting?->is_shop)
         <script src="{{ asset('backend/js/chart.umd.min.js') }}"></script>
         <script>
@@ -582,4 +582,4 @@
             })(jQuery);
         </script>
     @endif
-@endpush --}}
+@endpush
