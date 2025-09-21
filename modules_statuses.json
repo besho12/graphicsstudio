@@ -2,7 +2,7 @@
     "Language": true,
     "Blog": true,
     "GlobalSetting": true,
-    "Currency": true,
+    "Currency": false,
     "BasicPayment": true,
     "Subscription": true,
     "PageBuilder": true,
