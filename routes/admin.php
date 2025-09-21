@@ -26,11 +26,13 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'translatio
     /* End admin auth route */
 
     Route::middleware(['auth:admin'])->group(function () {
-        Route::get('/', fn() => to_route('admin.service.index')); // <-- redirect to service
-        Route::get('dashboard', fn() => to_route('admin.service.index')); // <-- redirect to service
-
-        // Example service route
-        Route::get('service', [ServiceController::class, 'index'])->name('service.index');
+        Route::get('/', fn() => to_route('admin.service.index'));
+        
+        Route::get('dashboard', [DashboardController::class, 'dashboard'])
+            ->name('admin.dashboard'); // <-- named route
+        
+        Route::get('service', [ServiceController::class, 'index'])
+            ->name('admin.service.index');
 
         Route::controller(AdminProfileController::class)->group(function () {
             Route::get('edit-profile', 'edit_profile')->name('edit-profile');
