@@ -28,7 +28,7 @@
 
                 <li class="menu-header">{{ __('Manage Contents') }}</li>
 
-                @if (Module::isEnabled('Blog') && 1 == 2)
+                @if (Module::isEnabled('Blog')  )
                     @include('blog::sidebar')
                 @endif
 
@@ -36,11 +36,11 @@
                     @include('subscription::admin.sidebar')
                 @endif
 
-                @if (Module::isEnabled('OurTeam') && 1 == 2 && checkAdminHasPermission('team.management'))
+                @if (Module::isEnabled('OurTeam')   && checkAdminHasPermission('team.management'))
                     @include('ourteam::sidebar')
                 @endif
 
-                @if (Module::isEnabled('Customer') && 1 == 2 && checkAdminHasPermission('customer.view'))
+                @if (Module::isEnabled('Customer')   && checkAdminHasPermission('customer.view'))
                     @include('customer::sidebar')
                 @endif
             @endif
@@ -57,11 +57,11 @@
                     checkAdminHasPermission('social.link.management'))
                 <li class="menu-header">{{ __('Manage Website') }}</li>
 
-                @if (Module::isEnabled('CustomMenu') && 1 == 2 && checkAdminHasPermission('menu.view'))
+                @if (Module::isEnabled('CustomMenu')   && checkAdminHasPermission('menu.view'))
                     @include('custommenu::sidebar')
                 @endif
 
-                @if (Module::isEnabled('PageBuilder') && 1 == 2 && checkAdminHasPermission('page.view'))
+                @if (Module::isEnabled('PageBuilder')   && checkAdminHasPermission('page.view'))
                     @include('pagebuilder::sidebar')
                 @endif
 
@@ -83,7 +83,7 @@
                     checkAdminHasPermission('product.category.management') ||
                     checkAdminHasPermission('product.management') ||
                     checkAdminHasPermission('product.review.management'))
-                @if ($setting?->is_shop  && 1 == 2)
+                @if ($setting?->is_shop   )
                     <li class="menu-header">{{ __('Shop') }}</li>
 
                     <li
@@ -92,7 +92,7 @@
                             <i class="fas fa-store-alt"></i><span>{{ __('Manage Shop') }}</span>
                         </a>
                         <ul class="dropdown-menu">
-                            @if (Module::isEnabled('Shop') && 1 == 2 &&
+                            @if (Module::isEnabled('Shop')   &&
                                     (checkAdminHasPermission('product.category.management') ||
                                         checkAdminHasPermission('product.management') ||
                                         checkAdminHasPermission('product.review.management')))
@@ -101,16 +101,16 @@
                         </ul>
                     </li>
 
-                    @if (Module::isEnabled('Coupon') && 1 == 2 && checkAdminHasPermission('coupon.management'))
+                    @if (Module::isEnabled('Coupon')   && checkAdminHasPermission('coupon.management'))
                         @include('coupon::sidebar')
                     @endif
 
-                    @if (Module::isEnabled('Order') && 1 == 2 &&
+                    @if (Module::isEnabled('Order')   &&
                             (checkAdminHasPermission('order.management') || checkAdminHasPermission('shipping.method.view')))
                         @include('order::sidebar')
                     @endif
 
-                    @if (Module::isEnabled('Refund') && 1 == 2 && checkAdminHasPermission('refund.management'))
+                    @if (Module::isEnabled('Refund')   && checkAdminHasPermission('refund.management'))
                         @include('refund::admin.sidebar')
                     @endif
                 @endif
@@ -132,7 +132,7 @@
                             checkAdminHasPermission('award.view')))
                     @include('frontend::sidebar')
                 @endif
-                @if (Module::isEnabled('Brand') && 1 == 2 && checkAdminHasPermission('brand.management'))
+                @if (Module::isEnabled('Brand')   && checkAdminHasPermission('brand.management'))
                     @include('brand::sidebar')
                 @endif
             @endif
@@ -163,7 +163,7 @@
                 <li class="menu-header">{{ __('Utility') }}</li>
 
 
-                @if (Module::isEnabled('NewsLetter') && 1 == 2 &&
+                @if (Module::isEnabled('NewsLetter')   &&
                         (checkAdminHasPermission('newsletter.view') || checkAdminHasPermission('newsletter.mail')))
                     @include('newsletter::sidebar')
                 @endif

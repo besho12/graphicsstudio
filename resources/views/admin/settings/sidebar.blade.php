@@ -24,11 +24,11 @@
             @endif
             @if ($setting?->is_shop)
                 @if (checkAdminHasPermission('basic.payment.view'))
-                    @if (Module::isEnabled('BasicPayment') && 1 == 2 && checkAdminHasPermission('basic.payment.view'))
+                    @if (Module::isEnabled('BasicPayment')   && checkAdminHasPermission('basic.payment.view'))
                         @include('basicpayment::sidebar')
                     @endif
                 @endif
-                @if (Module::isEnabled('Currency') && 1 == 2 && checkAdminHasPermission('currency.view'))
+                @if (Module::isEnabled('Currency')   && checkAdminHasPermission('currency.view'))
                     @include('currency::sidebar')
                 @endif
             @endif
