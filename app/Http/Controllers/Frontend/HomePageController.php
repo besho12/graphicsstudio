@@ -272,6 +272,9 @@ class HomePageController extends Controller {
         return view('frontend.pages.service.index', compact('services','bannerSection'));
     }
     public function singleService($slug): View {
+
+        $sectionSetting = SectionSetting::first();
+
         $service = Service::select('id', 'slug', 'image','created_at')->with([
             'translation' => function ($query) {
             $query->select('service_id', 'title','description','seo_title', 'seo_description');
@@ -285,8 +288,12 @@ class HomePageController extends Controller {
             abort(404);
         }
 
+        $faqs = Faq::select('id')->where('service_id', $service->id)->with(['translation' => function ($query) {
+            $query->select('faq_id', 'question', 'answer');
+        }])->active()->latest()->take(4)->get();
 
-        return view('frontend.pages.service.details', compact('service'));
+
+        return view('frontend.pages.service.details', compact('service','sectionSetting','faqs'));
     }
     public function contactTeamMember(Request $request, $slug):JsonResponse {
         try {
