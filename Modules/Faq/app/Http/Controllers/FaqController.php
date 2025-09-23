@@ -3,13 +3,14 @@
 namespace Modules\Faq\app\Http\Controllers;
 
 use App\Enums\RedirectType;
-use App\Http\Controllers\Controller;
-use App\Traits\RedirectHelperTrait;
-use Illuminate\Pagination\Paginator;
-use Modules\Faq\app\Http\Requests\FaqRequest;
 use Modules\Faq\app\Models\Faq;
-use Modules\Language\app\Enums\TranslationModels;
+use App\Traits\RedirectHelperTrait;
+use App\Http\Controllers\Controller;
+use Illuminate\Pagination\Paginator;
+use Modules\Service\app\Models\Service;
 use Modules\Language\app\Models\Language;
+use Modules\Faq\app\Http\Requests\FaqRequest;
+use Modules\Language\app\Enums\TranslationModels;
 use Modules\Language\app\Traits\GenerateTranslationTrait;
 
 class FaqController extends Controller
@@ -67,8 +68,9 @@ class FaqController extends Controller
 
         $faq = Faq::with('translation')->findOrFail($id);
         $languages = allLanguages();
+        $services = Service::get();
 
-        return view('faq::edit', compact('faq', 'code', 'languages'));
+        return view('faq::edit', compact('faq', 'code', 'languages', 'services'));
     }
 
     public function update(FaqRequest $request, $id)
@@ -76,6 +78,8 @@ class FaqController extends Controller
         checkAdminHasPermissionAndThrowException('faq.update');
 
         $faq = Faq::findOrFail($id);
+
+        $faq->service_id = $request->service_id ?? $faq->service_id;
 
         $validatedData = $request->validated();
 

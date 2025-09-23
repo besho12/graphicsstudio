@@ -75,6 +75,19 @@
                                                     maxlength="1000" required="true" />
                                             </div>
                                         </div>
+
+                                        <div class="form-group col-md-12">
+                                            <x-admin.form-select name="service_id" id="service_id" class="select2"
+                                                label="{{ __('Service') }}" required="true">
+                                                <x-admin.select-option value="" text="{{ __('Select Service') }}" />
+                                                @foreach ($services as $service)
+                                                    <x-admin.select-option :selected="$service?->id ==
+                                                        old('service_id', $project?->service_id)" value="{{ $service?->id }}"
+                                                        text="{{ $service?->title }}" />
+                                                @endforeach
+                                            </x-admin.form-select>
+                                        </div>
+
                                         <div class="col-md-12">
                                             <x-admin.update-button :text="__('Update')" />
                                         </div>
