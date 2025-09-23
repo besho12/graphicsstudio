@@ -71,16 +71,16 @@
 
                 <br>
 
-                <div style="margin-top: 90px !important; ">
+
+                 <div class="col-xl-8" style="margin-top: 90px !important; ">
+                    <div class="row">
+                        <h3 class="mt-5 mb-5">Service FAQs</h3>
+                    </div>
+                </div>
+                <div class="mt-5">
                     {{-- FAQ --}}
                     @if ($sectionSetting?->faq_section)
                         <!-- faq-area -->
-
-                        <div class="col-xl-8">
-                            <div class="row">
-                                <h3 class="mt-5 mb-5">Service FAQs</h3>
-                            </div>
-                        </div>
                         @include('frontend.home.four.sections.faq-area')
                         <!-- faq-area-end -->
                     @endif
