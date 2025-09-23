@@ -69,7 +69,10 @@
                     </div>
                 </div>
 
-                <div class="col-xl-8">
+
+                <br>
+
+                <div class="col-xl-12 mt-5">
                     <!-- Contact Area -->
                     <div class="contact-area-1 space bg-theme">
                         <div class="contact-map shape-mockup wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s"
