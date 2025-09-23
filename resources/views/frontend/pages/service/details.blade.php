@@ -69,16 +69,16 @@
                     </div>
                 </div>
 
-
-
-                {{-- FAQ --}}
-                @if ($sectionSetting?->faq_section)
-                    <!-- faq-area -->
-                    @include('frontend.home.four.sections.faq-area')
-                    <!-- faq-area-end -->
-                @endif
-            
-
+                <br>
+                
+                <div class="row mt-5">
+                    {{-- FAQ --}}
+                    @if ($sectionSetting?->faq_section)
+                        <!-- faq-area -->
+                        @include('frontend.home.four.sections.faq-area')
+                        <!-- faq-area-end -->
+                    @endif
+                </div>
 
                 <br>
 
