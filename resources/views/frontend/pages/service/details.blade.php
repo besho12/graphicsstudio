@@ -75,7 +75,12 @@
                     {{-- FAQ --}}
                     @if ($sectionSetting?->faq_section)
                         <!-- faq-area -->
-                        <h3 class="mt-5 mb-5">Service FAQs</h3>
+
+                        <div class="col-xl-8">
+                            <div class="row">
+                                <h3 class="mt-5 mb-5">Service FAQs</h3>
+                            </div>
+                        </div>
                         @include('frontend.home.four.sections.faq-area')
                         <!-- faq-area-end -->
                     @endif
