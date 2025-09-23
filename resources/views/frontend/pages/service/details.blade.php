@@ -77,7 +77,7 @@
                         <h3 class="mt-5 mb-5">Service FAQs</h3>
                     </div>
                 </div>
-                <div class="mt-5">
+                <div>
                     {{-- FAQ --}}
                     @if ($sectionSetting?->faq_section)
                         <!-- faq-area -->
