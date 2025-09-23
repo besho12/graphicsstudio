@@ -82,7 +82,7 @@
                                                 <x-admin.select-option value="" text="{{ __('Select Service') }}" />
                                                 @foreach ($services as $service)
                                                     <x-admin.select-option :selected="$service?->id ==
-                                                        old('service_id', $project?->service_id)" value="{{ $service?->id }}"
+                                                        old('service_id', $faq?->service_id)" value="{{ $service?->id }}"
                                                         text="{{ $service?->title }}" />
                                                 @endforeach
                                             </x-admin.form-select>
