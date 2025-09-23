@@ -70,8 +70,8 @@
                 </div>
 
                 <br>
-                
-                <div class="row mt-5">
+
+                <div style="margin-top: 90px !important; ">
                     {{-- FAQ --}}
                     @if ($sectionSetting?->faq_section)
                         <!-- faq-area -->
