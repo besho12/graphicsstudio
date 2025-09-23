@@ -110,7 +110,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <input type="text" class="form-control style-border" name="subject"
-                                                            placeholder="{{ __('Subject') }}*" value="{{ old('subject') }}" required>
+                                                            value="{{ $service?->title }} - Service" placeholder="{{ __('Subject') }}*" value="{{ old('subject') }}" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
