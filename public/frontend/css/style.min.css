@@ -5,3 +5,10 @@
 .sticky-wrapper.header-sticky .main-menu li a{
     color: #000 !important;
 }
+#setLanguageHeader2, #setLanguageHeader {
+    display: flex;
+    align-items: anchor-center;
+}
+#setLanguageHeader2 .fas, #setLanguageHeader .fas {
+    font-size: 20px;
+}
