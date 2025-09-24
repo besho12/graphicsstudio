@@ -1431,10 +1431,3 @@ a.wpcc-privacy {
 .hero-title.wow.img-custom-anim-right, .hero-text.wow.img-custom-anim-right {
     color: #fff !important;
 }
-
-.sticky-wrapper .main-menu li a{
-    color: #fff !important;
-}
-.sticky-wrapper.header-sticky .main-menu li a{
-    color: #000 !important;
-}
