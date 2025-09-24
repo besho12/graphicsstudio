@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="{{ asset('global/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/cookie-consent.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/style.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}?v={{ $setting?->version }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.min.css?version=1.0.0') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css?version=1.0.0') }}?v={{ $setting?->version }}">
     @if (session()->has('text_direction') && session()->get('text_direction') == 'rtl')
     <link rel="stylesheet" href="{{ asset('frontend/css/rtl.css') }}?v={{ $setting?->version }}">
     @endif
