@@ -1432,9 +1432,9 @@ a.wpcc-privacy {
     color: #fff !important;
 }
 
-.sticky-wrapper .main-menu li{
+.sticky-wrapper .main-menu li a{
     color: #fff !important;
 }
-.sticky-wrapper.header-sticky .main-menu li{
+.sticky-wrapper.header-sticky .main-menu li a{
     color: #000 !important;
 }
