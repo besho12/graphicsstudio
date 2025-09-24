@@ -812,7 +812,7 @@ p.ajax-response.error {
 .header_language li.language-select-item::before {
     position: absolute;
     content: "";
-    background: url(../images/translation.png);
+    /* background: url(../images/translation.png); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -64,6 +64,7 @@
         @if (allLanguages()?->where('status', 1)->count() > 1)
             <li class="language-select-item select_item">
                 <form id="setLanguageHeader2" action="{{ route('set-language') }}" method="get">
+                    <i class="fas fa-language"></i>
                     <select class="select_js" name="code">
                         @forelse (allLanguages()?->where('status', 1) as $language)
                             <option value="{{ $language->code }}"

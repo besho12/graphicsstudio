@@ -62,6 +62,7 @@
                     <ul class="tg-header-top__social text-end header_language">
                         @if (allLanguages()?->where('status', 1)->count() > 1)
                             <li class="language-select-item select_item">
+                                <i class="fas fa-language"></i>
                                 <form id="setLanguageHeader" action="{{ route('set-language') }}" method="get">
                                     <select class="select_js" name="code">
                                         @forelse (allLanguages()?->where('status', 1) as $language)
