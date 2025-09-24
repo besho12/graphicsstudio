@@ -6,12 +6,24 @@
     border-bottom: 1px solid #fff !important;
     border-right: 1px solid #fff !important;
 }
+.sticky-wrapper .sidebar-btn {
+    border: 2px solid #ffffff !important;
+}
+.sticky-wrapper .sidebar-btn span {
+    color: #ffffff !important;
+}
 .sticky-wrapper.header-sticky .main-menu li a, .sticky-wrapper.header-sticky .main-menu li .fas{
     color: #000 !important;
 }
 .sticky-wrapper.header-sticky .header_language .nice-select:after {
     border-bottom: 1px solid #000 !important;
     border-right: 1px solid #000 !important;
+}
+.sticky-wrapper.header-sticky .sidebar-btn {
+    border: 2px solid #000 !important;
+}
+.sticky-wrapper.header-sticky .sidebar-btn span{
+    color: #000 !important;
 }
 #setLanguageHeader2, #setLanguageHeader {
     display: flex;
