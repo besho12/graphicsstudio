@@ -124,6 +124,7 @@ class HomePageController extends Controller {
         //     'plans',
         // ));
 
+        dd('here');
         $this->services();
     }
     function changeTheme(string $theme) {
