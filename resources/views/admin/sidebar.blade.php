@@ -11,13 +11,13 @@
         </div>
 
         <ul class="sidebar-menu">
-            @adminCan('dashboard.view')
+            {{-- @adminCan('dashboard.view')
                 <li class="{{ isRoute('admin.dashboard', 'active') }}">
                     <a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-home"></i>
                         <span>{{ __('Dashboard') }}</span>
                     </a>
                 </li>
-            @endadminCan
+            @endadminCan --}}
 
             @if (checkAdminHasPermission('blog.category.view') ||
                     checkAdminHasPermission('blog.view') ||
