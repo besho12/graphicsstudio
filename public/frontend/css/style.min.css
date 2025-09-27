@@ -32,6 +32,6 @@
 #setLanguageHeader2 .fas, #setLanguageHeader .fas {
     font-size: 22px;
 }
-.contact-form-wrap h2, .contact-form-wrap p, .contact-form-wrap h2, .contact-form-wrap input {
+.contact-form-wrap h2, .contact-form-wrap p, .contact-form-wrap h2, .contact-form-wrap input, .contact-form-wrap input::placeholder {
     color: #fff !important;
 }
