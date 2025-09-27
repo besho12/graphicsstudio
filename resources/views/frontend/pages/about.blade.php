@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    <!-- Team Area -->
+    {{-- <!-- Team Area -->
     <div class="team-area-1 space-bottom overflow-hidden">
         <div class="container">
             <div class="row justify-content-center">
@@ -122,7 +122,7 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Contact Area -->
     <div class="contact-area-1 space bg-theme">
