@@ -14524,6 +14524,10 @@ blockquote p {
     margin-left: 30px;
 }
 
+.contact-form-wrap h2, .contact-form-wrap p, .contact-form-wrap h2, .contact-form-wrap input {
+    color: #fff !important;
+}
+
 /*===================================
   DASHBOARD END
 ===================================*/
