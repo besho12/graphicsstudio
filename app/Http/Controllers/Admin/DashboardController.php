@@ -101,19 +101,34 @@ class DashboardController extends Controller {
         // }
         // return view('admin.dashboard', $data);
 
-        $per_age = cache('CustomPagination')?->service_list ?? CustomPagination::where('section_name', 'Service List')->value('item_qty');
-        
-        $services = Service::select('id', 'slug', 'icon')->with(['translation' => function ($query) {
-            $query->select('service_id', 'title', 'short_description', 'btn_text');
-        }])->active()->latest()->paginate($per_age);
+        checkAdminHasPermissionAndThrowException('service.view');
+        $query = Service::query();
 
-        $theme_name = DEFAULT_HOMEPAGE;
+        $query->when($request->filled('keyword'), function ($qa) use ($request) {
+            $qa->whereHas('translations', function ($q) use ($request) {
+                $q->where('title', 'like', '%' . $request->keyword . '%');
+                $q->orWhere('description', 'like', '%' . $request->keyword . '%');
+                $q->orWhere('short_description', 'like', '%' . $request->keyword . '%');
+            });
+        });
 
-        $bannerSection = Section::whereHas("home", function ($q) use ($theme_name) {
-            $q->where('slug', $theme_name);
-        })->where('name', 'banner_section')->first();
-        
-        return view('frontend.pages.service.index', compact('services','bannerSection'));
+        $query->when($request->filled('is_popular'), function ($q) use ($request) {
+            $q->where('is_popular', $request->is_popular);
+        });
+
+        $query->when($request->filled('status'), function ($q) use ($request) {
+            $q->where('status', $request->status);
+        });
+
+        $orderBy = $request->filled('order_by') && $request->order_by == 1 ? 'asc' : 'desc';
+
+        if ($request->filled('par-page')) {
+            $services = $request->get('par-page') == 'all' ? $query->with('translation')->orderBy('id', $orderBy)->get() : $query->with('translation')->orderBy('id', $orderBy)->paginate($request->get('par-page'))->withQueryString();
+        } else {
+            $services = $query->with('translation')->orderBy('id', $orderBy)->paginate(10)->withQueryString();
+        }
+
+        return view('service::index', compact('services'));
     }
 
     public function setLanguage() {
