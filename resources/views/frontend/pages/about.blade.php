@@ -72,7 +72,7 @@
     </div>
 
     <!-- Award Area -->
-    <div class="award-area-1 space overflow-hidden">
+    {{-- <div class="award-area-1 space overflow-hidden">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- <!-- Team Area -->
     <div class="team-area-1 space-bottom overflow-hidden">
