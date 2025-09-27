@@ -28,3 +28,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    .sticky-wrapper .main-menu li a, .sticky-wrapper .main-menu li .fas{
+        color: #fff !important;
+    }
+</style>
