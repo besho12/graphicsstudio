@@ -53,11 +53,11 @@
                         {{ __('Billing Addresses') }}</a>
                 </li>
             @endif
-            <li>
+            {{-- <li>
                 <a href="{{ route('user.pricing') }}" class="{{ isRoute('user.pricing', 'active') }}"><i
                         class="fas fa-dollar-sign"></i></i>
                     {{ __('Pricing Plan') }}</a>
-            </li>
+            </li> --}}
             <li>
                 <a class="{{ isRoute('user.change-password', 'active') }}"
                     href="{{ route('user.change-password') }}"><i class="fas fa-key"></i>
