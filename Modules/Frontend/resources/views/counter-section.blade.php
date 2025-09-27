@@ -63,10 +63,10 @@
                                                 <label for="year_experience_count">{{ __('Total Years of Experience') }}<span
                                                         class="text-danger"></span></label>
                                                 <input data-translate="true" type="text" id="year_experience_count"
-                                                    name="year_experience_count_count"
+                                                    name="year_experience_count"
                                                     value="{{ $counterSection?->global_content?->year_experience_count}}"
                                                     placeholder="{{ __('Total Years of Experience') }}" class="form-control">
-                                                @error('year_experience_count_count')
+                                                @error('year_experience_count')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
