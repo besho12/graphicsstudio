@@ -56,7 +56,7 @@
     -moz-box-sizing: border-box;
 }
 .dd-handle:hover {
-    color: #6777ef;
+    color: #1d262e;
     background: #fff;
 }
 
@@ -169,7 +169,7 @@
 }
 
 .dd-hover > .dd-handle {
-    background: #6777ef !important;
+    background: #1d262e !important;
 }
 
 /**
@@ -194,7 +194,7 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .dd3-content:hover {
-    color: #6777ef;
+    color: #1d262e;
     background: #fff;
 }
 
@@ -219,9 +219,9 @@
     overflow: hidden;
     border: 1px solid #aaa;
     background: #4a5bd4;
-    background: -webkit-linear-gradient(top, #4a5bd4 0%, #6777ef  100%);
-    background: -moz-linear-gradient(top, #4a5bd4 0%, #6777ef  100%);
-    background: linear-gradient(top, #4a5bd4 0%, #6777ef  100%);
+    background: -webkit-linear-gradient(top, #4a5bd4 0%, #1d262e  100%);
+    background: -moz-linear-gradient(top, #4a5bd4 0%, #1d262e  100%);
+    background: linear-gradient(top, #4a5bd4 0%, #1d262e  100%);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -240,7 +240,7 @@
     font-weight: 600;
 }
 .dd3-handle:hover {
-    background: #6777ef;
+    background: #1d262e;
 }
 input[readonly] {
     background-color: var(--bs-secondary-bg);

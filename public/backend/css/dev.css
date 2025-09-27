@@ -461,7 +461,7 @@ img.mr-3.ml-3.rounded-circle {
 }
 
 .wsus__show_product a:hover {
-    color: #6777ef !important;
+    color: #1d262e !important;
 }
 
 .lang_list_top {
@@ -489,7 +489,7 @@ img.mr-3.ml-3.rounded-circle {
 .select2-container--default .select2-results__option[aria-selected="true"],
 .select2-container--default
     .select2-results__option--highlighted[aria-selected] {
-    background-color: #6777ef !important;
+    background-color: #1d262e !important;
 }
 
 .select2-container--default .select2-selection--multiple {
@@ -513,7 +513,7 @@ img.mr-3.ml-3.rounded-circle {
 .admin_role_border .text-capitalize,
 .permission_all {
     font-weight: 700;
-    color: #6777ef;
+    color: #1d262e;
 }
 
 .missingCrentialsAlert {
@@ -585,7 +585,7 @@ img.mr-3.ml-3.rounded-circle {
 }
 
 .search-box #admin_menu_list a:hover {
-    color: #6777ef;
+    color: #1d262e;
 }
 
 .search-box #admin_menu_list a.not-found-message {
@@ -673,5 +673,5 @@ img.mr-3.ml-3.rounded-circle {
 }
 .dropzone {
     border-radius: 5px!important;
-    border: 2px dashed #6777ef!important;
+    border: 2px dashed #1d262e!important;
 }
