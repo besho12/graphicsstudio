@@ -79,7 +79,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                {{-- <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Team Section') }}</div>
                                         <label class="custom-switch mt-2">
@@ -88,8 +88,8 @@
                                             <span class="custom-switch-indicator"></span>
                                         </label>
                                     </div>
-                                </div>
-                                <div class="col-md-2">
+                                </div> --}}
+                                {{-- <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Award Section') }}</div>
                                         <label class="custom-switch mt-2">
@@ -98,7 +98,7 @@
                                             <span class="custom-switch-indicator"></span>
                                         </label>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Brands Section') }}</div>
@@ -129,7 +129,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                {{-- <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Counter Section') }}</div>
                                         <label class="custom-switch mt-2">
@@ -138,7 +138,7 @@
                                             <span class="custom-switch-indicator"></span>
                                         </label>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Choose Us Section') }}</div>
@@ -149,7 +149,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                {{-- <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Pricing Section') }}</div>
                                         <label class="custom-switch mt-2">
@@ -158,7 +158,7 @@
                                             <span class="custom-switch-indicator"></span>
                                         </label>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Contact Us Section') }}</div>
@@ -169,7 +169,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                {{-- <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Banner section') }}</div>
                                         <label class="custom-switch mt-2">
@@ -178,8 +178,8 @@
                                             <span class="custom-switch-indicator"></span>
                                         </label>
                                     </div>
-                                </div>
-                                <div class="col-md-2">
+                                </div> --}}
+                                {{-- <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Latest Blog section') }}</div>
                                         <label class="custom-switch mt-2">
@@ -188,8 +188,8 @@
                                             <span class="custom-switch-indicator"></span>
                                         </label>
                                     </div>
-                                </div>
-                                <div class="col-md-2">
+                                </div> --}}
+                                {{-- <div class="col-md-2">
                                     <div class="form-group">
                                         <div class="control-label">{{ __('Testimonial section') }}</div>
                                         <label class="custom-switch mt-2">
@@ -198,7 +198,7 @@
                                             <span class="custom-switch-indicator"></span>
                                         </label>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
                         </form>

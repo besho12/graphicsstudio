@@ -4,8 +4,8 @@
 
     </a>
     <ul class="dropdown-menu">
-        <li class="{{ isRoute('admin.site-appearance.*', 'active') }}">
-            <a class="nav-link" href="{{ route('admin.site-appearance.index') }}">{{ __('Site Themes') }}</a></li>
+        {{-- <li class="{{ isRoute('admin.site-appearance.*', 'active') }}">
+            <a class="nav-link" href="{{ route('admin.site-appearance.index') }}">{{ __('Site Themes') }}</a></li> --}}
         <li class="{{ isRoute('admin.section-setting.*', 'active') }}">
             <a class="nav-link" href="{{ route('admin.section-setting.index') }}">{{ __('Section Setting') }}</a></li>
         <li class="{{ isRoute('admin.site-color-setting.*', 'active') }}">
