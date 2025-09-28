@@ -2,12 +2,12 @@
 <li class="{{ Route::is('admin.general-setting') ? 'active' : '' }}"><a class="nav-link"
         href="{{ route('admin.general-setting') }}"><i class="fas fa-cog"></i>
         <span>{{ __('General Settings') }}</span></a></li>
-
+{{-- 
 <li class="{{ Route::is('admin.crediential-setting') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.crediential-setting') }}"><i class="fas fa-key"></i>
         <span>{{ __('Credential Settings') }}</span>
     </a>
-</li>
+</li> --}}
 
 <li class="{{ Route::is('admin.email-configuration') || Route::is('admin.edit-email-template') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.email-configuration') }}"><i class="fas fa-envelope"></i>
@@ -38,13 +38,13 @@
         href="{{ route('admin.database-clear') }}"><i class="fas fa-database"></i>
         <span>{{ __('Database Clear') }}</span></a></li>
 
-<li class="{{ Route::is('admin.system-update.index') ? 'active' : '' }}">
+{{-- <li class="{{ Route::is('admin.system-update.index') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.system-update.index') }}"><i class="fas fa-arrow-circle-up"></i>
         <span>{{ __('System Update') }}</span>
     </a>
-</li>
-<li class="{{ Route::is('admin.addons.*') ? 'active' : '' }}">
+</li> --}}
+{{-- <li class="{{ Route::is('admin.addons.*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.addons.view') }}"><i class="fas fa-plug"></i>
         <span>{{ __('Manage Addons') }}</span>
     </a>
-</li>
+</li> --}}

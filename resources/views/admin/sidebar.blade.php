@@ -176,7 +176,7 @@
                     @include('contactmessage::sidebar')
                 @endif
             @endif
-            <li class="nav-item dropdown {{ isRoute('admin.addon.*') ? 'active' : '' }}" id="addon_sidemenu">
+            {{-- <li class="nav-item dropdown {{ isRoute('admin.addon.*') ? 'active' : '' }}" id="addon_sidemenu">
                 <a class="nav-link has-dropdown" data-toggle="dropdown" href="#"><i class="fas fa-gem"></i>
                     <span>{{ __('Manage Addons') }} </span>
     
@@ -185,7 +185,7 @@
     
                     @includeIf('admin.addons')
                 </ul>
-            </li>
+            </li> --}}
         </ul>
         <div class="py-3 text-center">
             <div class="btn-sm-group-vertical version_button" role="group" aria-label="Responsive button group">

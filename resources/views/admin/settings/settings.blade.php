@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        {{-- <div class="col-lg-6">
                             <div class="card card-large-icons">
                                 <div class="text-white card-icon bg-primary">
                                     <i class="fas fa-key"></i>
@@ -50,7 +50,7 @@
                                             class="fas fa-chevron-right"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     @endif
                     @adminCan('language.view')
                         <div class="col-lg-6">
@@ -99,7 +99,7 @@
                         @endif
                     @endif
                     @if (checkAdminHasPermission('admin.view') || checkAdminHasPermission('role.view'))
-                        <div class="col-lg-6">
+                        {{-- <div class="col-lg-6">
                             <div class="card card-large-icons">
                                 <div class="card-icon bg-primary text-white">
                                     <i class="fas fa-shield-alt"></i>
@@ -110,7 +110,7 @@
                                         <i class="fas fa-chevron-right"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     @endif
                     @if (Module::isEnabled('GlobalSetting') && checkAdminHasPermission('setting.view'))
                         <div class="col-lg-6">

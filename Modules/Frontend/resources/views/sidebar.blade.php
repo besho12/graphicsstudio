@@ -38,11 +38,11 @@
                         {{ __('Choose Us Section') }}
                     </a>
                 </li>
-                <li class="{{ isRoute('admin.testimonial-section.index', 'active') }}">
+                {{-- <li class="{{ isRoute('admin.testimonial-section.index', 'active') }}">
                     <a class="nav-link" href="{{ route('admin.testimonial-section.index') }}">
                         {{ __('Testimonial Section') }}
                     </a>
-                </li>
+                </li> --}}
                 <li class="{{ isRoute('admin.contact-section.index', 'active') }}">
                     <a class="nav-link" href="{{ route('admin.contact-section.index') }}">
                         {{ __('Contact Page Section') }}

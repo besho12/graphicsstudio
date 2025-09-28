@@ -35,7 +35,7 @@
 
             @if (checkAdminHasPermission('admin.view') || checkAdminHasPermission('role.view'))
                 <li class="menu-header">{{ __('Administration Settings') }}</li>
-                <li
+                {{-- <li
                     class="nav-item dropdown {{ Route::is('admin.admin.*') || Route::is('admin.role.*') ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown"><i
                             class="fas fa-shield-alt"></i><span>{{ __('Admin & Roles') }}</span></a>
@@ -52,7 +52,7 @@
                             </li>
                         @endadminCan
                     </ul>
-                </li>
+                </li> --}}
             @endif
         </ul>
         <div class="py-3 text-center">

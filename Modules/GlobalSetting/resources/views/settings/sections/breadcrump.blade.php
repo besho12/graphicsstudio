@@ -56,30 +56,30 @@
                     :image="$setting?->service_page_breadcrumb_image" name="service_page_breadcrumb_image" label="{{ __('Service Page Breadcrumb Image') }}"
                     button_label="{{ __('Update Image') }}"  required="0"/>
             </div>
-            <div class="form-group col-md-4">
+            {{-- <div class="form-group col-md-4">
                 <x-admin.form-image-preview div_id="shop_page_breadcrumb_image_preview"
                     label_id="shop_page_breadcrumb_image_label" input_id="shop_page_breadcrumb_image_upload"
                     :image="$setting?->shop_page_breadcrumb_image" name="shop_page_breadcrumb_image" label="{{ __('Shop Page Breadcrumb Image') }}"
                     button_label="{{ __('Update Image') }}"  required="0"/>
-            </div>
-            <div class="form-group col-md-4">
+            </div> --}}
+            {{-- <div class="form-group col-md-4">
                 <x-admin.form-image-preview div_id="cart_page_breadcrumb_image_preview"
                     label_id="cart_page_breadcrumb_image_label" input_id="cart_page_breadcrumb_image_upload"
                     :image="$setting?->cart_page_breadcrumb_image" name="cart_page_breadcrumb_image" label="{{ __('Cart Page Breadcrumb Image') }}"
                     button_label="{{ __('Update Image') }}"  required="0"/>
-            </div>
-            <div class="form-group col-md-4">
+            </div> --}}
+            {{-- <div class="form-group col-md-4">
                 <x-admin.form-image-preview div_id="checkout_page_breadcrumb_image_preview"
                     label_id="checkout_page_breadcrumb_image_label" input_id="checkout_page_breadcrumb_image_upload"
                     :image="$setting?->checkout_page_breadcrumb_image" name="checkout_page_breadcrumb_image" label="{{ __('Checkout Page Breadcrumb Image') }}"
                     button_label="{{ __('Update Image') }}"  required="0"/>
-            </div>
-            <div class="form-group col-md-4">
+            </div> --}}
+            {{-- <div class="form-group col-md-4">
                 <x-admin.form-image-preview div_id="payment_page_breadcrumb_image_preview"
                     label_id="payment_page_breadcrumb_image_label" input_id="payment_page_breadcrumb_image_upload"
                     :image="$setting?->payment_page_breadcrumb_image" name="payment_page_breadcrumb_image" label="{{ __('Checkout Page Breadcrumb Image') }}"
                     button_label="{{ __('Update Image') }}"  required="0"/>
-            </div>
+            </div> --}}
             <div class="form-group col-12">
                 <x-admin.update-button :text="__('Update')" />
             </div>
