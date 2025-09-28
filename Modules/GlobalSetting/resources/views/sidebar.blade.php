@@ -27,16 +27,16 @@
 @if (Module::isEnabled('Sitemap') && checkAdminHasPermission('sitemap.management'))
     @include('sitemap::sidebar')
 @endif
-<li class="menu-header">{{ __('Extra Settings') }}</li>
+{{-- <li class="menu-header">{{ __('Extra Settings') }}</li> --}}
 
-<li class="{{ Route::is('admin.cache-clear') ? 'active' : '' }}"><a class="nav-link"
+{{-- <li class="{{ Route::is('admin.cache-clear') ? 'active' : '' }}"><a class="nav-link"
         href="{{ route('admin.cache-clear') }}"><i class="fas fa-sync"></i>
         <span>{{ __('Clear cache') }}</span>
-    </a></li>
-
+    </a></li> --}}
+{{-- 
 <li class="{{ Route::is('admin.database-clear') ? 'active' : '' }}"><a class="nav-link"
         href="{{ route('admin.database-clear') }}"><i class="fas fa-database"></i>
-        <span>{{ __('Database Clear') }}</span></a></li>
+        <span>{{ __('Database Clear') }}</span></a></li> --}}
 
 {{-- <li class="{{ Route::is('admin.system-update.index') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.system-update.index') }}"><i class="fas fa-arrow-circle-up"></i>
