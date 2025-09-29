@@ -7588,7 +7588,7 @@ blockquote p {
 .accordion-card {
     overflow: hidden;
     background: 0 0;
-    border-bottom: 2px solid var(--title-color);
+    border-bottom: 2px solid #fff;
     border-radius: 0;
     display: flex;
     align-items: start;
@@ -10444,7 +10444,7 @@ footer {
 
  h2,
  p,
- h2,
+ h2, .counter-card_text, 
  input,
  input::placeholder,
  textarea,
