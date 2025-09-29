@@ -9,11 +9,11 @@
     </a>
 </li> --}}
 
-<li class="{{ Route::is('admin.email-configuration') || Route::is('admin.edit-email-template') ? 'active' : '' }}">
+{{-- <li class="{{ Route::is('admin.email-configuration') || Route::is('admin.edit-email-template') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.email-configuration') }}"><i class="fas fa-envelope"></i>
         <span>{{ __('Email Configuration') }}</span>
     </a>
-</li>
+</li> --}}
 
 @if (Module::isEnabled('Language') && checkAdminHasPermission('language.view'))
     @include('language::sidebar')

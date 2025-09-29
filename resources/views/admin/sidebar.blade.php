@@ -168,9 +168,9 @@
                     @include('newsletter::sidebar')
                 @endif
 
-                @if (Module::isEnabled('Testimonial') && checkAdminHasPermission('testimonial.view'))
+                {{-- @if (Module::isEnabled('Testimonial') && checkAdminHasPermission('testimonial.view'))
                     @include('testimonial::sidebar')
-                @endif
+                @endif --}}
 
                 @if (Module::isEnabled('ContactMessage') && checkAdminHasPermission('contact.message.view'))
                     @include('contactmessage::sidebar')

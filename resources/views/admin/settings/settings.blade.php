@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        {{-- <div class="col-lg-6">
                             <div class="card card-large-icons">
                                 <div class="text-white card-icon bg-primary">
                                     <i class="fas fa-envelope"></i>
@@ -37,7 +37,7 @@
                                         class="card-cta">{{ __('Change Setting') }} <i class="fas fa-chevron-right"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- <div class="col-lg-6">
                             <div class="card card-large-icons">
                                 <div class="text-white card-icon bg-primary">
@@ -53,7 +53,7 @@
                         </div> --}}
                     @endif
                     @adminCan('language.view')
-                        <div class="col-lg-6">
+                        {{-- <div class="col-lg-6">
                             <div class="card card-large-icons">
                                 <div class="text-white card-icon bg-primary">
                                     <i class="fas fa-language"></i>
@@ -64,7 +64,7 @@
                                         <i class="fas fa-chevron-right"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     @endadminCan
                     @if ($setting?->is_shop)
                         @if (Module::isEnabled('Currency')  && 1 == 2  && checkAdminHasPermission('currency.view'))
@@ -112,7 +112,7 @@
                             </div>
                         </div> --}}
                     @endif
-                    @if (Module::isEnabled('GlobalSetting') && checkAdminHasPermission('setting.view'))
+                    {{-- @if (Module::isEnabled('GlobalSetting') && checkAdminHasPermission('setting.view'))
                         <div class="col-lg-6">
                             <div class="card card-large-icons">
                                 <div class="text-white card-icon bg-primary">
@@ -126,8 +126,8 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
-                    @if (Module::isEnabled('GlobalSetting') && checkAdminHasPermission('addon.view'))
+                    @endif --}}
+                    {{-- @if (Module::isEnabled('GlobalSetting') && checkAdminHasPermission('addon.view'))
                         <div class="col-lg-6">
                             <div class="card card-large-icons">
                                 <div class="text-white card-icon bg-primary">
@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
+                    @endif --}}
                 </div>
             </div>
         </section>
