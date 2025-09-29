@@ -10441,3 +10441,13 @@ h1, h2, h3, h4, h5, p, a {
 footer {
     background: var(--theme-color) !important;
 }
+
+ h2,
+ p,
+ h2,
+ input,
+ input::placeholder,
+ textarea,
+ textarea::placeholder {
+    color: #fff !important;
+}
