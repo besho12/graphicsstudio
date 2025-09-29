@@ -6139,7 +6139,7 @@ blockquote .blockquote-icon {
     display: inline;
 }
 .marquee-wrap .marquee__group .m-item span {
-    color: var(--smoke-color);
+    color: #fff;
     font-size: 36px;
     font-weight: 600;
     font-family: var(--title-font);
