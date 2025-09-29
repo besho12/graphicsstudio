@@ -1857,7 +1857,7 @@ ul.wp-block-rss {
 }
 .btn,
 .preloader {
-    background-color: var(--title-color);
+    background-color: #0472de;
 }
 .tgmobile__menu-outer .mobile-nav-toggler {
     position: relative;
