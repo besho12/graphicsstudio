@@ -10435,3 +10435,6 @@ h1, h2, h3, h4, h5, p, a {
 .faq-area-2.space-bottom.overflow-hidden button {
     color: #fff;
 }
+.sticky-wrapper {
+    background: var(--theme-color) !important;
+}
