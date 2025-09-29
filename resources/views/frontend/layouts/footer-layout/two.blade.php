@@ -1,4 +1,4 @@
-<footer class="footer-wrapper footer-layout2 bg-white overflow-hidden">
+<footer class="footer-wrapper footer-layout2 overflow-hidden">
     <div class="container">
         <div class="widget-area space-top">
             <div class="row justify-content-between">

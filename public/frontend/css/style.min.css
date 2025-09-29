@@ -10438,3 +10438,6 @@ h1, h2, h3, h4, h5, p, a {
 .sticky-wrapper {
     background: var(--theme-color) !important;
 }
+footer {
+    background: var(--theme-color) !important;
+}
