@@ -4550,7 +4550,7 @@ ul.wp-block-latest-posts li:last-child {
     top: 0;
     right: 0;
     left: 0;
-    background-color: var(--white-color);
+    background-color: var(--theme-color) !important;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07);
     animation: 0.6s ease-in-out stickyAni;
 }
@@ -10374,7 +10374,7 @@ blockquote p {
 }
 .sticky-wrapper .main-menu li a,
 .sticky-wrapper .main-menu li .fas {
-    color: #000 !important;
+    color: #fff !important;
 }
 .sticky-wrapper .header_language .nice-select:after {
     border-bottom: 1px solid #fff !important;
@@ -10388,17 +10388,17 @@ blockquote p {
 }
 .sticky-wrapper.header-sticky .main-menu li a,
 .sticky-wrapper.header-sticky .main-menu li .fas {
-    color: #000 !important;
+    color: #fff !important;
 }
 .sticky-wrapper.header-sticky .header_language .nice-select:after {
-    border-bottom: 1px solid #000 !important;
-    border-right: 1px solid #000 !important;
+    border-bottom: 1px solid #fff !important;
+    border-right: 1px solid #fff !important;
 }
 .sticky-wrapper.header-sticky .sidebar-btn {
-    border: 2px solid #000 !important;
+    border: 2px solid #fff !important;
 }
 .sticky-wrapper.header-sticky .sidebar-btn span {
-    background: #000 !important;
+    background: #fff !important;
 }
 #setLanguageHeader2,
 #setLanguageHeader {
