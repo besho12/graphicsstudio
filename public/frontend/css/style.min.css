@@ -1855,8 +1855,10 @@ ul.wp-block-rss {
     z-index: 5;
     box-shadow: -9px 0 14px 0 rgba(0, 0, 0, 0.06);
 }
-.btn,
 .preloader {
+    background-color: var(--title-color);
+}
+.btn {
     background-color: #0472de;
 }
 .tgmobile__menu-outer .mobile-nav-toggler {
