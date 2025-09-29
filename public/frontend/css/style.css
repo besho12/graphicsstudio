@@ -2,7 +2,7 @@
 
 :root {
     --theme-color: #E3FF04;
-    --title-color: #0A0C00;
+    --title-color: #0472de;
     --body-color: #0A0C00;
     --smoke-color: #F6F5F3;
     --smoke-color2: #FFF4EF;
@@ -6534,8 +6534,8 @@ ul.wp-block-latest-posts li:last-child {
 }
 
 .footer-layout5 .footer-top {
-    --title-color: #0A0C00;
-    --body-color: #0A0C00;
+    --title-color: #0472de;
+    --body-color: #0472de;
 }
 
 .footer-layout5 .footer-top .footer-top-title {
