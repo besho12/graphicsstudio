@@ -191,7 +191,7 @@
     </div>
 
     <!-- Brand Area -->
-    <div class="client-area-1 overflow-hidden space">
+    {{-- <div class="client-area-1 overflow-hidden space">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
@@ -212,7 +212,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!--  Marquee Area -->
     @include('frontend.partials.marquee')
