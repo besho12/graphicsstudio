@@ -20,11 +20,11 @@
         <!-- service-area-end -->
     @endif
 
-    @if ($sectionSetting?->brands_section)
+    {{-- @if ($sectionSetting?->brands_section)
         <!-- brand-area -->
         @include('frontend.home.two.sections.brand-area')
         <!-- brand-area-end -->
-    @endif
+    @endif --}}
 
     @if ($sectionSetting?->project_section)
         <!-- project-area -->
