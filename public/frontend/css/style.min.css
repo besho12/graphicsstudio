@@ -4925,7 +4925,7 @@ ul.wp-block-latest-posts li:last-child {
 .footer-layout2 .copyright-wrap,
 .footer-layout4 .copyright-wrap,
 .footer-menu-area {
-    border-top: 2px solid var(--title-color);
+    border-top: 2px solid #fff;
 }
 @media (max-width: 991px) {
     .header-layout2 .sticky-wrapper,
@@ -7622,7 +7622,7 @@ blockquote p {
     background: 0 0;
     border: 0;
     font-family: var(--icon-font);
-    color: var(--title-color);
+    color: #fff;
     font-weight: 900;
     font-size: 16px;
     display: grid;
