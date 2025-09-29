@@ -10432,3 +10432,6 @@ blockquote p {
 h1, h2, h3, h4, h5, p, a {
     color: #fff !important;
 } 
+.faq-area-2.space-bottom.overflow-hidden button {
+    color: #fff;
+}
