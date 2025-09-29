@@ -60,11 +60,11 @@ ins {
 }
 :root {
     --theme-color: #e3ff04;
-    --smoke-color: #f6f5f3;
-    --smoke-color2: #fff4ef;
-    --smoke-color3: #f5f5f6;
-    --smoke-color4: #f4f4f4;
-    --smoke-color5: #f0f2f4;
+    --smoke-color: #0472de;
+    --smoke-color2: #0472de;
+    --smoke-color3: #0472de;
+    --smoke-color4: #0472de;
+    --smoke-color5: #0472de;
     --black-color: #202020;
     --gray-color: #131312;
     --white-color: #ffffff;
