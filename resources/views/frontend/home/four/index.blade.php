@@ -14,21 +14,25 @@
         <!-- hero-area-end -->
     @endif
 
+    <!-- counter-area -->
+    @include('frontend.home.four.sections.counter-area')
+    <!-- counter-area-end -->
+
     @if ($sectionSetting?->service_section)
         <!-- service-area -->
         @include('frontend.home.four.sections.service-area')
         <!-- service-area-end -->
     @endif
 
-    {{-- @if ($sectionSetting?->brands_section)
+    @if ($sectionSetting?->brands_section)
         <!-- brand-area -->
-        @include('frontend.home.two.sections.brand-area')
+        @include('frontend.home.four.sections.brand-area')
         <!-- brand-area-end -->
-    @endif --}}
+    @endif
 
     @if ($sectionSetting?->project_section)
         <!-- project-area -->
-        @include('frontend.home.four.sections.project-area')
+        @include('frontend.home.optimized-project-area')
         <!-- project-area-end -->
     @endif
 
@@ -59,12 +63,7 @@
         @include('frontend.home.four.sections.blog-area')
         <!-- blog-area-end -->
     @endif
-    @if ($sectionSetting?->call_to_action_section)
-        <!-- cta-area -->
-        @include('frontend.home.four.sections.cta-area')
-        <!-- cta-area-end -->
-    @endif
 @endsection
 @section('footer')
-    @include('frontend.layouts.footer-layout.four')
+    @include('frontend.layouts.footer-layout.two')
 @endsection

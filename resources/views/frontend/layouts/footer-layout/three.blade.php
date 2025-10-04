@@ -9,7 +9,6 @@
                                     href="{{ $menu['link'] == '#' || empty($menu['link']) ? 'javascript:;' : url($menu['link']) }}">
                                     <span class="link-effect">
                                         <span class="effect-1">{{ $menu['label'] }}</span>
-                                        <span class="effect-1">{{ $menu['label'] }}</span>
                                     </span>
                                 </a></li>
                         @endforeach
@@ -21,7 +20,6 @@
                         <li><a @if ($menu['open_new_tab']) target="_blank" @endif
                                 href="{{ $menu['link'] == '#' || empty($menu['link']) ? 'javascript:;' : url($menu['link']) }}">
                                 <span class="link-effect">
-                                    <span class="effect-1">{{ $menu['label'] }}</span>
                                     <span class="effect-1">{{ $menu['label'] }}</span>
                                 </span>
                             </a></li>

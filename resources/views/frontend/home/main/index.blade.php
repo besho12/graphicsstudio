@@ -25,7 +25,7 @@
     @endif
     @if ($sectionSetting?->project_section)
         <!-- project-area -->
-        @include('frontend.home.main.sections.project-area')
+        @include('frontend.home.optimized-project-area')
         <!-- project-area-end -->
     @endif
     @if ($sectionSetting?->team_section)
@@ -45,5 +45,5 @@
     @endif
 @endsection
 @section('footer')
-    @include('frontend.layouts.footer-layout.one')
+    @include('frontend.layouts.footer-layout.two')
 @endsection

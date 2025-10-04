@@ -220,7 +220,9 @@ if (!function_exists('currectUrlWithQuery')) {
 
 if (!function_exists('checkAdminHasPermission')) {
     function checkAdminHasPermission($permission): bool {
-        return Auth::guard('admin')->user()->can($permission) ? true : false;
+        /** @var \App\Models\Admin $admin */
+        $admin = Auth::guard('admin')->user();
+        return $admin->can($permission) ? true : false;
     }
 }
 
@@ -393,7 +395,7 @@ if (!function_exists('checkCrentials')) {
 }
 
 if (!function_exists('isRoute')) {
-    function isRoute(string | array $route, string $returnValue = null) {
+    function isRoute(string | array $route, ?string $returnValue = null) {
         if (is_array($route)) {
             foreach ($route as $value) {
                 if (Route::is($value)) {

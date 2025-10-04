@@ -2,21 +2,34 @@
 <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
 <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script>
+<!-- Counter Up - DISABLED FOR PERFORMANCE -->
+<!-- <script src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script> -->
 <script src="{{ asset('frontend/js/imagesloaded.pkgd.min.js') }}"></script>
 <script src="{{ asset('frontend/js/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('frontend/js/gsap.min.js') }}"></script>
+<!-- GSAP - DISABLED FOR PERFORMANCE -->
+<!-- <script src="{{ asset('frontend/js/gsap.min.js') }}"></script> -->
 <script src="{{ asset('global/toastr/toastr.min.js') }}"></script>
 
-<script src="{{ asset('frontend/js/twinmax.js') }}"></script>
-<script src="{{ asset('frontend/js/imageRevealHover.js') }}"></script>
-<script src="{{ asset('frontend/js/jarallax.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.marquee.min.js') }}"></script>
+<!-- Twinmax - DISABLED FOR PERFORMANCE -->
+<!-- <script src="{{ asset('frontend/js/twinmax.js') }}"></script> -->
+<!-- ImageRevealHover - DISABLED FOR PERFORMANCE -->
+<!-- <script src="{{ asset('frontend/js/imageRevealHover.js') }}"></script> -->
+<!-- Jarallax - DISABLED FOR PERFORMANCE -->
+<!-- <script src="{{ asset('frontend/js/jarallax.min.js') }}"></script> -->
+<!-- Marquee - DISABLED FOR PERFORMANCE -->
+<!-- <script src="{{ asset('frontend/js/jquery.marquee.min.js') }}"></script> -->
 <script src="{{ asset('frontend/js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('frontend/js/waypoints.js') }}"></script>
-<script src="{{ asset('frontend/js/wow.js') }}"></script>
+<!-- Waypoints - DISABLED FOR PERFORMANCE -->
+<!-- <script src="{{ asset('frontend/js/waypoints.js') }}"></script> -->
+<!-- Wow - DISABLED FOR PERFORMANCE -->
+<!-- <script src="{{ asset('frontend/js/wow.js') }}"></script> -->
 <script src="{{ asset('frontend/js/jquery.nice-select.min.js') }}"></script>
+<!-- Performance Optimizer - MUST LOAD BEFORE MAIN -->
+<script src="{{ asset('frontend/js/performance-optimizer.js') }}"></script>
 <script src="{{ asset('frontend/js/main.js') }}"></script>
+<script src="{{ asset('frontend/js/scroll-optimized.js') }}"></script>
+<script src="{{ asset('frontend/js/lazy-loading.js') }}"></script>
+<script src="{{ asset('frontend/js/hero-image-loader.js') }}"></script>
 <script src="{{ asset('frontend/js/custom.js') }}?v={{ $setting?->version }}"></script>
 
 <script>
@@ -24,8 +37,10 @@
     toastr.options.closeButton = true;
     toastr.options.progressBar = true;
     toastr.options.positionClass = 'toast-bottom-right';
+</script>
 
-    @session('message')
+@session('message')
+<script>
     var type = "{{ Session::get('alert-type', 'info') }}"
     switch (type) {
         case 'info':
@@ -41,8 +56,8 @@
             toastr.error("{{ $value }}");
             break;
     }
-    @endsession
 </script>
+@endsession
 
 @if ($errors->any())
     @foreach ($errors->all() as $error)

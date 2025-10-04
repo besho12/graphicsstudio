@@ -1,0 +1,192 @@
+/* Feature Card Button Redesign - Modern Blue Theme */
+
+/* Reset and base styles for link-btn in feature cards */
+.feature-card .link-btn {
+    /* Reset existing styles */
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--title-font);
+    line-height: 1.4;
+    position: relative;
+    padding: 12px 24px;
+    margin: 16px 0 0 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    
+    /* Blue theme colors */
+    background: linear-gradient(135deg, #0273df 0%, #0056b3 100%);
+    color: #ffffff;
+    border: 2px solid #0273df;
+    box-shadow: 0 4px 12px rgba(2, 115, 223, 0.3);
+    
+    /* Remove old underline styles */
+    padding-bottom: 12px;
+}
+
+/* Remove old pseudo-elements */
+.feature-card .link-btn:before,
+.feature-card .link-btn:after {
+    display: none;
+}
+
+/* Link effect container styling */
+.feature-card .link-btn .link-effect {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 20px;
+    line-height: 20px;
+    flex: 1;
+}
+
+/* Effect spans styling */
+.feature-card .link-btn .link-effect .effect-1 {
+    display: block;
+    height: 100%;
+    position: relative;
+    top: 0;
+    transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hide second span by default */
+.feature-card .link-btn .link-effect .effect-1:nth-child(2) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+/* Hover effects */
+.feature-card .link-btn:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+    border-color: #0056b3;
+    box-shadow: 0 6px 20px rgba(2, 115, 223, 0.4);
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+/* Text sliding animation on hover */
+.feature-card .link-btn:hover .link-effect .effect-1:first-child {
+    top: -100%;
+}
+
+.feature-card .link-btn:hover .link-effect .effect-1:nth-child(2) {
+    top: 0;
+}
+
+/* Icon styling */
+.feature-card .link-btn img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card .link-btn:hover img {
+    transform: translateX(4px);
+}
+
+/* Focus and active states for accessibility */
+.feature-card .link-btn:focus {
+    outline: 3px solid rgba(2, 115, 223, 0.6);
+    outline-offset: 2px;
+}
+
+.feature-card .link-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(2, 115, 223, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feature-card .link-btn {
+        font-size: 13px;
+        padding: 10px 20px;
+        gap: 6px;
+    }
+    
+    .feature-card .link-btn .link-effect {
+        height: 18px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card .link-btn {
+        font-size: 12px;
+        padding: 8px 16px;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .feature-card .link-btn {
+        border-width: 3px;
+        box-shadow: none;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .feature-card .link-btn,
+    .feature-card .link-btn .link-effect .effect-1,
+    .feature-card .link-btn img {
+        transition: none;
+    }
+    
+    .feature-card .link-btn:hover {
+        transform: none;
+    }
+    
+    .feature-card .link-btn:hover img {
+        transform: none;
+    }
+}
+
+/* Dark theme support (if needed) */
+@media (prefers-color-scheme: dark) {
+    .feature-card .link-btn {
+        background: linear-gradient(135deg, #0273df 0%, #0056b3 100%);
+        border-color: #0273df;
+        color: #ffffff;
+    }
+    
+    .feature-card .link-btn:hover {
+        background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+        border-color: #0056b3;
+    }
+}
+
+/* Loading state (optional enhancement) */
+.feature-card .link-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.feature-card .link-btn.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid transparent;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

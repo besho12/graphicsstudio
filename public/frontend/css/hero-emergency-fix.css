@@ -1,0 +1,432 @@
+/* HERO EMERGENCY FIX - Immediate solution for mobile black screen */
+
+/* CRITICAL: Force all hero sections to be visible */
+.hero-wrapper,
+.hero-1,
+.hero-3,
+.hero-4,
+.hero-bg-image,
+.hero-4-thumb,
+.hero-3-thumb {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+}
+
+/* CRITICAL: Ensure minimum height for all hero sections */
+.hero-wrapper,
+.hero-1,
+.hero-3,
+.hero-4 {
+    min-height: 100vh !important;
+    height: auto !important;
+    position: relative !important;
+}
+
+/* CRITICAL: Force hero images to display */
+.hero-main-image,
+.hero-bg-image img,
+.hero-4-thumb img,
+.hero-3-thumb img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1 !important;
+}
+
+/* CRITICAL: Container positioning */
+.hero-bg-image,
+.hero-4-thumb {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+}
+
+/* CRITICAL: Content overlay - Fixed for text visibility */
+.hero-content,
+.hero-style4,
+.hero-style3,
+.bg-theme {
+    position: relative !important;
+    z-index: 10 !important;
+    background: transparent !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    min-height: 100vh !important;
+}
+
+/* CRITICAL: Fallback background for all hero sections */
+.hero-wrapper::before,
+.hero-1::before,
+.hero-3::before,
+.hero-4::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%) !important;
+    z-index: 0 !important;
+}
+
+/* MOBILE SPECIFIC OVERRIDES */
+@media (max-width: 768px) {
+    /* Force visibility on mobile with better sizing */
+    .hero-wrapper,
+    .hero-1,
+    .hero-3,
+    .hero-4 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: 100vh !important;
+        max-height: 100vh !important;
+        height: 100vh !important;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    
+    /* Ensure images are visible */
+    .hero-main-image,
+    .hero-4-thumb img,
+    .hero-3-thumb img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Text visibility and positioning */
+    .hero-title,
+    .hero-text,
+    .hero-content h1,
+    .hero-content h2,
+    .hero-content p,
+    .hero-style4 h1,
+    .hero-style4 h2,
+    .hero-style4 p,
+    .hero-style3 h1,
+    .hero-style3 h2,
+    .hero-style3 p {
+        color: #ffffff !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+        z-index: 20 !important;
+        position: relative !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Button visibility and styling */
+    .hero-content .btn,
+    .hero-style4 .btn,
+    .hero-style3 .btn,
+    .btn-primary,
+    .btn-outline {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 20 !important;
+        position: relative !important;
+        background: #3b82f6 !important;
+        color: #ffffff !important;
+        border: 2px solid #3b82f6 !important;
+        padding: 12px 24px !important;
+        border-radius: 6px !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        margin-top: 20px !important;
+    }
+    
+    /* Content container positioning - Better mobile sizing */
+    .hero-content,
+    .hero-style4,
+    .hero-style3 {
+        position: absolute !important;
+        top: 50% !important;
+        left: 15px !important;
+        right: 15px !important;
+        transform: translateY(-50%) !important;
+        z-index: 10 !important;
+        background: transparent !important;
+        padding: 25px 20px !important;
+        max-width: calc(100% - 30px) !important;
+        width: auto !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-wrapper,
+    .hero-1,
+    .hero-3,
+    .hero-4 {
+        min-height: 100vh !important;
+        max-height: 100vh !important;
+        height: 100vh !important;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    
+    /* Smaller screen text adjustments */
+    .hero-content,
+    .hero-style4,
+    .hero-style3 {
+        left: 12px !important;
+        right: 12px !important;
+        padding: 20px 15px !important;
+        max-width: calc(100% - 24px) !important;
+    }
+    
+    .hero-content h1,
+    .hero-content h2,
+    .hero-style4 h1,
+    .hero-style4 h2,
+    .hero-style3 h1,
+    .hero-style3 h2 {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .hero-content p,
+    .hero-style4 p,
+    .hero-style3 p {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-wrapper,
+    .hero-1,
+    .hero-3,
+    .hero-4 {
+        min-height: 100vh !important;
+        max-height: 100vh !important;
+        height: 100vh !important;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    
+    /* Very small screen adjustments */
+    .hero-content,
+    .hero-style4,
+    .hero-style3 {
+        left: 10px !important;
+        right: 10px !important;
+        padding: 18px 12px !important;
+        top: 50% !important;
+        max-width: calc(100% - 20px) !important;
+    }
+    
+    .hero-content h1,
+    .hero-content h2,
+    .hero-style4 h1,
+    .hero-style4 h2,
+    .hero-style3 h1,
+    .hero-style3 h2 {
+        font-size: 20px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .hero-content p,
+    .hero-style4 p,
+    .hero-style3 p {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .hero-content .btn,
+    .hero-style4 .btn,
+    .hero-style3 .btn {
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+        margin-top: 15px !important;
+        border-radius: 6px !important;
+    }
+}
+
+/* OVERRIDE ANY HIDING RULES */
+* [class*="hero"] {
+    max-width: none !important;
+    max-height: none !important;
+}
+
+/* FORCE IMAGE LOADING */
+img[src*="hero"],
+img[alt*="hero"],
+img[alt*="Hero"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* EMERGENCY FALLBACK - If nothing else works */
+.hero-wrapper:empty::after,
+.hero-1:empty::after,
+.hero-3:empty::after,
+.hero-4:empty::after {
+    content: 'Hero Section' !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%) !important;
+    color: white !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1 !important;
+}
+
+/* ADDITIONAL TEXT CONTRAST AND OVERLAY IMPROVEMENTS */
+.hero-wrapper::after,
+.hero-1::after,
+.hero-3::after,
+.hero-4::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+/* Ensure all text elements have proper contrast */
+.hero-wrapper *,
+.hero-1 *,
+.hero-3 *,
+.hero-4 * {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7) !important;
+}
+
+/* Special handling for links and buttons */
+.hero-wrapper a,
+.hero-1 a,
+.hero-3 a,
+.hero-4 a,
+.hero-wrapper .btn,
+.hero-1 .btn,
+.hero-3 .btn,
+.hero-4 .btn {
+    background: rgba(59, 130, 246, 0.9) !important;
+    border: 2px solid #3b82f6 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.hero-wrapper a:hover,
+.hero-1 a:hover,
+.hero-3 a:hover,
+.hero-4 a:hover,
+.hero-wrapper .btn:hover,
+.hero-1 .btn:hover,
+.hero-3 .btn:hover,
+.hero-4 .btn:hover {
+    background: #3b82f6 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* MOBILE CONTENT SPACING OPTIMIZATIONS */
+@media (max-width: 768px) {
+    /* Better text spacing for mobile readability */
+    .hero-content h1,
+    .hero-content h2,
+    .hero-style4 h1,
+    .hero-style4 h2,
+    .hero-style3 h1,
+    .hero-style3 h2 {
+        margin-bottom: 16px !important;
+        line-height: 1.25 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .hero-content p,
+    .hero-style4 p,
+    .hero-style3 p {
+        margin-bottom: 18px !important;
+        line-height: 1.6 !important;
+        word-wrap: break-word !important;
+    }
+    
+    /* Button spacing and sizing */
+    .hero-content .btn,
+    .hero-style4 .btn,
+    .hero-style3 .btn {
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+        min-width: 140px !important;
+        text-align: center !important;
+    }
+    
+    /* Content container improvements */
+    .hero-content,
+    .hero-style4,
+    .hero-style3 {
+        /* Removed all visual styling for transparent containers */
+    }
+}
+
+/* LANDSCAPE MOBILE OPTIMIZATION */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-wrapper,
+    .hero-1,
+    .hero-3,
+    .hero-4 {
+        min-height: 100vh !important;
+        height: 100vh !important;
+    }
+    
+    .hero-content,
+    .hero-style4,
+    .hero-style3 {
+        padding: 15px 20px !important;
+        top: 50% !important;
+    }
+    
+    .hero-content h1,
+    .hero-content h2,
+    .hero-style4 h1,
+    .hero-style4 h2,
+    .hero-style3 h1,
+    .hero-style3 h2 {
+        font-size: 20px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .hero-content p,
+    .hero-style4 p,
+    .hero-style3 p {
+        font-size: 14px !important;
+        margin-bottom: 10px !important;
+    }
+}

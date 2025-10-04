@@ -19,55 +19,202 @@
     <!-- breadcrumb-area -->
     <x-breadcrumb-two :title="$service?->title" :links="[['url' => route('home'), 'text' => __('Home')],['url' => route('services'), 'text' => __('Service')]]" />
 
-    <!-- Main Area -->
-    <div class="service-details-page-area space">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-xl-12">
-                    <div class="service-inner-thumb mb-80 wow img-custom-anim-top">
-                        <img class="w-100" src="{{ asset($service?->image) }}" alt="{{ $service?->title }}">
-                    </div>
-                </div>
-                <div class="col-xl-8">
-                    <div class="title-area details-text mb-35">
-                        <h2>{{ $service?->title }}</h2>
-                        {!! clean(replaceImageSources($service?->description)) !!}
-                    </div>
-                </div>
-                <div class="col-xl-8">
-                    <div class="row">
-                        <h3 class="mt-5 mb-5">Service Projects</h3>
-                        @forelse ($service->projects as $index => $project)
-                            <div class="col-lg-6 filter-item">
-                                <div class="portfolio-wrap {{ $index == 0 ? 'mt-lg-140' : ($index == 1 ? 'mt-lg-0' : '') }}" style="margin-top: 100px;">
-                                    <div class="portfolio-thumb wow img-custom-anim-top" data-wow-duration="1.5s"
-                                        data-wow-delay="0.2s">
-                                        <a href="{{ route('single.portfolio', $project?->slug) }}">
-                                            <img src="{{ asset($project?->image) }}" alt="{{ $project?->title }}">
-                                        </a>
+    <!-- Service Details Hero Section -->
+    <div class="service-details-hero space-top">
+        <div class="container-fluid px-0">
+            <div class="service-hero-modern-wrapper">
+                <div class="row g-0 min-vh-100 align-items-center">
+                    <!-- Left Content Section -->
+                    <div class="col-lg-6 col-xl-7">
+                        <div class="service-hero-content-section">
+                            <div class="container">
+                                <div class="service-hero-text-content">
+                                    <div class="service-hero-badge-modern">
+                                        <i class="fas fa-star"></i>
+                                        <span>{{ __('Premium Service') }}</span>
                                     </div>
-                                    <div class="portfolio-details">
-                                        <ul class="portfolio-meta">
-                                            <li><a href="javascript:;">{{ $project?->project_category }}</a></li>
-                                        </ul>
-                                        <h3 class="portfolio-title"><a
-                                                href="{{ route('single.portfolio', $project?->slug) }}">{{ $project?->title }}</a>
-                                        </h3>
-                                        <a href="{{ route('single.portfolio', $project?->slug) }}" class="link-btn">
-                                            <span class="link-effect">
-                                                <span class="effect-1">{{ __('View Project') }}</span>
-                                                <span class="effect-1">{{ __('View Project') }}</span>
-                                            </span>
-                                            <img src="{{ asset('frontend/images/arrow-left-top.svg') }}" alt="icon">
+                                    <h1 class="service-hero-title">{{ $service?->title }}</h1>
+                                    <p class="service-hero-description">
+                                        {{ Str::limit(strip_tags($service?->description), 200) }}
+                                    </p>
+                                    <div class="service-hero-meta">
+                                        <div class="service-meta-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>{{ __('Fast Delivery') }}</span>
+                                        </div>
+                                        <div class="service-meta-item">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <span>{{ __('Quality Guaranteed') }}</span>
+                                        </div>
+                                        <div class="service-meta-item">
+                                            <i class="fas fa-headset"></i>
+                                            <span>{{ __('24/7 Support') }}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Stats Section -->
+                                    <div class="service-hero-stats-inline">
+                                        <div class="stat-item-inline">
+                                            <div class="stat-number">5.0</div>
+                                            <div class="stat-label">{{ __('Rating') }}</div>
+                                            <div class="stat-stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item-inline">
+                                            <div class="stat-number">500+</div>
+                                            <div class="stat-label">{{ __('Projects') }}</div>
+                                        </div>
+                                        <div class="stat-item-inline">
+                                            <div class="stat-number">98%</div>
+                                            <div class="stat-label">{{ __('Satisfaction') }}</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="service-hero-actions">
+                                        <a href="#service-content" class="btn btn-primary btn-modern">
+                                            {{ __('Learn More') }}
+                                            <i class="fas fa-arrow-down ms-2"></i>
+                                        </a>
+                                        <a href="#contact" class="btn btn-outline-primary btn-modern">
+                                            {{ __('Get Quote') }}
+                                            <i class="fas fa-paper-plane ms-2"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        @empty
-                            <x-data-not-found />
-                        @endforelse
+                        </div>
+                    </div>
+                    
+                    <!-- Right Image Section -->
+                    <div class="col-lg-6 col-xl-5">
+                        <div class="service-hero-image-section">
+                            <div class="service-hero-image-wrapper">
+                                <div class="service-hero-image-container">
+                                    <img src="{{ asset($service?->image) }}" alt="{{ $service?->title }}" class="service-hero-main-image">
+                                    <div class="service-hero-image-overlay"></div>
+                                </div>
+                                
+                                <!-- Floating Badge -->
+                                <div class="service-hero-floating-badge">
+                                    <div class="floating-badge-content">
+                                        <i class="fas fa-award"></i>
+                                        <span>{{ __('Premium Quality') }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Details Content -->
+    <div class="service-details-content space" id="service-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10">
+                    <div class="service-content-wrapper">
+                        <div class="service-description">
+                            {!! clean(replaceImageSources($service?->description)) !!}
+                        </div>
+
+                        <!-- Service Features -->
+                        <div class="service-features-section">
+                            <h3 class="features-title">{{ __('What You Get') }}</h3>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4>{{ __('Professional Quality') }}</h4>
+                                        <p>{{ __('High-quality work delivered by experienced professionals') }}</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4>{{ __('Fast Turnaround') }}</h4>
+                                        <p>{{ __('Quick delivery without compromising on quality') }}</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-headset"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4>{{ __('24/7 Support') }}</h4>
+                                        <p>{{ __('Round-the-clock support for all your queries') }}</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4>{{ __('Money Back Guarantee') }}</h4>
+                                        <p>{{ __('100% satisfaction guaranteed or your money back') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Projects Section -->
+    @if($service->projects->count() > 0)
+    <div class="service-projects-section space-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">{{ __('Related Projects') }}</h2>
+                        <p class="section-subtitle">{{ __('Check out some of our amazing work in this service category') }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-4">
+                @foreach ($service->projects as $index => $project)
+                    <div class="col-lg-6 col-md-6">
+                        <div class="modern-project-card">
+                            <div class="project-image-wrapper">
+                                <img src="{{ asset($project?->image) }}" alt="{{ $project?->title }}" class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-category">{{ $project?->project_category }}</div>
+                                    <a href="{{ route('single.portfolio', $project?->slug) }}" class="project-view-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4 class="project-title">
+                                    <a href="{{ route('single.portfolio', $project?->slug) }}">{{ $project?->title }}</a>
+                                </h4>
+                                <a href="{{ route('single.portfolio', $project?->slug) }}" class="project-link">
+                                    {{ __('View Project') }}
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    @endif
 
                 <br>
 

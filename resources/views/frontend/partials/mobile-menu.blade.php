@@ -51,13 +51,11 @@
                 <a href="{{ route('dashboard') }}" class="btn">
                     <span class="link-effect text-uppercase">
                         <span class="effect-1">{{ __('Dashboard') }}</span>
-                        <span class="effect-1">{{ __('Dashboard') }}</span>
                     </span>
                 </a>
             @else
                 <a href="{{ route('login') }}" class="btn">
                     <span class="link-effect text-uppercase">
-                        <span class="effect-1">{{ __('Sign In') }}</span>
                         <span class="effect-1">{{ __('Sign In') }}</span>
                     </span>
                 </a>

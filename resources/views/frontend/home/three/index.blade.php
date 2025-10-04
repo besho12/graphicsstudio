@@ -25,7 +25,7 @@
     @endif
     @if ($sectionSetting?->project_section)
         <!-- project-area -->
-        @include('frontend.home.three.sections.project-area')
+        @include('frontend.home.optimized-project-area')
         <!-- project-area-end -->
     @endif
     @if ($sectionSetting?->service_section)
@@ -46,11 +46,6 @@
         <!-- blog-area-end -->
     @endif
 
-    @if ($sectionSetting?->call_to_action_section)
-        <!-- cta-area -->
-        @include('frontend.home.three.sections.cta-area')
-        <!-- cta-area-end -->
-    @endif
 @endsection
 @section('footer')
     @include('frontend.layouts.footer-layout.three')

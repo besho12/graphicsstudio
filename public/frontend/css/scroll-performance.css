@@ -1,0 +1,111 @@
+/**
+ * Scroll Performance Optimizations
+ * Reduces heavy animations and improves scroll smoothness
+ */
+
+/* Reduce animation intensity for better scroll performance */
+.hero-area .hero-bg::before {
+    animation: shine 6s infinite !important; /* Slower animation */
+}
+
+/* Optimize marquee animation */
+.brands-carousel {
+    animation-duration: 60s !important; /* Slower brand scrolling */
+}
+
+/* Reduce transform operations during scroll */
+.wow {
+    animation-duration: 0.5s !important; /* Faster WOW animations */
+}
+
+/* Optimize hover effects to use transform3d for hardware acceleration */
+.service-item:hover,
+.portfolio-item:hover,
+.team-item:hover {
+    transform: translate3d(0, -8px, 0) !important;
+    will-change: transform;
+}
+
+/* Optimize image hover effects */
+.image-reveal-hover {
+    will-change: transform;
+}
+
+/* Reduce heavy CSS animations during scroll */
+@media (prefers-reduced-motion: reduce) {
+    .hero-area .hero-bg::before,
+    .brands-carousel,
+    .rotate-animation,
+    .ripple-animation {
+        animation: none !important;
+    }
+}
+
+/* Optimize scroll-triggered animations */
+.scroll-animation {
+    will-change: transform, opacity;
+}
+
+/* Improve performance for fixed elements */
+.sticky-wrapper.header-sticky {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+/* Optimize scroll to top button */
+.scroll-top {
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Reduce repaints for animated elements */
+.moving-animation,
+.jump-animation,
+.spin-animation {
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Optimize slick slider for better performance */
+.slick-track {
+    will-change: transform;
+}
+
+/* Reduce layout thrashing */
+.portfolio-filter li:hover,
+.service-nav li:hover {
+    transform: translate3d(0, -2px, 0) !important;
+    will-change: transform;
+}
+
+/* Optimize image loading for scroll performance */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+}
+
+/* Smooth scrolling optimization */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optimize background attachments that can cause scroll lag */
+.parallax-bg,
+.jarallax {
+    background-attachment: scroll !important; /* Avoid fixed backgrounds on mobile */
+}
+
+@media (max-width: 768px) {
+    /* Disable heavy animations on mobile for better performance */
+    .hero-area .hero-bg::before,
+    .brands-carousel,
+    .rotate-animation {
+        animation: none !important;
+    }
+    
+    /* Reduce transform operations on mobile */
+    .service-item:hover,
+    .portfolio-item:hover {
+        transform: none !important;
+    }
+}
