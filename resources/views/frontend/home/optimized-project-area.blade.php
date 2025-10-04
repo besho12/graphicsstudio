@@ -15,22 +15,24 @@
                 {{-- Optimized Project Grid (No Carousel) --}}
                 <div class="project-grid" id="project-grid">
                     @if(isset($projects) && $projects->count() > 0)
-                        @foreach($projects->take(6) as $project)
+                        @foreach($projects->take(4) as $project)
                             <div class="project-card-optimized" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
-                                <a href="{{ route('single.portfolio', $project->slug) }}" class="project-image-container">
-                                    <img 
-                                        class="project-image-optimized" 
-                                        src="{{ asset($project->image) }}" 
-                                        alt="{{ $project->title }}"
-                                        loading="lazy"
-                                    >
-                                    <div class="project-overlay">
-                                        <div class="overlay-content">
-                                            <span>View Project</span>
-                                            <i class="fas fa-arrow-right"></i>
+                                <div class="project-image-container">
+                                    <a href="{{ route('single.portfolio', $project->slug) }}">
+                                        <img 
+                                            class="project-image-optimized" 
+                                            src="{{ asset($project->image) }}" 
+                                            alt="{{ $project->title }}"
+                                            loading="lazy"
+                                        >
+                                        <div class="project-overlay">
+                                            <div class="overlay-content">
+                                                <span>View Project</span>
+                                                <i class="fas fa-arrow-right"></i>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                                 <div class="project-content">
                                     <h3 class="project-title">{{ $project->title }}</h3>
                                     <p class="project-description">{{ Str::limit($project->description, 100) }}</p>
@@ -50,14 +52,12 @@
                 </div>
                 
                 {{-- View All Projects Button --}}
-                @if(isset($projects) && $projects->count() > 6)
-                    <div class="view-all-projects">
-                        <a href="{{ route('portfolio.index') }}" class="view-all-btn">
-                            <span>View All Projects</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                @endif
+                <div class="view-all-projects">
+                    <a href="{{ route('portfolios') }}" class="view-all-btn">
+                        <span>View All Projects</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

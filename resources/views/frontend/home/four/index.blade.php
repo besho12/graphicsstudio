@@ -20,7 +20,7 @@
 
     @if ($sectionSetting?->service_section)
         <!-- service-area -->
-        @include('frontend.home.four.sections.service-area')
+        @include('frontend.home.optimized-service-area')
         <!-- service-area-end -->
     @endif
 
