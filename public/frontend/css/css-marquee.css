@@ -1,0 +1,40 @@
+/* CSS-based Marquee Alternative for Performance */
+.css-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.css-marquee::before {
+    content: attr(data-text);
+    position: absolute;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+
+.css-marquee:hover::before {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .css-marquee::before {
+        animation-duration: 10s;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .css-marquee::before {
+        animation: none;
+    }
+}

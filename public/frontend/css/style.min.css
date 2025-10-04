@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap);
 table,
 td,
 th {
@@ -73,8 +73,8 @@ ins {
     --success-color: #28a745;
     --error-color: #dc3545;
     --border-color: #e3e3e3;
-    --title-font: "Unbounded", sans-serif;
-    --body-font: "Poppins", sans-serif;
+    --title-font: "Cairo", sans-serif;
+    --body-font: "Cairo", sans-serif;
     --icon-font: "Font Awesome 5 Free";
     --main-container: 1296px;
     --container-gutters: 24px;

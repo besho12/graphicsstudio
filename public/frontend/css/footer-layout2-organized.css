@@ -1,0 +1,367 @@
+/* ORGANIZED FOOTER LAYOUT2 STYLES - BLUE THEME */
+
+/* Main Footer Structure */
+.footer-layout2-modern {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-main-section {
+    padding: 4rem 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Company Section Styles */
+.footer-company-section {
+    margin-bottom: 2rem;
+}
+
+.footer-brand-modern {
+    margin-bottom: 2rem;
+}
+
+.footer-logo-wrapper {
+    margin-bottom: 1rem;
+}
+
+.footer-logo-modern {
+    max-height: 50px;
+    width: auto;
+}
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 1rem 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.company-description {
+    color: #bfdbfe;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Compact Newsletter Styles */
+.footer-newsletter-compact {
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.newsletter-title-small {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form-compact {
+    margin-bottom: 0;
+}
+
+.input-group-compact {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.form-control-compact {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.form-control-compact::placeholder {
+    color: #bfdbfe;
+}
+
+.form-control-compact:focus {
+    outline: none;
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.btn-subscribe-compact {
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-subscribe-compact:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateX(-2px);
+}
+
+/* Footer Title Styles */
+.footer-title-modern {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-title-modern::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+/* Organized Menu Styles */
+.footer-links-section,
+.footer-services-section {
+    margin-bottom: 2rem;
+}
+
+.footer-menu-organized {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu-organized li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-link-clean {
+    color: #bfdbfe;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-link-clean:hover {
+    color: #60a5fa;
+    transform: translateX(5px);
+}
+
+.footer-link-clean::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.footer-link-clean:hover::before {
+    width: 10px;
+}
+
+/* Contact Section Organized */
+.footer-contact-section {
+    margin-bottom: 2rem;
+}
+
+.contact-info-organized {
+    margin-bottom: 2rem;
+}
+
+.contact-item-clean {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: rgba(59, 130, 246, 0.08);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-item-clean:hover {
+    background: rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+}
+
+.contact-icon-small {
+    width: 20px;
+    height: 20px;
+    color: #60a5fa;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.contact-text,
+.contact-link-clean {
+    color: #bfdbfe;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    text-decoration: none;
+}
+
+.contact-link-clean:hover {
+    color: #ffffff;
+}
+
+/* Social Section Organized */
+.social-section-organized {
+    margin-bottom: 2rem;
+}
+
+.social-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.social-links-organized {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-link-clean {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.15);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link-clean:hover {
+    background: #2563eb;
+    transform: translateY(-3px);
+}
+
+.social-icon-small {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1199px) {
+    .footer-main-section {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .company-name {
+        font-size: 1.3rem;
+    }
+    
+    .footer-title-modern {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer-main-section {
+        padding: 2.5rem 0 1rem;
+    }
+    
+    .footer-company-section,
+    .footer-links-section,
+    .footer-services-section,
+    .footer-contact-section {
+        margin-bottom: 2.5rem;
+    }
+    
+    .footer-newsletter-compact {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-main-section {
+        padding: 2rem 0 1rem;
+    }
+    
+    .company-name {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .company-description {
+        text-align: center;
+    }
+    
+    .footer-title-modern {
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    .footer-title-modern::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-menu-organized {
+        text-align: center;
+    }
+    
+    .footer-link-clean::before {
+        display: none;
+    }
+    
+    .footer-link-clean:hover {
+        transform: none;
+    }
+    
+    .contact-info-organized {
+        text-align: center;
+    }
+    
+    .social-links-organized {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .footer-newsletter-compact {
+        padding: 1rem;
+    }
+    
+    .input-group-compact {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-subscribe-compact {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .contact-item-clean {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .contact-icon-small {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .social-links-organized {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}

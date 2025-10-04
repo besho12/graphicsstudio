@@ -1,0 +1,174 @@
+/* HERO MOBILE COMPLETE FIX - Emergency Fix for Black Screen Issue */
+
+/* Force all hero sections to be visible and have minimum height */
+.hero-wrapper,
+.hero-1,
+.hero-3,
+.hero-4 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 100vh !important;
+    position: relative !important;
+}
+
+/* Force hero image containers to be visible */
+.hero-bg-image,
+.hero-1 .hero-bg-image {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+}
+
+/* Force hero images to display properly */
+.hero-main-image,
+.hero-bg-image img,
+.hero-1 .hero-bg-image img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* Hero 4 specific fixes */
+.hero-4 .hero-4-thumb {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+}
+
+.hero-4 .hero-4-thumb img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Hero 3 specific fixes */
+.hero-3 .hero-3-thumb img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Content overlay to ensure text is visible */
+.hero-content,
+.hero-style4,
+.hero-style3 {
+    position: relative !important;
+    z-index: 10 !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+}
+
+/* Fallback gradient background for all hero sections */
+.hero-wrapper::before,
+.hero-1::before,
+.hero-3::before,
+.hero-4::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%) !important;
+    z-index: 0 !important;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+    .hero-wrapper,
+    .hero-1,
+    .hero-3,
+    .hero-4 {
+        min-height: 80vh !important;
+        padding: 20px 0 !important;
+    }
+    
+    .hero-main-image,
+    .hero-4 .hero-4-thumb img {
+        object-position: center center !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-wrapper,
+    .hero-1,
+    .hero-3,
+    .hero-4 {
+        min-height: 70vh !important;
+        padding: 15px 0 !important;
+    }
+    
+    .hero-main-image,
+    .hero-4 .hero-4-thumb img {
+        object-position: center top !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-wrapper,
+    .hero-1,
+    .hero-3,
+    .hero-4 {
+        min-height: 60vh !important;
+        padding: 10px 0 !important;
+    }
+    
+    .hero-main-image,
+    .hero-4 .hero-4-thumb img {
+        object-position: center top !important;
+        transform: scale(1.1) !important;
+    }
+}
+
+/* Emergency fallback - if images fail to load */
+.hero-main-image[src=""],
+.hero-main-image:not([src]),
+.hero-4-thumb img[src=""],
+.hero-4-thumb img:not([src]) {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%) !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Override any hiding rules */
+.hero-bg-image img,
+.hero-main-image,
+.hero-4-thumb img,
+.hero-3-thumb img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: none !important;
+    max-height: none !important;
+}

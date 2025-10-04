@@ -1,0 +1,2251 @@
+/* ===================================
+   FOOTER LAYOUT 2 MODERN REDESIGN
+   =================================== */
+
+/* Main Footer Wrapper */
+.footer-layout2-modern {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-layout2-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    pointer-events: none;
+}
+
+/* Main Footer Section */
+.footer-main-section {
+    padding: 80px 0 60px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Newsletter Section */
+.footer-newsletter-modern {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-newsletter-modern::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.footer-newsletter-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+.newsletter-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.newsletter-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ffffff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.newsletter-subtitle {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Newsletter Form */
+.newsletter-form-modern {
+    position: relative;
+    z-index: 3;
+}
+
+.input-group-modern {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.input-group-modern:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-control-modern {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-control-modern::placeholder {
+    color: #94a3b8;
+}
+
+.btn-subscribe-modern {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border: none;
+    border-radius: 40px;
+    padding: 15px 25px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-subscribe-modern:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+.newsletter-privacy {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.newsletter-privacy i {
+    color: #10b981;
+}
+
+/* Footer Links Section */
+.footer-links-modern {
+    padding: 20px 0;
+}
+
+.footer-title-modern {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-title-modern::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 2px;
+}
+
+.footer-menu-modern {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu-modern li {
+    margin-bottom: 12px;
+}
+
+.footer-link-modern {
+    color: #cbd5e1;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.footer-link-modern i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.footer-link-modern:hover {
+    color: #3b82f6;
+    transform: translateX(5px);
+}
+
+.footer-link-modern:hover i {
+    transform: translateX(3px);
+}
+
+/* Contact Section */
+.footer-contact-modern {
+    padding: 20px 0;
+}
+
+.contact-info-modern {
+    margin-top: 25px;
+}
+
+.contact-item-modern {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-item-modern:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-label {
+    display: block;
+    font-size: 12px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-details p {
+    color: #e2e8f0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-link-modern {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link-modern:hover {
+    color: #60a5fa;
+}
+
+/* Social Media Section */
+.footer-social-modern {
+    padding: 20px 0;
+}
+
+.social-links-modern {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.social-link-modern {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    transition: left 0.3s ease;
+}
+
+.social-icon-modern {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    z-index: 2;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.social-link-modern:hover::before {
+    left: 0;
+}
+
+.social-link-modern:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Footer CTA */
+.footer-cta-modern {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-text {
+    color: #e2e8f0;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.btn-cta-modern {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-cta-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    color: white;
+}
+
+/* Footer Bottom */
+.footer-bottom-modern {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.copyright-modern {
+    display: flex;
+    align-items: center;
+}
+
+.copyright-text-modern {
+    color: #94a3b8;
+    margin: 0;
+    font-size: 14px;
+}
+
+.copyright-link-modern {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.copyright-link-modern:hover {
+    color: #60a5fa;
+}
+
+.footer-legal-modern {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.legal-link-modern {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.legal-link-modern:hover {
+    color: #3b82f6;
+}
+
+.separator {
+    color: #475569;
+}
+
+/* Responsive Design */
+
+/* Extra Large Screens */
+@media (max-width: 1399px) {
+    .footer-main-section {
+        padding: 70px 0 50px;
+    }
+    
+    .footer-newsletter-modern {
+        padding: 35px 25px;
+    }
+}
+
+/* Large Screens */
+@media (max-width: 1199px) {
+    .footer-main-section {
+        padding: 60px 0 40px;
+    }
+    
+    .newsletter-title {
+        font-size: 24px;
+    }
+    
+    .footer-newsletter-modern {
+        padding: 30px 20px;
+    }
+    
+    .contact-item-modern {
+        padding: 12px;
+    }
+}
+
+/* Medium Screens - Tablets */
+@media (max-width: 991px) {
+    .footer-main-section {
+        padding: 50px 0 35px;
+    }
+    
+    .footer-newsletter-modern {
+        padding: 25px 20px;
+        margin-bottom: 40px;
+    }
+    
+    .newsletter-title {
+        font-size: 22px;
+        text-align: center;
+    }
+    
+    .newsletter-subtitle {
+        text-align: center;
+        font-size: 15px;
+    }
+    
+    .newsletter-icon {
+        margin: 0 auto 20px;
+    }
+    
+    .footer-title-modern {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .footer-title-modern::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links-modern,
+    .footer-contact-modern,
+    .footer-social-modern {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .footer-menu-modern {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .footer-menu-modern li {
+        margin-bottom: 8px;
+    }
+    
+    .social-links-modern {
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    
+    .footer-legal-modern {
+        justify-content: center;
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .contact-info-modern {
+        max-width: 400px;
+        margin: 25px auto 0;
+    }
+}
+
+/* Small Screens - Mobile Landscape */
+@media (max-width: 767px) {
+    .footer-main-section {
+        padding: 40px 0 30px;
+    }
+    
+    .footer-newsletter-modern {
+        padding: 20px 15px;
+        margin-bottom: 30px;
+    }
+    
+    .newsletter-title {
+        font-size: 20px;
+    }
+    
+    .newsletter-subtitle {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    
+    .input-group-modern {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 20px;
+    }
+    
+    .form-control-modern {
+        padding: 12px 15px;
+        text-align: center;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .btn-subscribe-modern {
+        justify-content: center;
+        border-radius: 15px;
+        padding: 12px 20px;
+        width: 100%;
+    }
+    
+    .contact-item-modern {
+        flex-direction: row;
+        text-align: left;
+        gap: 15px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .footer-legal-modern {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .footer-cta-modern {
+        padding: 20px 15px;
+    }
+    
+    .btn-cta-modern {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+    
+    .social-link-modern {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-icon-modern {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Extra Small Screens - Mobile Portrait */
+@media (max-width: 575px) {
+    .footer-main-section {
+        padding: 35px 0 25px;
+    }
+    
+    .footer-newsletter-modern {
+        padding: 20px 12px;
+        border-radius: 15px;
+    }
+    
+    .newsletter-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .newsletter-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .newsletter-subtitle {
+        font-size: 13px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    
+    .input-group-modern {
+        padding: 8px;
+        gap: 10px;
+    }
+    
+    .form-control-modern {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .btn-subscribe-modern {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .btn-subscribe-modern span {
+        display: none;
+    }
+    
+    .footer-title-modern {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-menu-modern {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .footer-link-modern {
+        font-size: 14px;
+        justify-content: center;
+    }
+    
+    .contact-item-modern {
+        padding: 12px;
+        border-radius: 10px;
+    }
+    
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+    
+    .contact-details p,
+    .contact-link-modern {
+        font-size: 13px;
+    }
+    
+    .contact-label {
+        font-size: 11px;
+    }
+    
+    .social-links-modern {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .social-link-modern {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+    
+    .social-icon-modern {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .footer-cta-modern {
+        padding: 15px 10px;
+        border-radius: 12px;
+    }
+    
+    .cta-text {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .btn-cta-modern {
+        padding: 8px 15px;
+        font-size: 12px;
+        border-radius: 20px;
+    }
+    
+    .footer-bottom-modern {
+        padding: 20px 0;
+    }
+    
+    .copyright-text-modern {
+        font-size: 12px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .legal-link-modern {
+        font-size: 12px;
+    }
+    
+    .newsletter-privacy {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+/* Ultra Small Screens */
+@media (max-width: 375px) {
+    .footer-newsletter-modern {
+        padding: 15px 10px;
+    }
+    
+    .newsletter-title {
+        font-size: 16px;
+    }
+    
+    .newsletter-subtitle {
+        font-size: 12px;
+    }
+    
+    .input-group-modern {
+        padding: 6px;
+    }
+    
+    .form-control-modern {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    
+    .btn-subscribe-modern {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .contact-item-modern {
+        padding: 10px;
+    }
+    
+    .social-links-modern {
+        gap: 8px;
+    }
+    
+    .social-link-modern {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .social-icon-modern {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* ORGANIZED FOOTER LAYOUT2 STYLES */
+
+/* Company Section Styles */
+.footer-company-section {
+    margin-bottom: 2rem;
+}
+
+.footer-brand-modern {
+    margin-bottom: 2rem;
+}
+
+.footer-logo-wrapper {
+    margin-bottom: 1rem;
+}
+
+.footer-logo-modern {
+    max-height: 50px;
+    width: auto;
+}
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 1rem 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.company-description {
+    color: #b8c5d1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Compact Newsletter Styles */
+.footer-newsletter-compact {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-title-small {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form-compact {
+    margin-bottom: 0;
+}
+
+.input-group-compact {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-compact {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.form-control-compact::placeholder {
+    color: #b8c5d1;
+}
+
+.form-control-compact:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-subscribe-compact {
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-subscribe-compact:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateX(-2px);
+}
+
+/* Organized Menu Styles */
+.footer-links-section,
+.footer-services-section {
+    margin-bottom: 2rem;
+}
+
+.footer-menu-organized {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu-organized li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-link-clean {
+    color: #b8c5d1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-link-clean:hover {
+    color: #4f46e5;
+    transform: translateX(5px);
+}
+
+.footer-link-clean::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: #4f46e5;
+    transition: width 0.3s ease;
+}
+
+.footer-link-clean:hover::before {
+    width: 10px;
+}
+
+/* Contact Section Organized */
+.footer-contact-section {
+    margin-bottom: 2rem;
+}
+
+.contact-info-organized {
+    margin-bottom: 2rem;
+}
+
+.contact-item-clean {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-item-clean:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.contact-icon-small {
+    width: 20px;
+    height: 20px;
+    color: #4f46e5;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.contact-text,
+.contact-link-clean {
+    color: #b8c5d1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    text-decoration: none;
+}
+
+.contact-link-clean:hover {
+    color: #ffffff;
+}
+
+/* Social Section Organized */
+.social-section-organized {
+    margin-bottom: 2rem;
+}
+
+.social-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.social-links-organized {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-link-clean {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link-clean:hover {
+    background: #4f46e5;
+    transform: translateY(-3px);
+}
+
+.social-icon-small {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+/* CTA Organized */
+.footer-cta-organized {
+    text-align: center;
+}
+
+.btn-cta-organized {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}
+
+.btn-cta-organized i {
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-organized:hover i {
+    transform: translateX(3px);
+}
+
+.btn-cta-organized:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+}

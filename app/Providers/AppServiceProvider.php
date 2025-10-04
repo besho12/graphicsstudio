@@ -86,8 +86,12 @@ class AppServiceProvider extends ServiceProvider {
         $this->registerBladeDirectives();
         Paginator::useBootstrapFour();
 
-        define('DEFAULT_HOMEPAGE', $setting?->site_theme ?? ThemeList::MAIN->value);
-        define('TINYMNCE_UPLOAD_PATH', 'custom-images');
+        if (!defined('DEFAULT_HOMEPAGE')) {
+            define('DEFAULT_HOMEPAGE', $setting?->site_theme ?? ThemeList::MAIN->value);
+        }
+        if (!defined('TINYMNCE_UPLOAD_PATH')) {
+            define('TINYMNCE_UPLOAD_PATH', 'custom-images');
+        }
     }
 
     protected function registerBladeDirectives() {

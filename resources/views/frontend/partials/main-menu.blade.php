@@ -10,7 +10,6 @@
                 <a href="{{ route('home') }}" class="text-uppercase">
                     <span class="link-effect">
                         <span class="effect-1">{{ __('Home') }}</span>
-                        <span class="effect-1">{{ __('Home') }}</span>
                     </span>
                 </a>
                 @php
@@ -33,7 +32,6 @@
                     class="text-uppercase" {{ $menu['open_new_tab'] ? 'target="_blank"' : '' }}>
                     <span class="link-effect">
                         <span class="effect-1">{{ $menu['label'] }}</span>
-                        <span class="effect-1">{{ $menu['label'] }}</span>
                     </span>
                 </a>
 
@@ -50,7 +48,6 @@
         <li class="menu-item-has-children">
             <a href="{{ route('home') }}" class="text-uppercase">
                 <span class="link-effect">
-                    <span class="effect-1">{{ __('Home') }}</span>
                     <span class="effect-1">{{ __('Home') }}</span>
                 </span>
             </a>

@@ -1,0 +1,170 @@
+/* Hero Mobile Fix - Restore Background Images on Mobile */
+
+/* Remove blue gradient overlay that's hiding background images - Higher specificity */
+.hero-wrapper.hero-1,
+.hero-wrapper,
+.hero-1,
+.hero-2,
+.hero-3,
+.hero-4,
+div.hero-wrapper,
+div.hero-1,
+div.hero-2,
+div.hero-3,
+div.hero-4 {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Ensure hero background image container is visible */
+.hero-1 .hero-bg-image {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+    overflow: hidden !important;
+}
+
+/* Ensure hero background image displays properly */
+.hero-1 .hero-bg-image img,
+.hero-main-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+}
+
+/* Restore proper overlay for text readability */
+.hero-1::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.6) 0%, 
+        rgba(0, 0, 0, 0.3) 50%, 
+        rgba(0, 0, 0, 0.5) 100%
+    ) !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+/* Ensure content is above overlay */
+.hero-1 .container,
+.hero-style1 {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 767px) {
+    .hero-1 .hero-bg-image img,
+    .hero-main-image {
+        object-position: center !important;
+        min-height: 100% !important;
+    }
+    
+    /* Stronger overlay on mobile for better text readability */
+    .hero-1::before {
+        background: linear-gradient(135deg, 
+            rgba(0, 0, 0, 0.7) 0%, 
+            rgba(0, 0, 0, 0.4) 50%, 
+            rgba(0, 0, 0, 0.6) 100%
+        ) !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-1::before {
+        background: linear-gradient(135deg, 
+            rgba(0, 0, 0, 0.75) 0%, 
+            rgba(0, 0, 0, 0.5) 50%, 
+            rgba(0, 0, 0, 0.65) 100%
+        ) !important;
+    }
+}
+
+/* Fix for other hero styles if they have background images */
+.hero-2 .hero-2-thumb,
+.hero-3 .hero-3-thumb,
+.hero-4 .hero-4-thumb {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.hero-2 .hero-2-thumb img,
+.hero-3 .hero-3-thumb img,
+.hero-4 .hero-4-thumb img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Ensure hero-4 background image works properly */
+.hero-4 .hero-4-thumb {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+}
+
+.hero-4 .hero-4-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Remove any shine animations that might interfere - Higher specificity */
+.hero-wrapper::before,
+.hero-1::before,
+.hero-1::after,
+.hero-2::before,
+.hero-3::before,
+.hero-4::before,
+div.hero-wrapper::before,
+div.hero-1::before,
+div.hero-1::after,
+div.hero-2::before,
+div.hero-3::before,
+div.hero-4::before {
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+    background: none !important;
+}
+
+/* Override the blue gradient ::before pseudo-elements completely */
+.hero-wrapper::before,
+.hero-1::before,
+.hero-2::before,
+.hero-3::before,
+.hero-4::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.6) 0%, 
+        rgba(0, 0, 0, 0.3) 50%, 
+        rgba(0, 0, 0, 0.5) 100%
+    ) !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    animation: none !important;
+}

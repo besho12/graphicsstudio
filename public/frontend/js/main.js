@@ -185,8 +185,12 @@
 
 
     /*===========================================
-    =         Sticky Fix         =
+    =         Sticky Fix & Scroll To Top (OPTIMIZED)         =
     =============================================*/
+    // Original scroll handlers commented out - replaced with optimized version
+    // in scroll-optimized.js to improve performance
+    
+    /*
     $(window).scroll(function () {
         var topPos = $(this).scrollTop();
         if (topPos > 500) {
@@ -196,10 +200,6 @@
         }
     })
 
-
-    /*===========================================
-    =         Scroll To Top         =
-    =============================================*/
     if ($('.scroll-top')) {
         var scrollTopbtn = document.querySelector('.scroll-top');
         var progressPath = document.querySelector('.scroll-top path');
@@ -232,6 +232,7 @@
             return false;
         })
     }
+    */
 
 
     /*===========================================
@@ -569,90 +570,71 @@
     /*===========================================
     =         Progress Bar Animation         =
     =============================================*/
-    $('.progress-bar').waypoint(function () {
-        $('.progress-bar').css({
-            animation: "animate-positive 1.8s",
-            opacity: "1"
-        });
-    }, { offset: '90%' });
+    // Waypoints disabled for performance - handled by performance-optimizer.js
+    console.log('Progress bar animations handled by performance optimizer');
 
 
 
     /*===========================================
     =         Counter Up         =
     =============================================*/
-    $(".counter-number").counterUp({
-        delay: 10,
-        time: 1000,
-    });
+    // CounterUp disabled for performance - handled by performance-optimizer.js
+    console.log('Counter animations handled by performance optimizer');
 
 
 
     /*===========================================
     =         Marquee Active         =
     =============================================*/
+    // Marquee disabled for performance - lightweight alternative
     if ($(".marquee_mode").length) {
-        $('.marquee_mode').marquee({
-            speed: 50,
-            gap: 0,
-            delayBeforeStart: 0,
-            direction: 'left',
-            duplicated: true,
-            pauseOnHover: true,
-            startVisible: true,
+        // Simple CSS-based marquee alternative
+        $('.marquee_mode').each(function() {
+            $(this).addClass('css-marquee');
         });
     }
 
 
     ///////////////////////////////////////////////////////
-    // GSAP Register
-
-    window.gsap.registerPlugin(
-        window.TweenMax
-    );
+    // GSAP Register - DISABLED FOR PERFORMANCE
+    // window.gsap.registerPlugin(window.TweenMax);
 
     /////////////////////////////////////////////////////
-    // Magnate Animation
-    var magnets = document.querySelectorAll('.gsap-magnetic')
-    var strength = 50
+    // Magnate Animation - DISABLED FOR PERFORMANCE
+    // var magnets = document.querySelectorAll('.gsap-magnetic')
+    // var strength = 50
 
-    magnets.forEach((magnet) => {
-        magnet.addEventListener('mousemove', moveMagnet);
-        magnet.addEventListener('mouseout', function (event) {
-            TweenMax.to(event.currentTarget, 1, { x: 0, y: 0, ease: Power4.easeOut })
-        });
-    });
+    // magnets.forEach((magnet) => {
+    //     magnet.addEventListener('mousemove', moveMagnet);
+    //     magnet.addEventListener('mouseout', function (event) {
+    //         TweenMax.to(event.currentTarget, 1, { x: 0, y: 0, ease: Power4.easeOut })
+    //     });
+    // });
 
-    function moveMagnet(event) {
-        var magnetButton = event.currentTarget
-        var bounding = magnetButton.getBoundingClientRect()
+    // function moveMagnet(event) {
+     //     var magnetButton = event.currentTarget
+     //     var bounding = magnetButton.getBoundingClientRect()
 
-        TweenMax.to(magnetButton, 1, {
-            x: (((event.clientX - bounding.left) / magnetButton.offsetWidth) - 0.5) * strength,
-            y: (((event.clientY - bounding.top) / magnetButton.offsetHeight) - 0.5) * strength,
-            ease: Power4.easeOut
-        })
-    }
+     //     TweenMax.to(magnetButton, 1, {
+     //         x: (((event.clientX - bounding.left) / magnetButton.offsetWidth) - 0.5) * strength,
+     //         y: (((event.clientY - bounding.top) / magnetButton.offsetHeight) - 0.5) * strength,
+     //         ease: Power4.easeOut
+     //     })
+     // }
 
 
     /*===========================================
     =         Jarallax Active         =
     =============================================*/
-    $('.jarallax').jarallax();
+    // $('.jarallax').jarallax(); // Disabled for performance
 
 
     /*===========================================
         =        Wow Active         =
     =============================================*/
     function wowAnimation() {
-        var wow = new WOW({
-            boxClass: 'wow',
-            animateClass: 'animated',
-            offset: 0,
-            mobile: false,
-            live: true
-        });
-        wow.init();
+        // WOW.js disabled for performance - handled by performance-optimizer.js
+        console.log('WOW animations handled by performance optimizer');
     }
 
     /*===========================================
