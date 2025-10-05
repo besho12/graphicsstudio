@@ -123,4 +123,8 @@
     </script>
 @endif
 @include('frontend.js-variables')
+
+<!-- FADA.A Navigation JavaScript -->
+<script src="{{ asset('frontend/js/fada-nav.js') }}"></script>
+
 @stack('js')

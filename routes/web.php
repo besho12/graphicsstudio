@@ -7,6 +7,31 @@ use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Frontend\HomePageController;
 
+// Test route to isolate 500 error
+Route::get('/test-simple', function () {
+    return 'Simple test works!';
+});
+
+Route::get('/test-helpers', function () {
+    try {
+        $mainMenu = mainMenu();
+        $allLanguages = allLanguages();
+        $sessionLanguage = getSessionLanguage();
+        
+        return response()->json([
+            'mainMenu' => $mainMenu ? 'OK' : 'NULL',
+            'allLanguages' => $allLanguages ? 'OK' : 'NULL', 
+            'sessionLanguage' => $sessionLanguage ?: 'NULL'
+        ]);
+    } catch (Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
+});
+
+Route::get('/test-template', function () {
+    return view('test-template');
+});
+
 Route::group(['middleware' => ['maintenance.mode', 'translation']], function () {
 
     Route::controller(HomePageController::class)->group(function () {

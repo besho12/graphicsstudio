@@ -205,17 +205,36 @@ class HomePageController extends Controller {
         }
         abort(404);
     }
-    public function portfolios(): View {
+    public function portfolios(Request $request): View {
         $per_age = cache('CustomPagination')?->portfolio_list ?? CustomPagination::where('section_name', 'Portfolio List')->value('item_qty');
         
-        $projects = Project::select('id', 'slug', 'image')->with(['translation' => function ($query) {
+        $query = Project::select('id', 'slug', 'image')->with(['translation' => function ($query) {
             $query->select('project_id', 'title', 'project_category');
         }])->whereHas('service', function ($query) {
             $query->active();
-        })->active()->latest()->paginate($per_age);
-        
+        })->active()->latest();
 
-        return view('frontend.pages.portfolio.index', compact('projects'));
+        // Filter by category if provided
+        if ($request->has('category') && $request->category !== 'all') {
+            $query->whereHas('translation', function ($q) use ($request) {
+                $q->where('project_category', $request->category);
+            });
+        }
+
+        $projects = $query->paginate($per_age);
+        
+        // Get all unique categories for the filter
+        $categories = Project::select('id')->with(['translation' => function ($query) {
+            $query->select('project_id', 'project_category');
+        }])->whereHas('service', function ($query) {
+            $query->active();
+        })->active()->get()
+        ->pluck('translation.project_category')
+        ->unique()
+        ->filter()
+        ->values();
+
+        return view('frontend.pages.portfolio.index', compact('projects', 'categories'));
     }
     public function singlePortfolio($slug): View {
         $project = Project::select('id', 'slug', 'image','tags','project_author','created_at')->with([

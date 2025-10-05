@@ -1,0 +1,670 @@
+/* FADA.A Exact Navigation Styles */
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Container */
+.fada-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent; /* Completely transparent */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    z-index: 1000;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    border-bottom: none;
+}
+
+/* Scrolled state with enhanced blur */
+.fada-header.scrolled {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(25px) saturate(1.8);
+    -webkit-backdrop-filter: blur(25px) saturate(1.8);
+    box-shadow: 0 1px 2px rgba(96, 165, 250, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fada-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 70px;
+    gap: 40px; /* Add consistent spacing between elements */
+}
+
+/* Logo Section */
+.fada-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.fada-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.fada-logo img {
+    display: block; /* Show logo images */
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle; /* Better alignment with text */
+}
+
+.fada-logo-text {
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 1; /* Improve text alignment */
+}
+
+.fada-logo-accent {
+    color: #60a5fa; /* Light blue accent */
+    margin-left: 2px;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+/* Main Navigation */
+.fada-main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.fada-nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+}
+
+.fada-nav-item {
+    position: relative;
+}
+
+.fada-nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.fada-nav-text {
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(96, 165, 250, 0.4);
+}
+
+.fada-nav-link:hover .fada-nav-text {
+    color: #60a5fa;
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.fada-nav-item.active .fada-nav-text {
+    color: #60a5fa;
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+/* Dropdown Icon */
+.fada-dropdown-icon {
+    margin-left: 8px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    color: #ffffff;
+}
+
+.fada-nav-item:hover .fada-dropdown-icon {
+    transform: rotate(180deg);
+    color: #60a5fa;
+}
+
+/* Dropdown Menu */
+.fada-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    min-width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    list-style: none;
+    padding: 15px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fada-nav-item:hover .fada-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.fada-dropdown-item {
+    margin: 0;
+}
+
+.fada-dropdown-link {
+    display: block;
+    padding: 12px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.fada-dropdown-link:hover {
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+    text-shadow: 0 0 6px rgba(96, 165, 250, 0.3);
+}
+
+.fada-dropdown-item.active .fada-dropdown-link {
+    background: rgba(96, 165, 250, 0.3);
+    color: #60a5fa;
+    text-shadow: 0 0 6px rgba(96, 165, 250, 0.3);
+}
+
+/* Language Selector */
+.fada-language-selector {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: auto; /* Push language selector to the right */
+}
+
+.fada-language-form {
+    display: flex;
+    align-items: center;
+}
+
+.fada-language-select {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 32px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.fada-language-select:hover {
+    border-color: #60a5fa;
+    background-color: rgba(96, 165, 250, 0.2);
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+}
+
+.fada-language-select option {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    padding: 8px;
+}
+
+/* Mobile Menu Toggle */
+.fada-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    background: transparent;
+    border: none;
+}
+
+.fada-mobile-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.fada-mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.fada-mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.fada-mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation */
+.fada-mobile-nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.fada-mobile-nav.active {
+    max-height: 100vh;
+    padding: 20px 0;
+}
+
+.fada-mobile-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.fada-mobile-item {
+    margin-bottom: 10px;
+}
+
+.fada-mobile-link {
+    display: block;
+    padding: 15px 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.fada-mobile-link:hover {
+    color: #60a5fa;
+    padding-left: 10px;
+    text-shadow: 0 0 6px rgba(96, 165, 250, 0.3);
+}
+
+.fada-mobile-dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.fada-mobile-item.has-dropdown.active .fada-mobile-dropdown {
+    max-height: 500px;
+    padding-top: 10px;
+}
+
+.fada-mobile-dropdown li {
+    margin-bottom: 5px;
+}
+
+.fada-mobile-dropdown a {
+    display: block;
+    padding: 10px 0;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.fada-mobile-dropdown a:hover {
+    color: #60a5fa;
+    padding-left: 10px;
+    text-shadow: 0 0 6px rgba(96, 165, 250, 0.3);
+}
+
+/* Mobile Language Selector */
+.fada-mobile-lang {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+}
+
+.fada-mobile-lang-option {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.fada-mobile-lang-option:hover,
+.fada-mobile-lang-option.active {
+    background: rgba(96, 165, 250, 0.3);
+    border-color: #60a5fa;
+    color: #60a5fa;
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+    text-shadow: 0 0 6px rgba(96, 165, 250, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .fada-main-nav,
+    .fada-language-selector {
+        display: none;
+    }
+    
+    .fada-mobile-toggle {
+        display: flex;
+    }
+    
+    .fada-header-container {
+        height: 60px;
+    }
+    
+    .fada-mobile-nav {
+        top: 60px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Padding for Fixed Header */
+body {
+    padding-top: 0px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+}
+
+/* Focus States for Accessibility */
+.fada-nav-link:focus,
+.fada-language-select:focus,
+.fada-mobile-toggle:focus {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+
+/* Animation for Smooth Transitions */
+.fada-nav-link,
+.fada-dropdown-menu,
+.fada-language-select {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effects */
+.fada-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.fada-nav-link:hover::after,
+.fada-nav-item.active .fada-nav-link::after {
+    width: 100%;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fada-header {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Glassmorphism Effect Enhancement */
+.fada-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.05));
+    pointer-events: none;
+}
+
+/* Blue Glow Effects */
+.fada-logo-text:hover {
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
+}
+
+.fada-header:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(96, 165, 250, 0.1);
+}
+
+.fada-mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.fada-mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.fada-mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Navigation */
+.fada-mobile-nav {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.fada-mobile-nav.active {
+    display: block;
+}
+
+.fada-mobile-nav .fada-nav-list {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+}
+
+.fada-mobile-nav .fada-nav-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fada-mobile-nav .fada-nav-link {
+    padding: 15px 0;
+    justify-content: space-between;
+}
+
+.fada-mobile-nav .fada-dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+.fada-mobile-language {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fada-mobile-language .fada-language-select {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .fada-nav-list {
+        gap: 30px;
+    }
+    
+    .fada-header-container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fada-main-nav {
+        display: none;
+    }
+    
+    .fada-language-selector {
+        display: none;
+    }
+    
+    .fada-mobile-toggle {
+        display: flex;
+    }
+    
+    .fada-header-container {
+        height: 60px;
+    }
+    
+    .fada-mobile-nav {
+        top: 60px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Padding for Fixed Header */
+body {
+    padding-top: 0px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+}
+
+/* Focus States for Accessibility */
+.fada-nav-link:focus,
+.fada-language-select:focus,
+.fada-mobile-toggle:focus {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+
+/* Animation for Smooth Transitions */
+.fada-nav-link,
+.fada-dropdown-menu,
+.fada-language-select {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effects */
+.fada-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.fada-nav-link:hover::after,
+.fada-nav-item.active .fada-nav-link::after {
+    width: 100%;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fada-header {
+    animation: fadeIn 0.5s ease-out;
+}

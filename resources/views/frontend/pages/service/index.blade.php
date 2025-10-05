@@ -71,115 +71,94 @@
         </div>
     </div>
 
-    <!-- Contact Form Section -->
     <div class="services-contact-section space-bottom">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-10">
-                    <div class="contact-form-wrapper">
-                        <div class="contact-form-header text-center mb-5">
-                            <h3 class="contact-form-title">{{ __('Get In Touch') }}</h3>
-                            <p class="contact-form-subtitle">{{ __('Ready to start your project? Contact us today and let\'s discuss how we can help you achieve your goals.') }}</p>
-                        </div>
-                        
-                        <!-- Success/Error Messages -->
-                        <div id="form-messages" class="mb-4" style="display: none;">
-                            <div id="success-message" class="alert alert-success" style="display: none;">
-                                <i class="fas fa-check-circle me-2"></i>
-                                <span>{{ __('Message sent successfully! We\'ll get back to you soon.') }}</span>
-                            </div>
-                            <div id="error-message" class="alert alert-danger" style="display: none;">
-                                <i class="fas fa-exclamation-circle me-2"></i>
-                                <span>{{ __('Something went wrong. Please try again.') }}</span>
-                            </div>
-                        </div>
-                        
-                        <form id="contact-form" class="modern-contact-form" action="{{ route('send-contact-message') }}" method="POST">
-                            @csrf
-                            <div class="row gy-4">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="name" name="name" class="form-control" placeholder=" " required>
-                                        <label for="name" class="form-label">{{ __('Full Name') }}</label>
-                                        <div class="form-icon">
-                                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" id="email" name="email" class="form-control" placeholder=" " required>
-                                        <label for="email" class="form-label">{{ __('Email Address') }}</label>
-                                        <div class="form-icon">
-                                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                                <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="m22 7-10 5L2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="url" id="website" name="website" class="form-control" placeholder=" ">
-                                        <label for="website" class="form-label">{{ __('Website (Optional)') }}</label>
-                                        <div class="form-icon">
-                                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/>
-                                                <path d="M8 12h8" stroke="currentColor" stroke-width="2"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select id="subject" name="subject" class="form-control" required>
-                                            <option value="">{{ __('Select a subject') }}</option>
-                                            @foreach($services as $service)
-                                                <option value="Inquiry about {{ $service->title }}">{{ $service->title }}</option>
-                                            @endforeach
-                                            <option value="General Inquiry">{{ __('General Inquiry') }}</option>
-                                            <option value="Quote Request">{{ __('Quote Request') }}</option>
-                                            <option value="Support">{{ __('Support') }}</option>
-                                        </select>
-                                        <label for="subject" class="form-label">{{ __('Subject') }}</label>
-                                        <div class="form-icon">
-                                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                                <path d="M8 9l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M16 15l-4 4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea id="message" name="message" class="form-control" rows="5" placeholder=" " required></textarea>
-                                        <label for="message" class="form-label">{{ __('Message') }}</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-submit text-center">
-                                        <button type="submit" class="contact-submit-btn" id="submit-btn">
-                                            <span class="btn-text">{{ __('Send Message') }}</span>
-                                            <span class="btn-icon">
-                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                                    <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </span>
-                                            <div class="spinner-border spinner-border-sm" role="status" style="display: none;">
-                                                <span class="visually-hidden">{{ __('Loading...') }}</span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+            <div class="contact-form-wrapper">
+                <div class="contact-form-header">
+                    <h2 class="contact-form-title">{{ __('Ready to Get Started?') }}</h2>
+                    <p class="contact-form-subtitle">
+                        {{ __("Fill out the form and our team will get back to you within 24 hours.") }}
+                    </p>
                 </div>
+
+                <form action="{{ route('send-contact-message') }}" id="contact-form" class="modern-contact-form">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" placeholder=" " value="{{ old('name') }}" required>
+                                <label class="form-label">{{__('Your Name')}}</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder=" " value="{{ old('email') }}" required>
+                                <label class="form-label">{{__('Your Email')}}</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="website" class="form-control" placeholder=" " value="{{ old('website') }}">
+                                <label class="form-label">{{__('Your Website')}}</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="subject" class="form-control" placeholder=" " value="{{ old('subject') }}" required>
+                                <label class="form-label">{{__('Subject')}}</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-tag"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder=" " rows="5" required>{{ old('message') }}</textarea>
+                        <label class="form-label">{{__('Your Message')}}</label>
+                        <div class="form-icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                    </div>
+                    
+                    @if ($setting?->recaptcha_status == 'active')
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="{{ $setting?->recaptcha_site_key }}"></div>
+                        </div>
+                    @endif
+                    
+                    <!-- Form Messages -->
+                    <div id="form-messages" style="display: none;">
+                        <div id="success-message" class="alert alert-success" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <span>{{ __('Your message has been sent successfully!') }}</span>
+                        </div>
+                        <div id="error-message" class="alert alert-danger" style="display: none;">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>{{ __('Something went wrong. Please try again.') }}</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn" class="contact-submit-btn">
+                        <span class="btn-text">{{__('Send Message')}}</span>
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                        <div class="spinner-border spinner-border-sm" role="status" style="display: none;">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
+                </form>
             </div>
         </div>
     </div>

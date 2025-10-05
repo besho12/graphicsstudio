@@ -57,6 +57,12 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/modern-footer.css') }}">
     <!-- Footer Layout 2 Modern CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/css/footer-layout2-organized.css') }}">
+    
+    <!-- FADA.A Navigation CSS - Exact Replica -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/fada-nav.css') }}">
+
+    <!-- Hero Rotation Fix CSS - Disables unwanted rotation animations -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/hero-rotation-fix.css') }}">
 
     @if (session()->has('text_direction') && session()->get('text_direction') == 'rtl')
     <link rel="stylesheet" href="{{ asset('frontend/css/rtl.css') }}"?v={{ $setting?->version }}>

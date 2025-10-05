@@ -1,0 +1,73 @@
+/**
+ * Hero Section Rotation Fix
+ * Disables any unwanted rotation or animation effects on hero elements
+ */
+
+/* Disable all animations and transforms on hero section */
+.hero-wrapper,
+.hero-wrapper *,
+.hero-4,
+.hero-4 *,
+.hero-style4,
+.hero-style4 *,
+.hero-4-thumb,
+.hero-4-thumb *,
+.hero-title,
+.hero-text,
+.bg-theme {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Specifically disable spin animations */
+.hero-wrapper .fa-spin,
+.hero-4 .fa-spin,
+.hero-style4 .fa-spin {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Disable any rotation keyframes */
+.hero-wrapper .spin,
+.hero-4 .spin,
+.hero-style4 .spin,
+.hero-wrapper .rotate,
+.hero-4 .rotate,
+.hero-style4 .rotate {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Disable WOW animations on hero */
+.hero-wrapper.wow,
+.hero-4.wow,
+.hero-style4.wow {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Ensure shape-mockup elements don't rotate */
+.hero-wrapper .shape-mockup,
+.hero-4 .shape-mockup {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Reset any CSS transforms that might be applied */
+.hero-wrapper,
+.hero-4,
+.hero-style4 {
+    transform: translateZ(0) !important; /* Force hardware acceleration without rotation */
+}
+
+/* Disable any CSS animations that might be inherited */
+.hero-wrapper *,
+.hero-4 *,
+.hero-style4 * {
+    animation-name: none !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 0 !important;
+}
