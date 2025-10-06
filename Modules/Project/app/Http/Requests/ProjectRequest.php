@@ -29,12 +29,16 @@ class ProjectRequest extends FormRequest {
             $rules['code'] = 'required|exists:languages,code';
             $rules['title'] = 'required|string|max:255';
             $rules['image'] = 'nullable|mimes:jpeg,jpg,png,gif,webp,svg';
+            $rules['gallery_images'] = 'nullable|array';
+            $rules['gallery_images.*'] = 'mimes:jpeg,jpg,png,gif,webp,svg';
             $rules['tags'] = 'nullable|string|max:255';
         }
         if ($this->isMethod('post')) {
             $rules['image'] = 'required|mimes:jpeg,jpg,png,gif,webp,svg';
             $rules['slug'] = 'required|string|max:255|unique:projects,slug';
             $rules['title'] = 'required|string|max:255|unique:project_translations,title';
+            $rules['gallery_images'] = 'nullable|array';
+            $rules['gallery_images.*'] = 'mimes:jpeg,jpg,png,gif,webp,svg';
             $rules['tags'] = 'nullable|string|max:255';
         }
 

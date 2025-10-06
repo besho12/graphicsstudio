@@ -70,7 +70,7 @@
                 <!-- Gallery Section -->
                 <div class="portfolio-gallery-section">
                     <div class="portfolio-gallery-wrapper">
-                        @if($project?->gallery && count($project->gallery) > 0)
+                        @if($project?->images && $project->images->count() > 0)
                         <!-- Multi-Image Gallery Grid -->
                         <div class="portfolio-gallery-grid">
                             <div class="gallery-main-image">
@@ -89,8 +89,12 @@
                                     </button>
                                 </div>
                                 <div class="gallery-counter">
-                                    <span id="currentImageIndex">1</span> / <span id="totalImages">{{ count($project->gallery) + 1 }}</span>
+                                    <span id="currentImageIndex">1</span> / <span id="totalImages">{{ $project->images->count() + 1 }}</span>
                                 </div>
+                                <button class="full-view-btn" type="button" data-action="full-view">
+                                    <i class="fas fa-expand"></i>
+                                    <span>{{ __('Full View') }}</span>
+                                </button>
                             </div>
                             
                             <div class="gallery-sidebar">
@@ -99,9 +103,9 @@
                                         <img src="{{ asset($project?->image) }}" alt="{{ $project?->title }}">
                                         <div class="thumbnail-overlay"></div>
                                     </div>
-                                    @foreach($project->gallery as $index => $gallery)
-                                    <div class="gallery-thumbnail" data-index="{{ $index + 1 }}" data-image-src="{{ asset($gallery->image) }}">
-                                         <img src="{{ asset($gallery->image) }}" alt="{{ $project?->title }}">
+                                    @foreach($project->images as $index => $image)
+                                    <div class="gallery-thumbnail" data-index="{{ $index + 1 }}" data-image-src="{{ asset($image->large_image) }}">
+                                         <img src="{{ asset($image->small_image) }}" alt="{{ $project?->title }}">
                                          <div class="thumbnail-overlay"></div>
                                      </div>
                                     @endforeach
@@ -117,6 +121,10 @@
                                     <i class="fas fa-search-plus"></i>
                                 </button>
                             </div>
+                            <button class="full-view-btn" type="button" data-action="full-view">
+                                <i class="fas fa-expand"></i>
+                                <span>{{ __('Full View') }}</span>
+                            </button>
                         </div>
                         @endif
                     </div>
@@ -185,6 +193,18 @@
                                             </div>
                                         </div>
                                         @endif
+
+                                        @if($project?->project_author)
+                                        <div class="info-item">
+                                            <div class="info-icon">
+                                                <i class="fas fa-id-badge"></i>
+                                            </div>
+                                            <div class="info-content">
+                                                <div class="info-label">{{ __('Author') }}</div>
+                                                <div class="info-value">{{ $project->project_author }}</div>
+                                            </div>
+                                        </div>
+                                        @endif
                                         
                                         <div class="info-item">
                                             <div class="info-icon">
@@ -201,7 +221,7 @@
                                 <div class="portfolio-cta-card">
                                     <h3 class="cta-title">{{ __('Interested in Similar Work?') }}</h3>
                                     <p class="cta-description">{{ __('Let\'s discuss your project and bring your vision to life with our expertise.') }}</p>
-                                    <a href="{{ route('contact') }}" class="cta-btn">
+                                    <a href="#contact-form" class="cta-btn">
                                         <i class="fas fa-envelope"></i>
                                         {{ __('Get In Touch') }}
                                     </a>
@@ -534,11 +554,13 @@
     border-radius: 15px;
     overflow: hidden;
     background: #34495e;
+    height: 420px;
 }
 
 .main-portfolio-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -633,6 +655,31 @@
     font-weight: 500;
 }
 
+/* Full View Button */
+.full-view-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.full-view-btn:hover {
+    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    box-shadow: 0 10px 24px rgba(52, 152, 219, 0.45);
+}
+
 /* Gallery Sidebar */
 .gallery-sidebar {
     display: flex;
@@ -693,6 +740,7 @@
     border-radius: 15px;
     overflow: hidden;
     background: #34495e;
+    height: 420px;
 }
 
 /* Legacy Thumbnail Gallery (for backward compatibility) */
@@ -897,18 +945,18 @@
     justify-content: center;
     gap: 10px;
     padding: 15px 30px;
-    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    background: linear-gradient(45deg, #3498db, #2980b9);
     color: #ffffff;
     text-decoration: none;
     border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
 .cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
     color: #ffffff;
     text-decoration: none;
 }
@@ -1134,6 +1182,11 @@
     .gallery-sidebar {
         order: -1;
     }
+
+    .gallery-main-image,
+    .portfolio-single-image {
+        height: 300px;
+    }
     
     .gallery-thumbnail-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -1185,6 +1238,11 @@
         height: 35px;
         font-size: 14px;
     }
+
+    .gallery-main-image,
+    .portfolio-single-image {
+        height: 220px;
+    }
 }
 </style>
 
@@ -1202,8 +1260,8 @@ function initializeGallery() {
     // Collect all gallery images
     const thumbnails = document.querySelectorAll('.gallery-thumbnail');
     galleryImages = Array.from(thumbnails).map(thumb => {
-        const img = thumb.querySelector('img');
-        return img ? img.src : '';
+        const src = thumb.getAttribute('data-image-src');
+        return src ? src : '';
     }).filter(src => src);
     
     // Add event listeners for gallery thumbnails
@@ -1227,6 +1285,17 @@ function initializeGallery() {
     
     if (nextBtn) {
         nextBtn.addEventListener('click', nextImage);
+    }
+
+    // Add event listener for Full View button
+    const fullViewBtn = document.querySelector('.full-view-btn');
+    if (fullViewBtn) {
+        fullViewBtn.addEventListener('click', function() {
+            const mainImage = document.getElementById('mainPortfolioImage');
+            if (mainImage && mainImage.src) {
+                openImageModal(mainImage.src);
+            }
+        });
     }
     
     // Add event listeners for zoom buttons
@@ -1276,7 +1345,7 @@ function changeMainImage(imageSrc, thumbnailElement, index) {
         // Update zoom button
         const zoomBtn = document.querySelector('.zoom-btn');
         if (zoomBtn) {
-            zoomBtn.setAttribute('onclick', `openImageModal('${imageSrc}')`);
+            zoomBtn.setAttribute('data-image-src', imageSrc);
         }
         
         // Update counter

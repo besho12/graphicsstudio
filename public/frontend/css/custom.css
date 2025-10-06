@@ -3725,7 +3725,7 @@ html {
 
 .brands-carousel {
     display: flex;
-    animation: scrollBrands 30s linear infinite;
+    animation: scrollBrands 12s linear infinite;
     gap: 60px;
     align-items: center;
 }
@@ -3804,7 +3804,7 @@ html {
     
     .brands-carousel {
         gap: 40px;
-        animation-duration: 20s;
+        animation-duration: 10s;
     }
     
     .brand-logo {

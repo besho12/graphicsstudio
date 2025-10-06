@@ -72,6 +72,23 @@ class ProjectController extends Controller {
             $project->save();
         }
 
+        // Handle optional gallery images on create (support single or multiple)
+        if ($project && $request->hasFile('gallery_images')) {
+            $images = $request->file('gallery_images');
+            $images = is_array($images) ? $images : [$images];
+
+            foreach ($images as $image) {
+                if ($image) {
+                    $file_name = file_upload($image, 'uploads/custom-images/');
+                    \Modules\Project\app\Models\ProjectImage::create([
+                        'project_id'  => $project->id,
+                        'large_image' => $file_name,
+                        'small_image' => $file_name,
+                    ]);
+                }
+            }
+        }
+
         $this->generateTranslations(
             TranslationModels::Project,
             $project,
@@ -81,10 +98,9 @@ class ProjectController extends Controller {
 
         return $this->redirectWithMessage(
             RedirectType::CREATE->value,
-            'admin.project.edit',
+            'admin.project.gallery',
             [
-                'project' => $project->id,
-                'code'    => allLanguages()->first()->code,
+                $project->id,
             ]
         );
     }

@@ -41,7 +41,7 @@
             <x-admin.breadcrumb title="{{ __('Dashboard') }}" />
             @if (checkAdminHasPermission('dashboard.view'))
                 <div class="section-body">
-                    <div class="row">
+                    <div class="row g-3">
                         @if ($setting?->is_shop)
                             <!-- Earnings (Monthly) Card Example -->
                             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -177,6 +177,40 @@
                                     <div class="card-body">
                                         {{ count($total_newsletter) }}
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-0">{{ __('Quick Actions') }}</h4>
+                                </div>
+                                <div class="card-body d-flex flex-wrap gap-2">
+                                    @adminCan('project.management')
+                                        <a href="{{ route('admin.project.create') }}" class="btn btn-primary">
+                                            <i class="fas fa-plus-circle"></i> {{ __('Create Project') }}
+                                        </a>
+                                    @endadminCan
+                                    @adminCan('blog.create')
+                                        <a href="{{ route('admin.blogs.create') }}" class="btn btn-info">
+                                            <i class="fas fa-pen"></i> {{ __('Write Blog Post') }}
+                                        </a>
+                                    @endadminCan
+                                    @if ($setting?->is_shop)
+                                        @adminCan('product.management')
+                                            <a href="{{ route('admin.product.create') }}" class="btn btn-success">
+                                                <i class="fas fa-box"></i> {{ __('Add Product') }}
+                                            </a>
+                                        @endadminCan
+                                        @adminCan('order.management')
+                                            <a href="{{ route('admin.order.list') }}" class="btn btn-secondary">
+                                                <i class="fas fa-shopping-cart"></i> {{ __('View Orders') }}
+                                            </a>
+                                        @endadminCan
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -472,6 +506,8 @@
 @push('js')
     @if (checkAdminHasPermission('dashboard.view') && $setting?->is_shop)
         <script src="{{ asset('backend/js/chart.umd.min.js') }}"></script>
+        <script type="application/json" id="monthlyDataJson">@json($monthly_data)</script>
+        <script type="application/json" id="currencyIconJson">@json(session()->get('currency_icon'))</script>
         <script>
             (function($) {
 
@@ -479,9 +515,14 @@
 
                 // Area Chart Example
                 $(document).ready(function() {
+                    // Ensure number_format exists for chart labels
+                    var number_format = (typeof window.number_format === 'function') ? window.number_format : function(value) {
+                        try { return Number(value).toLocaleString(); } catch (e) { return value; }
+                    };
 
-                    var bData = @json($monthly_data);
-                    var jData = JSON.parse(bData);
+                    // Read JSON data injected via non-JS script tags to avoid Blade/JS lint conflicts
+                    var jData = JSON.parse(document.getElementById('monthlyDataJson').textContent || '[]');
+                    var currencyIcon = JSON.parse(document.getElementById('currencyIconJson').textContent || '""');
 
                     var ctx = document.getElementById("myAreaChart");
                     var myLineChart = new Chart(ctx, {
@@ -534,10 +575,9 @@
                                     ticks: {
                                         maxTicksLimit: 5,
                                         padding: 10,
-                                        // Include a dollar sign in the ticks
+                                        // Include a currency icon in the ticks
                                         callback: function(value, index, values) {
-                                            return '{{ session()->get('currency_icon') }}' +
-                                                number_format(value);
+                                            return currencyIcon + number_format(value);
                                         }
                                     },
                                     gridLines: {
@@ -566,15 +606,14 @@
                                 intersect: false,
                                 mode: 'index',
                                 caretPadding: 10,
-                                callbacks: {
-                                    label: function(tooltipItem, chart) {
-                                        var datasetLabel = chart.datasets[tooltipItem.datasetIndex]
-                                            .label || '';
-                                        return datasetLabel +
-                                            ': {{ session()->get('currency_icon') }}' +
-                                            number_format(tooltipItem.yLabel);
+                                    callbacks: {
+                                        label: function(tooltipItem, chart) {
+                                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex]
+                                                .label || '';
+                                            return datasetLabel + ': ' + currencyIcon +
+                                                number_format(tooltipItem.yLabel);
+                                        }
                                     }
-                                }
                             }
                         }
                     });

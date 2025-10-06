@@ -10,7 +10,7 @@
 
 /* Optimize marquee animation */
 .brands-carousel {
-    animation-duration: 60s !important; /* Slower brand scrolling */
+    animation-duration: 12s !important; /* Faster brand scrolling */
 }
 
 /* Reduce transform operations during scroll */

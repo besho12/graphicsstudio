@@ -44,10 +44,6 @@
                                 loading="lazy"
                             >
                             <div class="portfolio-hover-content">
-                                <div class="portfolio-category-tag">
-                                    <i class="fas fa-tag"></i>
-                                    <span>{{ $project->project_category }}</span>
-                                </div>
                                 <div class="portfolio-actions">
                                     <a href="{{ route('single.portfolio', $project->slug) }}" class="portfolio-action-btn">
                                         <i class="fas fa-eye"></i>
@@ -180,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
     bottom: 0;
     background: 
         radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(29, 78, 216, 0.12) 0%, transparent 50%),
         radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
@@ -327,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8));
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(29, 78, 216, 0.8));
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -363,26 +359,12 @@ document.addEventListener('DOMContentLoaded', function() {
     opacity: 1;
 }
 
-.portfolio-category-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
-}
-
 .portfolio-action-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: white;
-    color: #1d262e;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
     padding: 12px 24px;
     border-radius: 50px;
     text-decoration: none;
@@ -392,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .portfolio-action-btn:hover {
-    background: #3b82f6;
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);

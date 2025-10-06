@@ -28,6 +28,11 @@
                                         <div class="form-group col-md-12">
                                             <x-admin.form-image-preview />
                                         </div>
+                                        <div class="form-group col-md-12">
+                                            <label>{{ __('Gallery Images') }} <span class="text-muted">({{ __('optional') }})</span></label>
+                                            <input type="file" name="gallery_images[]" id="gallery-images-upload" class="form-control" multiple accept="image/*">
+                                            <small class="form-text text-muted">{{ __('You can upload multiple images to appear as thumbnails on the project page.') }}</small>
+                                        </div>
 
                                         <div class="form-group col-md-12">
                                             <label>{{ __('Title') }} <span class="text-danger">*</span></label>

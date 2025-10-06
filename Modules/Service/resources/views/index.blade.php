@@ -11,61 +11,53 @@
             ]" />
             <div class="section-body">
                 <div class="mt-4 row">
-                    {{-- Search filter --}}
+                    {{-- Actions + Filter toolbar --}}
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{ route('admin.service.index') }}" method="GET"
-                                    class="on-change-submit card-body">
-                                    <div class="row">
-                                        <div class="col-md-3 form-group mb-3 mb-md-0">
+                                <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <a href="{{ route('admin.service.create') }}" class="btn btn-primary">
+                                            <i class="fas fa-plus me-1"></i> {{ __('Add Service') }}
+                                        </a>
+                                        <a href="{{ route('services') }}" target="_blank" class="btn btn-light">
+                                            <i class="fas fa-external-link-alt me-1"></i> {{ __('View Frontend') }}
+                                        </a>
+                                    </div>
+                                </div>
+                                <form action="{{ route('admin.service.index') }}" method="GET" class="on-change-submit">
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-md-4">
                                             <div class="input-group">
-                                                <input type="text" name="keyword" value="{{ request()->get('keyword') }}"
-                                                    class="form-control" placeholder="{{ __('Search') }}">
-                                                <button class="btn btn-primary" type="submit"><i
-                                                        class="fas fa-search"></i></button>
+                                                <input type="text" name="keyword" value="{{ request()->get('keyword') }}" class="form-control" placeholder="{{ __('Search services...') }}">
+                                                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 form-group mb-3 mb-md-0">
+                                        <div class="col-md-2">
                                             <select name="status" id="status" class="form-control form-select">
                                                 <option value="">{{ __('Select Status') }}</option>
-                                                <option value="1" {{ request('status') == '1' ? 'selected' : '' }}>
-                                                    {{ __('Active') }}
-                                                </option>
-                                                <option value="0" {{ request('status') == '0' ? 'selected' : '' }}>
-                                                    {{ __('In-Active') }}
-                                                </option>
+                                                <option value="1" {{ request('status') == '1' ? 'selected' : '' }}>{{ __('Active') }}</option>
+                                                <option value="0" {{ request('status') == '0' ? 'selected' : '' }}>{{ __('Inactive') }}</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-3 form-group mb-3 mb-md-0">
+                                        <div class="col-md-2">
                                             <select name="order_by" id="order_by" class="form-control form-select">
                                                 <option value="">{{ __('Order By') }}</option>
-                                                <option value="1" {{ request('order_by') == '1' ? 'selected' : '' }}>
-                                                    {{ __('ASC') }}
-                                                </option>
-                                                <option value="0" {{ request('order_by') == '0' ? 'selected' : '' }}>
-                                                    {{ __('DESC') }}
-                                                </option>
+                                                <option value="1" {{ request('order_by') == '1' ? 'selected' : '' }}>{{ __('ASC') }}</option>
+                                                <option value="0" {{ request('order_by') == '0' ? 'selected' : '' }}>{{ __('DESC') }}</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-3 form-group mb-3 mb-md-0">
+                                        <div class="col-md-2">
                                             <select name="par-page" id="par-page" class="form-control form-select">
                                                 <option value="">{{ __('Per Page') }}</option>
-                                                <option value="10" {{ '10' == request('par-page') ? 'selected' : '' }}>
-                                                    {{ __('10') }}
-                                                </option>
-                                                <option value="50" {{ '50' == request('par-page') ? 'selected' : '' }}>
-                                                    {{ __('50') }}
-                                                </option>
-                                                <option value="100"
-                                                    {{ '100' == request('par-page') ? 'selected' : '' }}>
-                                                    {{ __('100') }}
-                                                </option>
-                                                <option value="all"
-                                                    {{ 'all' == request('par-page') ? 'selected' : '' }}>
-                                                    {{ __('All') }}
-                                                </option>
+                                                <option value="10" {{ '10' == request('par-page') ? 'selected' : '' }}>{{ __('10') }}</option>
+                                                <option value="50" {{ '50' == request('par-page') ? 'selected' : '' }}>{{ __('50') }}</option>
+                                                <option value="100" {{ '100' == request('par-page') ? 'selected' : '' }}>{{ __('100') }}</option>
+                                                <option value="all" {{ 'all' == request('par-page') ? 'selected' : '' }}>{{ __('All') }}</option>
                                             </select>
+                                        </div>
+                                        <div class="col-md-2 text-md-end">
+                                            <a href="{{ route('admin.service.index') }}" class="btn btn-outline-secondary"><i class="fas fa-undo me-1"></i>{{ __('Reset') }}</a>
                                         </div>
                                     </div>
                                 </form>
@@ -87,7 +79,7 @@
                                         <thead>
                                             <tr>
                                                 <th width="5%">{{ __('SN') }}</th>
-                                                <th width="10%">{{ __('Image') }}</th>
+                                                <th width="12%">{{ __('Image') }}</th>
                                                 <th width="30%">{{ __('Title') }}</th>
                                                 @adminCan('service.management')
                                                     <th width="15%">{{ __('Status') }}</th>
@@ -99,8 +91,9 @@
                                             @forelse ($services as $service)
                                                 <tr>
                                                     <td>{{ $loop->index + 1 }}</td>
-                                                    <td><img src="{{ asset($service?->icon) }}"
-                                                            class="rounded-circle my-2"></td>
+                                                    <td>
+                                                        <img src="{{ asset($service?->icon) }}" alt="{{ $service?->title }}" class="rounded-circle my-2" style="width:40px;height:40px;object-fit:cover;">
+                                                    </td>
                                                     <td>{{ $service->title }}</td>
                                                     @adminCan('service.management')
                                                         <td>

@@ -16,23 +16,20 @@
         <div class="container">
             {{-- Section Header --}}
             <div class="section-header text-center mb-5">
-                <h2 class="section-title">{{ __('Our Portfolio') }}</h2>
-                <p class="section-subtitle">{{ __('Discover our latest projects and creative works') }}</p>
+                <h2 class="section-title">{{ __('Discover Our Latest Projects') }}</h2>
             </div>
 
-            {{-- Category Filter --}}
+            {{-- Category Filter (Home-style pills with client-side filtering) --}}
             <div class="portfolio-filter-modern mb-5">
-                <div class="filter-buttons d-flex justify-content-center flex-wrap gap-3">
-                    <a href="{{ route('portfolios') }}" 
-                       class="filter-btn {{ !request('category') || request('category') === 'all' ? 'active' : '' }}">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
                         <span>{{ __('All Projects') }}</span>
-                    </a>
+                    </button>
                     @if(isset($categories) && $categories->count() > 0)
                         @foreach($categories as $category)
-                            <a href="{{ route('portfolios', ['category' => $category]) }}" 
-                               class="filter-btn {{ request('category') === $category ? 'active' : '' }}">
+                            <button class="filter-btn" data-filter="{{ Str::slug($category) }}">
                                 <span>{{ $category }}</span>
-                            </a>
+                            </button>
                         @endforeach
                     @endif
                 </div>
@@ -51,10 +48,6 @@
                                 loading="lazy"
                             >
                             <div class="portfolio-hover-content">
-                                <div class="portfolio-category-tag">
-                                    <i class="fas fa-tag"></i>
-                                    <span>{{ $project->project_category }}</span>
-                                </div>
                                 <div class="portfolio-actions">
                                     <a href="{{ route('single.portfolio', $project->slug) }}" class="portfolio-action-btn">
                                         <i class="fas fa-eye"></i>
@@ -126,51 +119,44 @@
                  margin: 0 auto;
              }
 
-            /* Portfolio Filter Styles */
+            /* Portfolio Filter Styles (matched to home screen) */
             .portfolio-filter-modern {
                 margin-bottom: 50px;
+                text-align: center;
             }
 
             .filter-buttons {
-                display: flex;
-                justify-content: center;
+                display: inline-flex;
+                gap: 12px;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 8px;
+                border-radius: 50px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
                 flex-wrap: wrap;
-                gap: 15px;
+                justify-content: center;
             }
 
             .filter-btn {
-                display: inline-flex;
-                align-items: center;
+                background: transparent;
+                border: none;
+                color: #94a3b8;
                 padding: 12px 24px;
-                background: rgba(255, 255, 255, 0.1);
-                color: rgba(255, 255, 255, 0.8);
-                text-decoration: none;
-                border-radius: 30px;
-                font-weight: 500;
-                font-size: 0.95rem;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
                 transition: all 0.3s ease;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(10px);
+                position: relative;
+                overflow: hidden;
             }
 
+            .filter-btn.active,
             .filter-btn:hover {
-                background: rgba(52, 152, 219, 0.3);
-                color: #ffffff;
+                background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                color: white;
                 transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-                text-decoration: none;
-            }
-
-            .filter-btn.active {
-                background: linear-gradient(135deg, #3498db, #2980b9);
-                color: #ffffff;
-                box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
-                border-color: rgba(255, 255, 255, 0.3);
-            }
-
-            .filter-btn.active:hover {
-                background: linear-gradient(135deg, #2980b9, #3498db);
-                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
             }
 
             .portfolio-grid-modern {
@@ -243,19 +229,7 @@
                 transform: translate(-50%, -50%) translateY(-10px);
             }
 
-            .portfolio-category-tag {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                background: rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(10px);
-                padding: 8px 16px;
-                border-radius: 25px;
-                color: white;
-                font-size: 0.9rem;
-                margin-bottom: 20px;
-                border: 1px solid rgba(255, 255, 255, 0.3);
-            }
+            /* Category tag removed to match home screen */
 
             .portfolio-actions {
                 display: flex;
@@ -267,8 +241,8 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 8px;
-                background: white;
-                color: #3498db;
+                background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                color: #ffffff;
                 padding: 12px 24px;
                 border-radius: 30px;
                 text-decoration: none;
@@ -278,8 +252,8 @@
             }
 
             .portfolio-action-btn:hover {
-                background: #3498db;
-                color: white;
+                background: linear-gradient(135deg, #60a5fa, #3b82f6);
+                color: #ffffff;
                 transform: translateY(-2px);
                 box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
             }
@@ -394,6 +368,46 @@
                 }
             }
         </style>
+        {{-- Client-side filtering (home screen behavior) --}}
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioCards = document.querySelectorAll('.portfolio-card-modern');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter portfolio cards
+                    portfolioCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+        </script>
     </section>
 
     <!--  Marquee Area -->
