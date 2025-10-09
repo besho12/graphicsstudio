@@ -127,4 +127,7 @@
 <!-- FADA.A Navigation JavaScript -->
 <script src="{{ asset('frontend/js/fada-nav.js') }}"></script>
 
+<!-- Language Switcher JavaScript -->
+<script src="{{ asset('frontend/js/language-switcher.js') }}"></script>
+
 @stack('js')

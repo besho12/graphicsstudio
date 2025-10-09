@@ -33,16 +33,8 @@
         @include('frontend.home.optimized-project-area')
         <!-- project-area-end -->
     @endif
-    @if ($sectionSetting?->award_section)
-        <!-- award-area -->
-        @include('frontend.home.two.sections.award-area')
-        <!-- award-area-end -->
-    @endif
-    @if ($sectionSetting?->banner_section)
-        <!-- banner-area -->
-        @include('frontend.home.two.sections.banner-area')
-        <!-- banner-area-end -->
-    @endif
+    {{-- Award section removed --}}
+    {{-- Banner section removed --}}
     @if ($sectionSetting?->latest_blog_section)
         <!-- blog-area -->
         @include('frontend.home.two.sections.blog-area')

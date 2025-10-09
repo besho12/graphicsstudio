@@ -4,33 +4,33 @@
             <div class="col-xl-auto col-lg-4 col-md-6 counter-divider">
                 <div class="counter-card">
                     <h3 class="counter-card_number">
-                        <span class="counter-number">26</span>+
+                        <span class="counter-number">{{$counterSection?->global_content?->year_experience_count}}</span>+
                     </h3>
-                    <h4 class="counter-card_title">Years of Experience</h4>
+                    <h4 class="counter-card_title">{{$counterSection?->content?->year_experience_title}}</h4>
                     <div class="counter-card_text">
-                        We are a creative agency brands building insightful strategy, creating unique designs helping
+                        {!! clean(processText($counterSection?->content?->year_experience_sub_title)) !!}
                     </div>
                 </div>
             </div>
             <div class="col-xl-auto col-lg-4 col-md-6 counter-divider">
                 <div class="counter-card">
                     <h3 class="counter-card_number">
-                        <span class="counter-number">347</span>+
+                        <span class="counter-number">{{$counterSection?->global_content?->project_count}}</span>+
                     </h3>
-                    <h4 class="counter-card_title">Successful Projects</h4>
+                    <h4 class="counter-card_title">{{$counterSection?->content?->project_title}}</h4>
                     <div class="counter-card_text">
-                        We are a creative agency brands building insightful strategy, creating unique designs helping
+                        {!! clean(processText($counterSection?->content?->project_sub_title)) !!}
                     </div>
                 </div>
             </div>
             <div class="col-xl-auto col-lg-4 col-md-6 counter-divider">
                 <div class="counter-card">
                     <h3 class="counter-card_number">
-                        <span class="counter-number">139</span>+
+                        <span class="counter-number">{{$counterSection?->global_content?->customer_count}}</span>+
                     </h3>
-                    <h4 class="counter-card_title">Satisfied Customers</h4>
+                    <h4 class="counter-card_title">{{$counterSection?->content?->customer_title}}</h4>
                     <div class="counter-card_text">
-                        We are a creative agency brands building insightful strategy, creating unique designs helping
+                        {!! clean(processText($counterSection?->content?->customer_sub_title)) !!}
                     </div>
                 </div>
             </div>

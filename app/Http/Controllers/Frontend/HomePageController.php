@@ -93,9 +93,17 @@ class HomePageController extends Controller {
 
         $servicefeatureSection = $sections->where('name', 'service_feature_section')->first();
 
+        $serviceSection = $sections->where('name', 'service_section')->first();
+
         $chooseUsSection = $sections->where('name', 'choose_us_section')->first();
 
         $counterSection = $sections->where('name', 'counter_section')->first();
+
+        $brandsSection = $sections->where('name', 'brands_section')->first();
+
+        $projectSection = $sections->where('name', 'project_section')->first();
+
+        $faqSection = $sections->where('name', 'faq_section')->first();
 
         $plans = SubscriptionPlan::select('id', 'plan_price','expiration_date','button_url')->with([
             'translation'          => function ($query) {
@@ -119,8 +127,12 @@ class HomePageController extends Controller {
             'awards',
             'services',
             'servicefeatureSection',
+            'serviceSection',
             'chooseUsSection',
             'counterSection',
+            'brandsSection',
+            'projectSection',
+            'faqSection',
             'plans',
         ));
     }

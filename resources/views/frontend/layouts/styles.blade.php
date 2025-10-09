@@ -41,8 +41,14 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/hero-mobile-complete-fix.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/hero-emergency-fix.css') }}">
     
+    <!-- Hero Mobile Text Position Fix - Move hero text higher on mobile devices -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/hero-mobile-text-position-fix.css') }}">
+    
     <!-- Hero Button Redesign - Modern & Responsive -->
     <link rel="stylesheet" href="{{ asset('frontend/css/hero-button-redesign.css') }}">
+    
+    <!-- Service Action Button Mobile Fix - Improve padding and visibility on mobile -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/service-action-btn-mobile-fix.css') }}">
     
     <!-- Feature Card Button Redesign - Modern Blue Theme -->
     <link rel="stylesheet" href="{{ asset('frontend/css/feature-button-redesign.css') }}">
@@ -61,8 +67,14 @@
     <!-- FADA.A Navigation CSS - Exact Replica -->
     <link rel="stylesheet" href="{{ asset('frontend/css/fada-nav.css') }}">
 
+    <!-- Dark Blue Mobile Menu CSS - Theme 3 Mobile Navigation -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/dark-blue-mobile-menu.css') }}">
+
     <!-- Hero Rotation Fix CSS - Disables unwanted rotation animations -->
     <link rel="stylesheet" href="{{ asset('frontend/css/hero-rotation-fix.css') }}">
+
+    <!-- Modern Language Switcher CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/language-switcher.css') }}">
 
     @if (session()->has('text_direction') && session()->get('text_direction') == 'rtl')
     <link rel="stylesheet" href="{{ asset('frontend/css/rtl.css') }}"?v={{ $setting?->version }}>

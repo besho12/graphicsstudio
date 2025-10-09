@@ -141,6 +141,45 @@ class SectionSeeder extends Seeder {
                             ],
                         ],
                     ],
+                    [
+                        'name'           => 'project_section',
+                        'global_content' => [],
+                        'translations'   => [
+                            'en' => [
+                                'title'       => 'Our Latest Projects',
+                                'sub_title'   => 'Portfolio',
+                                'description' => 'Discover our amazing portfolio of creative projects that showcase our expertise and innovation in digital design and development.',
+                            ],
+                            'hi' => [
+                                'title'       => 'हमारी नवीनतम परियोजनाएं',
+                                'sub_title'   => 'पोर्टफोलियो',
+                                'description' => 'रचनात्मक परियोजनाओं के हमारे अद्भुत पोर्टफोलियो की खोज करें जो डिजिटल डिज़ाइन और विकास में हमारी विशेषज्ञता और नवाचार को प्रदर्शित करते हैं।',
+                            ],
+                            'ar' => [
+                                'title'       => 'أحدث مشاريعنا',
+                                'sub_title'   => 'معرض الأعمال',
+                                'description' => 'اكتشف محفظة أعمالنا المذهلة من المشاريع الإبداعية التي تعرض خبرتنا وابتكارنا في التصميم والتطوير الرقمي.',
+                            ],
+                        ],
+                    ],
+                    [
+                        'name'           => 'brands_section',
+                        'global_content' => [],
+                        'translations'   => [
+                            'en' => [
+                                'title'     => 'Trusted by Leading Brands',
+                                'sub_title' => 'We are proud to work with some of the most innovative companies in the world',
+                            ],
+                            'hi' => [
+                                'title'     => 'अग्रणी ब्रांडों द्वारा भरोसा',
+                                'sub_title' => 'हमें दुनिया की कुछ सबसे नवाचारी कंपनियों के साथ काम करने पर गर्व है',
+                            ],
+                            'ar' => [
+                                'title'     => 'موثوق من قبل العلامات التجارية الرائدة',
+                                'sub_title' => 'نحن فخورون بالعمل مع بعض أكثر الشركات ابتكارًا في العالم',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             [
@@ -280,6 +319,24 @@ class SectionSeeder extends Seeder {
                             ],
                         ],
                     ],
+                    [
+                        'name'           => 'brands_section',
+                        'global_content' => [],
+                        'translations'   => [
+                            'en' => [
+                                'title'     => 'Trusted by Leading Brands',
+                                'sub_title' => 'We are proud to work with some of the most innovative companies in the world',
+                            ],
+                            'hi' => [
+                                'title'     => 'अग्रणी ब्रांडों द्वारा भरोसा',
+                                'sub_title' => 'हमें दुनिया की कुछ सबसे नवाचारी कंपनियों के साथ काम करने पर गर्व है',
+                            ],
+                            'ar' => [
+                                'title'     => 'موثوق من قبل العلامات التجارية الرائدة',
+                                'sub_title' => 'نحن فخورون بالعمل مع بعض أكثر الشركات ابتكارًا في العالم',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             [
@@ -376,6 +433,24 @@ class SectionSeeder extends Seeder {
                             ],
                         ],
                     ],
+                    [
+                        'name'           => 'brands_section',
+                        'global_content' => [],
+                        'translations'   => [
+                            'en' => [
+                                'title'     => 'Trusted by Leading Brands',
+                                'sub_title' => 'We are proud to work with some of the most innovative companies in the world',
+                            ],
+                            'hi' => [
+                                'title'     => 'अग्रणी ब्रांडों द्वारा भरोसा',
+                                'sub_title' => 'हमें दुनिया की कुछ सबसे नवाचारी कंपनियों के साथ काम करने पर गर्व है',
+                            ],
+                            'ar' => [
+                                'title'     => 'موثوق من قبل العلامات التجارية الرائدة',
+                                'sub_title' => 'نحن فخورون بالعمل مع بعض أكثر الشركات ابتكارًا في العالم',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             [
@@ -416,6 +491,24 @@ class SectionSeeder extends Seeder {
                         'global_content' => [
                             'image'     => 'uploads/custom-images/video_4.jpg',
                             'video_url' => 'https://www.youtube.com/watch?v=vvNwlRLjLkU',
+                        ],
+                    ],
+                    [
+                        'name'           => 'service_section',
+                        'global_content' => [],
+                        'translations'   => [
+                            'en' => [
+                                'title'     => 'What We Can Do for Our Clients',
+                                'sub_title' => 'We provide comprehensive digital solutions to help your business grow and succeed in the digital landscape.',
+                            ],
+                            'hi' => [
+                                'title'     => 'हम अपने ग्राहकों के लिए क्या कर सकते हैं',
+                                'sub_title' => 'हम आपके व्यवसाय को डिजिटल परिदृश्य में बढ़ने और सफल होने में मदद करने के लिए व्यापक डिजिटल समाधान प्रदान करते हैं।',
+                            ],
+                            'ar' => [
+                                'title'     => 'ما يمكننا فعله لعملائنا',
+                                'sub_title' => 'نحن نقدم حلولاً رقمية شاملة لمساعدة عملك على النمو والنجاح في المشهد الرقمي.',
+                            ],
                         ],
                     ],
                     [
@@ -475,6 +568,24 @@ class SectionSeeder extends Seeder {
                             'ar' => [
                                 'title'     => 'تمكين\\ أعمالك في \\المجال الرقمي',
                                 'sub_title' => '<h4>نحن نحب ما نقوم به</h4><p>نحن وكالة إبداعية نعمل مع العلامات التجارية لبناء استراتيجيات ثاقبة، وإنشاء تصميمات فريدة وصياغة القيمة</p><h4>لماذا تعمل معنا</h4><p>إذا سألت عملاءنا عن شعورهم بالعمل مع 36، فسوف يتحدثون عن مدى اهتمامنا بنجاحهم. بالنسبة لنا، العلاقات الحقيقية هي وقود النجاح الحقيقي. نحن نحب بناء العلامات التجارية</p>',
+                            ],
+                        ],
+                    ],
+                    [
+                        'name'           => 'brands_section',
+                        'global_content' => [],
+                        'translations'   => [
+                            'en' => [
+                                'title'     => 'Trusted by Leading Brands',
+                                'sub_title' => 'We are proud to work with some of the most innovative companies in the world',
+                            ],
+                            'hi' => [
+                                'title'     => 'अग्रणी ब्रांडों द्वारा भरोसा',
+                                'sub_title' => 'हमें दुनिया की कुछ सबसे नवाचारी कंपनियों के साथ काम करने पर गर्व है',
+                            ],
+                            'ar' => [
+                                'title'     => 'موثوق من قبل العلامات التجارية الرائدة',
+                                'sub_title' => 'نحن فخورون بالعمل مع بعض أكثر الشركات ابتكارًا في العالم',
                             ],
                         ],
                     ],

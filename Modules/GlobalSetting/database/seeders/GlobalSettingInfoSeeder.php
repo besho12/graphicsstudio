@@ -15,7 +15,7 @@ class GlobalSettingInfoSeeder extends Seeder
     {
         $setting_data = [
             'app_name' => 'Frisk',
-            'version' => '1.2.1',
+            'version' => '1.0.0',
             'logo' => 'uploads/website-images/logo.svg',
             'logo_white' => 'uploads/website-images/logo-white.svg',
             'timezone' => 'Asia/Dhaka',

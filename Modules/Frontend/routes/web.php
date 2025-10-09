@@ -9,6 +9,9 @@ use Modules\Frontend\app\Http\Controllers\CounterSectionController;
 use Modules\Frontend\app\Http\Controllers\ChooseUsSectionController;
 use Modules\Frontend\app\Http\Controllers\TestimonialSectionController;
 use Modules\Frontend\app\Http\Controllers\ServiceFeatureSectionController;
+use Modules\Frontend\app\Http\Controllers\ServiceSectionController;
+use Modules\Frontend\app\Http\Controllers\BrandsSectionController;
+use Modules\Frontend\app\Http\Controllers\ProjectSectionController;
 
 Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('hero-section', [HeroSectionController::class, 'index'])->name('hero-section.index');
@@ -21,10 +24,16 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.
     Route::put('counter-section', [CounterSectionController::class, 'update'])->name('counter-section.update');
     Route::get('service-features-section', [ServiceFeatureSectionController::class, 'index'])->name('service-features-section.index');
     Route::put('service-features-section', [ServiceFeatureSectionController::class, 'update'])->name('service-features-section.update');
+    Route::get('service-section', [ServiceSectionController::class, 'index'])->name('service-section.index');
+    Route::put('service-section', [ServiceSectionController::class, 'update'])->name('service-section.update');
     Route::get('choose-us-section', [ChooseUsSectionController::class, 'index'])->name('choose-us-section.index');
     Route::put('choose-us-section', [ChooseUsSectionController::class, 'update'])->name('choose-us-section.update');
+    Route::get('brands-section', [BrandsSectionController::class, 'index'])->name('brands-section.index');
+    Route::put('brands-section', [BrandsSectionController::class, 'update'])->name('brands-section.update');
     Route::get('banner-section', [BannerSectionController::class, 'index'])->name('banner-section.index');
     Route::put('banner-section', [BannerSectionController::class, 'update'])->name('banner-section.update');
     Route::get('contact-section', [ContactSectionController::class,'index'])->name('contact-section.index');
     Route::put('contact-section', [ContactSectionController::class,'update'])->name('contact-section.update');
+    Route::get('project-section', [ProjectSectionController::class, 'index'])->name('project-section.index');
+    Route::put('project-section', [ProjectSectionController::class, 'update'])->name('project-section.update');
 });

@@ -52,8 +52,8 @@
         <div class="copyright-wrap copyright-modern">
             <div class="row gy-3 justify-content-center align-items-center text-center">
                 <div class="col-md-12">
-                    <p class="copyright-text copyright-text-modern">{{ $setting?->copyright_text }}
-                        <a href="{{ route('home') }}" class="copyright-link-modern">{{ $setting?->app_name }}</a>
+                    <p class="copyright-text copyright-text-modern">
+                        <a href="https://hamdiesolutions.com/" class="copyright-link-modern" target="_blank">Powered by © Hamdies Solutions</a>
                     </p>
                 </div>
             </div>

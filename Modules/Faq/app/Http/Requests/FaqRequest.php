@@ -17,6 +17,7 @@ class FaqRequest extends FormRequest
         $rules = [
             'question' => 'required|string|max:255',
             'answer' => 'required|string|max:10000',
+            'service_id' => 'nullable|exists:services,id',
         ];
 
         return $rules;
@@ -31,6 +32,7 @@ class FaqRequest extends FormRequest
             'answer.required' => __('The answer field is required.'),
             'answer.string' => __('The answer must be a string.'),
             'answer.max' => __('The answer may not be greater than 10000 characters.'),
+            'service_id.exists' => __('The selected service is invalid.'),
         ];
     }
 }

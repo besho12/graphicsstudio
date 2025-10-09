@@ -8,8 +8,12 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center mb-5">
                 <div class="title-area">
-                    <h2 class="sec-title">{{ __('What We Can Do for Our Clients') }}</h2>
-                    <p class="sec-subtitle mt-3">{{ __('Discover our comprehensive range of professional services designed to elevate your business to new heights') }}</p>
+                    <h2 class="sec-title">{{ $serviceSection?->getTranslation(app()->getLocale())?->content?->title ?? __('What We Can Do for Our Clients') }}</h2>
+                    @if($serviceSection?->getTranslation(app()->getLocale())?->content?->sub_title)
+                        <p class="sec-subtitle mt-3">{{ $serviceSection?->getTranslation(app()->getLocale())?->content?->sub_title }}</p>
+                    @else
+                        <p class="sec-subtitle mt-3">{{ __('Discover our comprehensive range of professional services designed to elevate your business to new heights') }}</p>
+                    @endif
                 </div>
             </div>
         </div>

@@ -62,29 +62,11 @@
                             <div class="hero-stats-grid" data-aos="fade-up" data-aos-delay="400">
                                 <div class="stat-card">
                                     <div class="stat-icon">
-                                        <i class="fas fa-bolt"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <span class="stat-number">24h</span>
-                                        <span class="stat-label">{{ __('Fast Delivery') }}</span>
-                                    </div>
-                                </div>
-                                <div class="stat-card">
-                                    <div class="stat-icon">
                                         <i class="fas fa-award"></i>
                                     </div>
                                     <div class="stat-content">
                                         <span class="stat-number">100%</span>
                                         <span class="stat-label">{{ __('Quality') }}</span>
-                                    </div>
-                                </div>
-                                <div class="stat-card">
-                                    <div class="stat-icon">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <span class="stat-number">500+</span>
-                                        <span class="stat-label">{{ __('Projects') }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -489,8 +471,8 @@
                     </div>
                     <span>{{ __('FAQ') }}</span>
                 </div>
-                <h2 class="section-title-enhanced">{{ __('Frequently Asked Questions') }}</h2>
-                <p class="section-subtitle-enhanced">{{ __('Find answers to common questions about our services and process') }}</p>
+                <h2 class="section-title-enhanced">{{ $serviceSection?->getTranslation(app()->getLocale())?->content?->title ?? __('Frequently Asked Questions') }}</h2>
+                <p class="section-subtitle-enhanced">{{ $serviceSection?->getTranslation(app()->getLocale())?->content?->sub_title ?? __('Find answers to common questions about our services and process') }}</p>
                 <div class="section-divider-enhanced"></div>
             </div>
             
@@ -548,74 +530,99 @@
         </div>
     </section>
 
-                <br>
+    <!-- Contact Form Section -->
+    <div class="contact-form-section space-bottom">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <div class="contact-form-header">
+                    <h2 class="contact-form-title">{{ __('Have Any Project on Your Mind?') }}</h2>
+                    <p class="contact-form-subtitle">
+                        {{ __("Great! We're excited to hear from you and let's start something") }}
+                    </p>
+                </div>
 
-                <!-- Contact Area -->
-                <div class="contact-area-1 space bg-theme">
-                        <div class="contact-map shape-mockup wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s"
-                            data-left="0" data-top="-100px" data-bottom="140px">
-                            <iframe src="{{ $contactSection?->map }}" allowfullscreen="" loading="lazy"></iframe>
+                <form action="{{ route('send-contact-message') }}" id="contact-form" class="modern-contact-form">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" placeholder=" " value="{{ old('name') }}" required>
+                                <label class="form-label">{{__('Your Name')}}</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="container">
-                            <div class="row align-items-center justify-content-end">
-                                <div class="col-lg-6">
-                                    <div class="contact-form-wrap">
-                                        <div class="title-area mb-30">
-                                            <h2 class="sec-title">{{ __('Have Any Project on Your Mind?') }}</h2>
-                                            <p>{{ __("Great! We're excited to hear from you and let's start something") }}</p>
-                                        </div>
-                                        <form action="{{ route('send-contact-message') }}" id="contact-form" class="contact-form">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control style-border" name="name"
-                                                            placeholder="{{ __('Full name') }}*" value="{{ old('name') }}" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control style-border" name="email"
-                                                            placeholder="{{ __('Email address') }}*" value="{{ old('email') }}" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control style-border" name="website"
-                                                            placeholder="{{ __('Website link') }}" value="{{ old('website') }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control style-border" name="subject"
-                                                            value="{{ $service?->title }} - Service" placeholder="{{ __('Subject') }}*" value="{{ old('subject') }}" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <textarea name="message" placeholder="{{ __('How Can We Help You') }}*" class="form-control style-border" required>{{ old('message') }}</textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @if ($setting?->recaptcha_status == 'active')
-                                                <div class="form-group mb-0 col-12">
-                                                    <div class="g-recaptcha" data-sitekey="{{ $setting?->recaptcha_site_key }}"></div>
-                                                </div>
-                                            @endif
-                                            <div class="form-btn col-12">
-                                                <button type="submit" class="btn mt-20">
-                                                    <span class="link-effect text-uppercase">
-                                                        <span class="effect-1">{{ __('Send message') }}</span>
-                                                        <span class="effect-1">{{ __('Send message') }}</span>
-                                                    </span>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder=" " value="{{ old('email') }}" required>
+                                <label class="form-label">{{__('Your Email')}}</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="website" class="form-control" placeholder=" " value="{{ old('website') }}">
+                                <label class="form-label">{{__('Your Website')}}</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="subject" class="form-control" placeholder=" " value="{{ $service?->title }} - Service" required>
+                                <label class="form-label">{{__('Subject')}}</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-tag"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder=" " rows="5" required>{{ old('message') }}</textarea>
+                        <label class="form-label">{{__('Your Message')}}</label>
+                        <div class="form-icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                    </div>
+                    
+                    @if ($setting?->recaptcha_status == 'active')
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="{{ $setting?->recaptcha_site_key }}"></div>
+                        </div>
+                    @endif
+                    
+                    <!-- Form Messages -->
+                    <div id="form-messages" style="display: none;">
+                        <div id="success-message" class="alert alert-success" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <span>{{ __('Your message has been sent successfully!') }}</span>
+                        </div>
+                        <div id="error-message" class="alert alert-danger" style="display: none;">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>{{ __('Something went wrong. Please try again.') }}</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn" class="contact-submit-btn">
+                        <span class="btn-text">{{__('Send Message')}}</span>
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                        <div class="spinner-border spinner-border-sm" role="status" style="display: none;">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
             </div>
         </div>
     </div>
@@ -626,4 +633,90 @@
 @endsection
 @section('footer')
     @include('frontend.layouts.footer-layout.two')
+@endsection
+
+@section('scripts')
+<script>
+$(document).ready(function() {
+    $('#contact-form').on('submit', function(e) {
+        e.preventDefault();
+        
+        const form = $(this);
+        const submitBtn = $('#submit-btn');
+        const btnText = submitBtn.find('.btn-text');
+        const btnIcon = submitBtn.find('.btn-icon');
+        const spinner = submitBtn.find('.spinner-border');
+        const formMessages = $('#form-messages');
+        const successMessage = $('#success-message');
+        const errorMessage = $('#error-message');
+        
+        // Reset messages
+        formMessages.hide();
+        successMessage.hide();
+        errorMessage.hide();
+        
+        // Show loading state
+        submitBtn.prop('disabled', true);
+        btnText.text('{{ __("Sending...") }}');
+        btnIcon.hide();
+        spinner.show();
+        
+        // Get form data
+        const formData = new FormData(form[0]);
+        
+        $.ajax({
+            url: form.attr('action'),
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                // Show success message
+                successMessage.show();
+                formMessages.show();
+                
+                // Reset form
+                form[0].reset();
+                
+                // Reset reCAPTCHA if present
+                if (typeof grecaptcha !== 'undefined') {
+                    grecaptcha.reset();
+                }
+                
+                // Scroll to success message
+                $('html, body').animate({
+                    scrollTop: formMessages.offset().top - 100
+                }, 500);
+            },
+            error: function(xhr) {
+                // Show error message
+                let errorText = '{{ __("Something went wrong. Please try again.") }}';
+                
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    errorText = xhr.responseJSON.message;
+                } else if (xhr.responseJSON && xhr.responseJSON.errors) {
+                    const errors = Object.values(xhr.responseJSON.errors).flat();
+                    errorText = errors.join(', ');
+                }
+                
+                errorMessage.find('span').text(errorText);
+                errorMessage.show();
+                formMessages.show();
+                
+                // Scroll to error message
+                $('html, body').animate({
+                    scrollTop: formMessages.offset().top - 100
+                }, 500);
+            },
+            complete: function() {
+                // Reset button state
+                submitBtn.prop('disabled', false);
+                btnText.text('{{ __("Send Message") }}');
+                spinner.hide();
+                btnIcon.show();
+            }
+        });
+    });
+});
+</script>
 @endsection

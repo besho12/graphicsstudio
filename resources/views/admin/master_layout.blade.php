@@ -72,22 +72,7 @@
                         @endif
                     </ul>
                 </div>
-                <div class="mr-auto me-md-auto search-box position-relative">
-                    <x-admin.form-input id="search_menu" :placeholder="__('Search option')" />
-                    <div id="admin_menu_list" class="position-absolute d-none rounded-2">
-                        @foreach (App\Enums\RouteList::getAll() as $route_item)
-                            @if (checkAdminHasPermission($route_item?->permission) || empty($route_item?->permission))
-                                <a @isset($route_item->tab) 
-                                        data-active-tab="{{ $route_item->tab }}" class="border-bottom search-menu-item" 
-                                    @else 
-                                        class="border-bottom" 
-                                    @endisset
-                                    href="{{ $route_item?->route }}">{{ $route_item?->name }}</a>
-                            @endif
-                        @endforeach
-                        <a class="not-found-message d-none" href="javascript:;">{{ __('Not Found!') }}</a>
-                    </div>
-                </div>
+                {{-- Admin search box removed --}}
 
                 <ul class="navbar-nav">
                     <li class="dropdown border rounded-2 mx-2 dropdown-list-toggle">

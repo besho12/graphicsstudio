@@ -3,8 +3,8 @@
         <div class="row justify-content-center">
             <div class="col-xl-10">
                 <div class="section-title text-center mb-60">
-                    <h2 class="sec-title">{{ __('Frequently Asked Questions') }}</h2>
-                    <p class="sec-text">{{ __('Find answers to common questions about our services and processes') }}</p>
+                    <h2 class="sec-title">{{ $faqSection?->getTranslation(app()->getLocale())?->content?->title ?? __('Frequently Asked Questions') }}</h2>
+                    <p class="sec-text">{{ $faqSection?->getTranslation(app()->getLocale())?->content?->sub_title ?? __('Find answers to common questions about our services and processes') }}</p>
                 </div>
                 <div class="faq-accordion-modern" id="faqAccordionModern">
                     @foreach ($faqs as $index => $faq)

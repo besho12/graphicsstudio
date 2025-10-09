@@ -41,7 +41,7 @@
                             </div>
                             <div class="service-card-footer">
                                 <a href="{{ route('single.service', $service?->slug) }}" class="modern-btn">
-                                    <span class="btn-text">{{ $service?->btn_text ?? 'View Details' }}</span>
+                                    <span class="btn-text">{{ $service?->btn_text ?? __('View Details') }}</span>
                                     <span class="btn-icon">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -189,10 +189,10 @@ $(document).ready(function() {
         const errorMessage = $('#error-message');
         
         // Show loading state
-        submitBtn.prop('disabled', true);
-        btnText.text('Sending...');
-        btnIcon.hide();
-        spinner.show();
+                submitBtn.prop('disabled', true);
+                btnText.text('{{ __("Sending...") }}');
+                btnIcon.hide();
+                spinner.show();
         
         // Hide previous messages
         formMessages.hide();
@@ -219,10 +219,10 @@ $(document).ready(function() {
             error: function(xhr) {
                 // Show error message
                 if (xhr.responseJSON && xhr.responseJSON.message) {
-                    errorMessage.find('span').text(xhr.responseJSON.message);
-                } else {
-                    errorMessage.find('span').text('Something went wrong. Please try again.');
-                }
+                        errorMessage.find('span').text(xhr.responseJSON.message);
+                    } else {
+                        errorMessage.find('span').text('{{ __("Something went wrong. Please try again.") }}');
+                    }
                 errorMessage.show();
                 formMessages.show();
                 
@@ -234,7 +234,7 @@ $(document).ready(function() {
             complete: function() {
                 // Reset button state
                 submitBtn.prop('disabled', false);
-                btnText.text('Send Message');
+                btnText.text('{{ __("Send Message") }}');
                 spinner.hide();
                 btnIcon.show();
             }

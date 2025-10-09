@@ -22,6 +22,11 @@ class SectionTranslation extends Model {
      * Accessor to decode JSON content when retrieving.
      */
     public function getContentAttribute($value):object|null {
-        return json_decode($value);
+        if (empty($value)) {
+            return null;
+        }
+        
+        $decoded = json_decode($value);
+        return is_object($decoded) ? $decoded : null;
     }
 }

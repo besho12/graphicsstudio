@@ -316,6 +316,9 @@ enum RouteList {
                 'name' => __('Choose Us Section'), 'route' => route('admin.choose-us-section.index'), 'permission' => 'section.management',
             ],
             (object) [
+                'name' => __('Brands Section'), 'route' => route('admin.brands-section.index'), 'permission' => 'section.management',
+            ],
+            (object) [
                 'name' => __('Testimonial Section'), 'route' => route('admin.testimonial-section.index'), 'permission' => 'section.management',
             ],
 

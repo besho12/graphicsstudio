@@ -27,6 +27,8 @@
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-button">
+                            <!-- Modern Language Switcher -->
+                            @include('frontend.partials.language-switcher', ['class' => 'desktop'])
                             {{-- @include('frontend.partials.cart-menu') --}}
 
                             {{-- @auth('web')

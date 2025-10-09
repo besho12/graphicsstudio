@@ -1,0 +1,354 @@
+/* Dark Blue Themed Mobile Menu */
+:root {
+    --mobile-dark-bg: #1a202c;
+    --mobile-darker-bg: #2d3748;
+    --mobile-blue-primary: #3182ce;
+    --mobile-blue-secondary: #4299e1;
+    --mobile-blue-light: #63b3ed;
+    --mobile-text-white: #ffffff;
+    --mobile-text-gray: #e2e8f0;
+    --mobile-border-blue: #4299e1;
+}
+
+/* Mobile Menu Wrapper - Dark overlay */
+.mobile-menu-wrapper {
+    background-color: rgba(26, 32, 44, 0.85) !important;
+    backdrop-filter: blur(8px);
+}
+
+/* Mobile Menu Area - Dark background */
+.mobile-menu-wrapper .mobile-menu-area {
+    background-color: var(--mobile-dark-bg) !important;
+    border-right: 3px solid var(--mobile-blue-primary);
+    box-shadow: 0 0 30px rgba(49, 130, 206, 0.3);
+}
+
+/* Mobile Logo Section */
+.mobile-menu-wrapper .mobile-logo {
+    background-color: var(--mobile-darker-bg) !important;
+    border-bottom: 2px solid var(--mobile-blue-primary);
+    padding: 30px 20px !important;
+}
+
+/* Menu Close Button - Remove circular border and apply blue theme */
+.mobile-menu-wrapper .menu-toggle {
+    border-radius: 8px !important; /* Remove circular border */
+    border: 2px solid var(--mobile-blue-primary) !important;
+    background-color: var(--mobile-darker-bg) !important;
+    color: var(--mobile-text-white) !important;
+    width: 45px !important;
+    height: 45px !important;
+    transition: all 0.3s ease !important;
+}
+
+.mobile-menu-wrapper .menu-toggle:hover {
+    background-color: var(--mobile-blue-primary) !important;
+    border-color: var(--mobile-blue-secondary) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 15px rgba(49, 130, 206, 0.5) !important;
+}
+
+/* Mobile Menu Items */
+.mobile-menu {
+    border-bottom: 2px solid var(--mobile-blue-primary) !important;
+}
+
+.mobile-menu ul li a {
+    color: var(--mobile-text-white) !important;
+    border-bottom: 1px solid rgba(66, 153, 225, 0.2) !important;
+    transition: all 0.3s ease !important;
+    padding: 12px 0 !important;
+}
+
+.mobile-menu ul li a:hover {
+    color: var(--mobile-blue-light) !important;
+    background-color: rgba(49, 130, 206, 0.1) !important;
+    padding-left: 10px !important;
+    border-left: 3px solid var(--mobile-blue-primary) !important;
+}
+
+/* Active menu items */
+.mobile-menu ul li.active a,
+.mobile-menu ul li.active-class > a {
+    color: var(--mobile-blue-light) !important;
+    background-color: rgba(49, 130, 206, 0.2) !important;
+    border-left: 3px solid var(--mobile-blue-primary) !important;
+    padding-left: 10px !important;
+}
+
+/* Submenu items */
+.mobile-menu ul li ul li a {
+    color: var(--mobile-text-gray) !important;
+    font-size: 16px !important;
+    padding-left: 30px !important;
+}
+
+.mobile-menu ul li ul li a:hover {
+    color: var(--mobile-blue-light) !important;
+    background-color: rgba(49, 130, 206, 0.15) !important;
+    padding-left: 35px !important;
+}
+
+/* Dropdown expand icons */
+.mobile-menu .submenu-item-has-children > a .mean-expand-class {
+    color: var(--mobile-blue-secondary) !important;
+    border-radius: 4px !important; /* Remove circular border */
+    background-color: rgba(49, 130, 206, 0.1) !important;
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-top: -15px !important;
+}
+
+.mobile-menu .submenu-item-has-children > a .mean-expand-class:hover {
+    background-color: var(--mobile-blue-primary) !important;
+    color: var(--mobile-text-white) !important;
+}
+
+/* Sidebar wrap sections */
+.mobile-menu-wrapper .sidebar-wrap h6 {
+    color: var(--mobile-text-white) !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+}
+
+.mobile-menu-wrapper .sidebar-wrap a {
+    color: var(--mobile-text-gray) !important;
+    transition: color 0.3s ease !important;
+}
+
+.mobile-menu-wrapper .sidebar-wrap a:hover {
+    color: var(--mobile-blue-light) !important;
+}
+
+/* Modern Social Icons Redesign */
+.mobile-menu-wrapper .social-btn.style3 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    padding: 20px 0 !important;
+    margin-top: 20px !important;
+    border-top: 1px solid rgba(66, 153, 225, 0.2) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50px !important;
+    height: 50px !important;
+    border: 2px solid var(--mobile-blue-primary) !important;
+    background: linear-gradient(135deg, rgba(49, 130, 206, 0.1), rgba(66, 153, 225, 0.05)) !important;
+    border-radius: 12px !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+    transition: left 0.6s ease !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a:hover::before {
+    left: 100% !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a:hover {
+    background: linear-gradient(135deg, var(--mobile-blue-primary), var(--mobile-blue-secondary)) !important;
+    border-color: var(--mobile-blue-light) !important;
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.4), 0 0 20px rgba(49, 130, 206, 0.2) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a:active {
+    transform: translateY(-1px) scale(1.02) !important;
+    transition: all 0.1s ease !important;
+}
+
+/* Social Icon Images */
+.mobile-menu-wrapper .social-btn.style3 a .social-icon {
+    width: 24px !important;
+    height: 24px !important;
+    object-fit: contain !important;
+    filter: brightness(0) invert(1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a:hover .social-icon {
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Link Effect Spans */
+.mobile-menu-wrapper .social-btn.style3 a .link-effect {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a .link-effect .effect-1 {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a .link-effect .effect-1:first-child {
+    opacity: 1 !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a .link-effect .effect-1:last-child {
+    position: absolute !important;
+    opacity: 0 !important;
+    transform: scale(0.8) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a:hover .link-effect .effect-1:first-child {
+    opacity: 0 !important;
+    transform: scale(1.2) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a:hover .link-effect .effect-1:last-child {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+/* Platform-specific colors on hover */
+.mobile-menu-wrapper .social-btn.style3 a[href*="facebook"]:hover {
+    background: linear-gradient(135deg, #1877f2, #42a5f5) !important;
+    border-color: #1877f2 !important;
+    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4), 0 0 20px rgba(24, 119, 242, 0.2) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a[href*="instagram"]:hover {
+    background: linear-gradient(135deg, #e4405f, #fd1d1d, #fcb045) !important;
+    border-color: #e4405f !important;
+    box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4), 0 0 20px rgba(228, 64, 95, 0.2) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a[href*="twitter"]:hover {
+    background: linear-gradient(135deg, #1da1f2, #0d8bd9) !important;
+    border-color: #1da1f2 !important;
+    box-shadow: 0 8px 25px rgba(29, 161, 242, 0.4), 0 0 20px rgba(29, 161, 242, 0.2) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a[href*="dribbble"]:hover {
+    background: linear-gradient(135deg, #ea4c89, #f082ac) !important;
+    border-color: #ea4c89 !important;
+    box-shadow: 0 8px 25px rgba(234, 76, 137, 0.4), 0 0 20px rgba(234, 76, 137, 0.2) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a[href*="linkedin"]:hover {
+    background: linear-gradient(135deg, #0077b5, #00a0dc) !important;
+    border-color: #0077b5 !important;
+    box-shadow: 0 8px 25px rgba(0, 119, 181, 0.4), 0 0 20px rgba(0, 119, 181, 0.2) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a[href*="youtube"]:hover {
+    background: linear-gradient(135deg, #ff0000, #ff4444) !important;
+    border-color: #ff0000 !important;
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4), 0 0 20px rgba(255, 0, 0, 0.2) !important;
+}
+
+.mobile-menu-wrapper .social-btn.style3 a[href*="tiktok"]:hover {
+    background: linear-gradient(135deg, #000000, #333333) !important;
+    border-color: #000000 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Responsive adjustments for social icons */
+@media (max-width: 400px) {
+    .mobile-menu-wrapper .social-btn.style3 {
+        gap: 8px !important;
+    }
+    
+    .mobile-menu-wrapper .social-btn.style3 a {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .mobile-menu-wrapper .social-btn.style3 a .social-icon {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+/* Menu item has children styling */
+.mobile-menu ul .menu-item-has-children > a {
+    position: relative;
+}
+
+.mobile-menu ul .menu-item-has-children > a::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mobile-blue-secondary);
+    background-color: rgba(49, 130, 206, 0.1);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu ul .menu-item-has-children.active > a::after {
+    content: '\f106';
+    background-color: var(--mobile-blue-primary);
+    color: var(--mobile-text-white);
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .mobile-menu-wrapper .mobile-menu-area {
+        max-width: 280px !important;
+    }
+}
+
+/* Animation improvements */
+.mobile-menu-wrapper.body-visible .mobile-menu-area {
+    animation: slideInLeft 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar styling for dark theme */
+.mobile-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mobile-menu::-webkit-scrollbar-track {
+    background: var(--mobile-darker-bg);
+}
+
+.mobile-menu::-webkit-scrollbar-thumb {
+    background: var(--mobile-blue-primary);
+    border-radius: 3px;
+}
+
+.mobile-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--mobile-blue-secondary);
+}

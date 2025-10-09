@@ -1,0 +1,107 @@
+@extends('admin.master_layout')
+@section('title')
+    <title>{{ __('Service Section') }}</title>
+@endsection
+@php
+    $current_theme_title = collect(App\Enums\ThemeList::themes())->firstWhere('name', DEFAULT_HOMEPAGE)?->title
+@endphp
+@section('admin-content')
+    <div class="main-content">
+        <section class="section">
+            <x-admin.breadcrumb title="{{ __('Service Section') }} ( {{$current_theme_title}} )" :list="[
+                __('Dashboard') => route('admin.dashboard'),
+                __('Service Section') => '#',
+            ]" />
+            <div class="section-body row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header gap-3 justify-content-between align-items-center">
+                            <h5 class="m-0 service_card">{{ __('Available Translations') }}</h5>
+                            @if ($code !== $languages->first()->code)
+                                <x-admin.button id="translate-btn" :text="__('Translate')" />
+                            @endif
+                        </div>
+                        <div class="card-body">
+                            <div class="lang_list_top">
+                                <ul class="lang_list">
+                                    @foreach ($languages as $language)
+                                        <li><a id="{{ request('code') == $language->code ? 'selected-language' : '' }}"
+                                                href="{{ route('admin.service-section.index', ['code' => $language->code]) }}"><i
+                                                    class="fas {{ request('code') == $language->code ? 'fa-eye' : 'fa-edit' }}"></i>
+                                                {{ $language->name }}</a></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div class="mt-2 alert alert-danger" role="alert">
+                                @php
+                                    $current_language = $languages->where('code', request()->get('code'))->first();
+                                @endphp
+                                <p>{{ __('Your editing mode') }}:<b> {{ $current_language?->name }}</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body">
+                <div class="mt-4 row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <x-admin.form-title :text="__('Service Section')" />
+                                <div>
+                                    <x-admin.back-button :href="route('admin.dashboard')" />
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{ route('admin.service-section.update', ['code' => $code]) }}" method="post"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <x-admin.form-input id="title" data-translate="true" name="title"
+                                                    label="{{ __('Service Section Title') }}" placeholder="{{ __('Service Section Title') }}"
+                                                    value="{{ $serviceSection?->getTranslation($code)?->content?->title }}"
+                                                    required="true" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="sub_title">{{ __('Service Section Subtitle') }}</label>
+                                                <textarea data-translate="true" id="sub_title" name="sub_title" 
+                                                    placeholder="{{ __('Service Section Subtitle') }}" class="form-control" rows="3">{{ $serviceSection?->getTranslation($code)?->content?->sub_title }}</textarea>
+                                                @error('sub_title')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <x-admin.update-button :text="__('Update')" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+@endsection
+
+@push('js')
+    <script>
+        (function($) {
+            "use strict";
+            $(document).ready(function() {
+                $("#translate-btn").on('click', function(e) {
+                    e.preventDefault();
+                    translateAllText();
+                });
+            });
+        })(jQuery);
+    </script>
+@endpush

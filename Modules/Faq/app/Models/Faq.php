@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Service\app\Models\Service;
 
 class Faq extends Model {
     use HasFactory;
@@ -13,7 +15,7 @@ class Faq extends Model {
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = ['status'];
+    protected $fillable = ['service_id', 'status'];
 
     public function getQuestionAttribute(): ?string {
         return $this?->translation?->question;
@@ -41,5 +43,9 @@ class Faq extends Model {
 
     public function scopeInactive($query) {
         return $query->where('status', 0);
+    }
+
+    public function service(): ?BelongsTo {
+        return $this->belongsTo(Service::class, 'service_id');
     }
 }

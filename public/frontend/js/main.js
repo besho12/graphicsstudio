@@ -431,35 +431,9 @@
     })
 
     /*===========================================
-    =         Search Box Popup         =
+    =         Search Box Popup - REMOVED         =
     =============================================*/
-    function popupSarchBox($searchBox, $searchOpen, $searchCls, $toggleCls) {
-        $($searchOpen).on("click", function (e) {
-            e.preventDefault();
-            $($searchBox).addClass($toggleCls);
-        });
-        $($searchBox).on("click", function (e) {
-            e.stopPropagation();
-            $($searchBox).removeClass($toggleCls);
-        });
-        $($searchBox)
-            .find("form")
-            .on("click", function (e) {
-                e.stopPropagation();
-                $($searchBox).addClass($toggleCls);
-            });
-        $($searchCls).on("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            $($searchBox).removeClass($toggleCls);
-        });
-    }
-    popupSarchBox(
-        ".popup-search-box",
-        ".searchBoxToggler",
-        ".searchClose",
-        "show"
-    );
+    // Popup search functionality has been removed
 
 
 

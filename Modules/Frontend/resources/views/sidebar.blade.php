@@ -5,12 +5,10 @@
             [
                 'admin.hero-section.index',
                 'admin.about-section.index',
-                'admin.banner-section.index',
                 'admin.counter-section.index',
                 'admin.choose-us-section.index',
                 'admin.testimonial-section.index',
                 'admin.contact-section.index',
-                'admin.award.index',
                 'admin.marquee.index',
                 'admin.service-features-section.index',
             ],
@@ -23,11 +21,7 @@
             {{-- Section nav list --}}
             @if (checkAdminHasPermission('section.management')) 
                 @include('frontend::' . DEFAULT_HOMEPAGE . '.sidebar')
-                <li class="{{ isRoute('admin.banner-section.index', 'active') }}">
-                    <a class="nav-link" href="{{ route('admin.banner-section.index', ['code' => 'en']) }}">
-                        {{ __('Banner Section') }}
-                    </a>
-                </li>
+                {{-- Banner section removed --}}
                 <li class="{{ isRoute('admin.counter-section.index', 'active') }}">
                     <a class="nav-link" href="{{ route('admin.counter-section.index', ['code' => 'en']) }}">
                         {{ __('Counter Section') }}
@@ -36,6 +30,11 @@
                 <li class="{{ isRoute('admin.choose-us-section.index', 'active') }}">
                     <a class="nav-link" href="{{ route('admin.choose-us-section.index', ['code' => 'en']) }}">
                         {{ __('Choose Us Section') }}
+                    </a>
+                </li>
+                <li class="{{ isRoute('admin.brands-section.index', 'active') }}">
+                    <a class="nav-link" href="{{ route('admin.brands-section.index', ['code' => 'en']) }}">
+                        {{ __('Brands Section') }}
                     </a>
                 </li>
                 {{-- <li class="{{ isRoute('admin.testimonial-section.index', 'active') }}">
@@ -49,9 +48,7 @@
                     </a>
                 </li>
             @endif
-            @if (Module::isEnabled('Award') && checkAdminHasPermission('award.view'))
-                @include('award::sidebar')
-            @endif
+            {{-- Award section removed --}}
             @if (Module::isEnabled('Marquee') && checkAdminHasPermission('marquee.view'))
                 @include('marquee::sidebar')
             @endif

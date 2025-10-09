@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8">
                 <div class="title-area text-center ">
-                    <h2 class="sec-title">{{ __('What We Can Do for Our Clients') }}</h2>
+                    <h2 class="sec-title">{{ $serviceSection?->getTranslation(app()->getLocale())?->content?->title ?? __('What We Can Do for Our Clients') }}</h2>
                 </div>
             </div>
             <div class="col-xl-8">

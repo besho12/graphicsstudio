@@ -26,16 +26,16 @@
                 </p>
                 <div class="hero-stats-modern">
                     <div class="hero-stat-item">
-                        <span class="hero-stat-number">24/7</span>
-                        <span class="hero-stat-label">{{__('Support')}}</span>
+                        <span class="hero-stat-number">{{__('24/7')}}</span>
+                        <span class="hero-stat-text">{{__('Support')}}</span>
                     </div>
                     <div class="hero-stat-item">
-                        <span class="hero-stat-number">< 1hr</span>
-                        <span class="hero-stat-label">{{__('Response Time')}}</span>
+                        <span class="hero-stat-number">{{__('< 1hr')}}</span>
+                        <span class="hero-stat-text">{{__('Response Time')}}</span>
                     </div>
                     <div class="hero-stat-item">
-                        <span class="hero-stat-number">100%</span>
-                        <span class="hero-stat-label">{{__('Satisfaction')}}</span>
+                        <span class="hero-stat-number">{{__('100%')}}</span>
+                        <span class="hero-stat-text">{{__('Satisfaction')}}</span>
                     </div>
                 </div>
             </div>

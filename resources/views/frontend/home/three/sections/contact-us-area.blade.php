@@ -1,5 +1,5 @@
-<div class="contact-area-1 space bg-theme">
-    <div class="contact-map shape-mockup wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s"
+<div>
+    <div class="contact-map wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s"
         data-left="0" data-top="-100px" data-bottom="140px">
         <iframe src="{{ $contactSection?->map }}" allowfullscreen="" loading="lazy"></iframe>
     </div>

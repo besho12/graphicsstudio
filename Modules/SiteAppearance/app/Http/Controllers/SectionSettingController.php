@@ -35,7 +35,6 @@ class SectionSettingController extends Controller
                 'testimonial_section' => $request->has('testimonial_section'),
                 'service_section' => $request->has('service_section'),
                 'service_feature_section' => $request->has('service_feature_section'),
-                'award_section' => $request->has('award_section'),
                 'marquee_section' => $request->has('marquee_section'),
                 'call_to_action_section' => $request->has('call_to_action_section'),
                 'brands_section' => $request->has('brands_section'),
@@ -44,7 +43,6 @@ class SectionSettingController extends Controller
                 'choose_us_section' => $request->has('choose_us_section'),
                 'contact_us_section' => $request->has('contact_us_section'),
                 'pricing_section' => $request->has('pricing_section'),
-                'banner_section' => $request->has('banner_section'),
                 'latest_blog_section' => $request->has('latest_blog_section'),
             ]
         );

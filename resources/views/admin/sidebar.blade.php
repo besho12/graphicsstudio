@@ -122,9 +122,9 @@
                     checkAdminHasPermission('section.management') ||
                     checkAdminHasPermission('brand.management'))
                 <li class="menu-header">{{ __('Site Contents') }}</li>
-                @if (Module::isEnabled('SiteAppearance') && checkAdminHasPermission('appearance.management'))
+                {{-- @if (Module::isEnabled('SiteAppearance') && checkAdminHasPermission('appearance.management'))
                     @include('siteappearance::sidebar')
-                @endif
+                @endif --}}
 
                 @if (Module::isEnabled('Frontend') &&
                         (checkAdminHasPermission('section.management') ||

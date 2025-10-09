@@ -15,13 +15,13 @@
             <div class="hero-style4">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h1 class="hero-title">Transform Your Vision Into Digital Reality</h1>
-                        <p class="hero-text">We are a creative digital agency that helps businesses develop immersive and engaging user experiences that drive top-level growth and success.</p>
+                        <h1 class="hero-title">{!! clean(processText($hero?->content?->title)) !!}</h1>
+                        <p class="hero-text">{!! clean(processText($hero?->content?->sub_title)) !!}</p>
                         <div class="btn-group fade_right">
-                            <a href="/portfolios" class="btn">
+                            <a href="{{ $hero?->global_content?->action_button_url ?? '/portfolios' }}" class="btn">
                                 <span class="link-effect text-uppercase">
-                                    <span class="effect-1">View Our Work</span>
-                                    <span class="effect-1">View Our Work</span>
+                                    <span class="effect-1">{{ $hero?->content?->action_button_text ?? 'View Our Work' }}</span>
+                                    <span class="effect-1">{{ $hero?->content?->action_button_text ?? 'View Our Work' }}</span>
                                 </span>
                             </a>
                         </div>

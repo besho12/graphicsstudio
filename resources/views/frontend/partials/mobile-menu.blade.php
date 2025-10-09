@@ -35,13 +35,18 @@
                                 {{ $menu['label'] }}
                             </a>
 
-                            {{-- @if ($is_child)
+                            @if ($is_child)
                                 <ul class="sub-menu">
                                     @foreach ($menu['child'] as $child)
-                                        <x-child-menu :menu="$child" />
+                                        <li>
+                                            <a href="{{ $child['link'] == '#' || empty($child['link']) ? 'javascript:;' : url($child['link']) }}"
+                                                {{ $child['open_new_tab'] ? 'target="_blank"' : '' }}>
+                                                {{ $child['label'] }}
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
-                            @endif --}}
+                            @endif
                             
                         </li>
                     @endif
@@ -78,5 +83,8 @@
                 </a>
             @endforeach
         </div>
+        
+        <!-- Language Switcher -->
+        @include('frontend.partials.language-switcher', ['class' => 'mobile'])
     </div>
 </div>

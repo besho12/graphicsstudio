@@ -7,8 +7,8 @@
                 <i class="fas fa-briefcase"></i>
                 <span>{{ __('Portfolio') }}</span>
             </div>
-            <h2 class="section-title">{{ $project_section->title ?? __('Our Latest Projects') }}</h2>
-            <p class="section-subtitle">{{ $project_section->description ?? __('Discover our amazing portfolio of creative projects that showcase our expertise and innovation') }}</p>
+            <h2 class="section-title">{{ $projectSection->translation->content->title ?? __('Our Latest Projects') }}</h2>
+            <p class="section-subtitle">{{ $projectSection->translation->content->description ?? __('Discover our amazing portfolio of creative projects that showcase our expertise and innovation') }}</p>
         </div>
 
         {{-- Category Filter --}}
@@ -522,9 +522,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     .filter-buttons {
-        flex-direction: column;
         gap: 8px;
         padding: 12px;
+        flex-wrap: wrap;
     }
     
     .filter-btn {

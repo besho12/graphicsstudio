@@ -15,18 +15,7 @@
                             <p class="company-description">{{__('Creating exceptional digital experiences through innovative design and strategic thinking.')}}</p>
                         </div>
                         
-                        <!-- Newsletter Signup -->
-                        <div class="footer-newsletter-compact">
-                            <h4 class="newsletter-title-small">{{__('Stay Updated')}}</h4>
-                            <form id="newsletter-form" action="{{route('newsletter-request')}}" class="newsletter-form-compact">
-                                <div class="input-group-compact">
-                                    <input class="form-control-compact" type="email" name="email" placeholder="Your email" required>
-                                    <button type="submit" class="btn-subscribe-compact">
-                                        <i class="fas fa-paper-plane"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+
                     </div>
                 </div>
 
@@ -53,11 +42,11 @@
                     <div class="footer-services-section">
                         <h4 class="footer-title-modern">{{__('Services')}}</h4>
                         <ul class="footer-menu-organized">
-                            <li><a href="#" class="footer-link-clean">Web Design</a></li>
-                            <li><a href="#" class="footer-link-clean">Branding</a></li>
-                            <li><a href="#" class="footer-link-clean">Digital Marketing</a></li>
-                            <li><a href="#" class="footer-link-clean">Development</a></li>
-                            <li><a href="#" class="footer-link-clean">Consulting</a></li>
+                            <li><a href="#" class="footer-link-clean">{{__('Web Design')}}</a></li>
+                            <li><a href="#" class="footer-link-clean">{{__('Branding')}}</a></li>
+                            <li><a href="#" class="footer-link-clean">{{__('Digital Marketing')}}</a></li>
+                            <li><a href="#" class="footer-link-clean">{{__('Development')}}</a></li>
+                            <li><a href="#" class="footer-link-clean">{{__('Consulting')}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -115,18 +104,17 @@
                 <div class="col-md-6">
                     <div class="copyright-modern">
                         <p class="copyright-text-modern">
-                            {{$setting?->copyright_text}}
-                            <a href="{{route('home')}}" class="copyright-link-modern">{{$setting?->app_name}}</a>
+                            <a href="https://hamdiesolutions.com/" class="copyright-link-modern" target="_blank">Powered by © Hamdies Solutions</a>
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="footer-legal-modern">
-                        <a href="#" class="legal-link-modern">Privacy Policy</a>
+                        <a href="#" class="legal-link-modern">{{__('Privacy Policy')}}</a>
                         <span class="separator">|</span>
-                        <a href="#" class="legal-link-modern">Terms of Service</a>
+                        <a href="#" class="legal-link-modern">{{__('Terms of Service')}}</a>
                         <span class="separator">|</span>
-                        <a href="#" class="legal-link-modern">Cookies</a>
+                        <a href="#" class="legal-link-modern">{{__('Cookies')}}</a>
                     </div>
                 </div>
             </div>

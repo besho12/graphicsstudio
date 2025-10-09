@@ -533,9 +533,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     .filter-buttons {
-        flex-direction: column;
         gap: 8px;
         padding: 12px;
+        flex-wrap: wrap;
     }
     
     .filter-btn {

@@ -34,6 +34,12 @@
         <!-- service-area-end -->
     @endif
 
+    @if ($sectionSetting?->brands_section)
+        <!-- brand-area -->
+        @include('frontend.home.three.sections.brand-area')
+        <!-- brand-area-end -->
+    @endif
+
     @if ($sectionSetting?->contact_us_section)
         <!-- brand-area -->
         @include('frontend.home.three.sections.contact-us-area')

@@ -173,33 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Search functionality (if search input exists)
-    const searchInput = document.querySelector('.nav-search-input');
-    const searchResults = document.querySelector('.nav-search-results');
-    
-    if (searchInput && searchResults) {
-        let searchTimeout;
-        
-        searchInput.addEventListener('input', function() {
-            clearTimeout(searchTimeout);
-            const query = this.value.trim();
-            
-            if (query.length > 2) {
-                searchTimeout = setTimeout(() => {
-                    performSearch(query);
-                }, 300);
-            } else {
-                searchResults.style.display = 'none';
-            }
-        });
-        
-        // Close search results when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                searchResults.style.display = 'none';
-            }
-        });
-    }
+    // Search functionality removed
 
     // Language selector functionality
     const languageSelectors = document.querySelectorAll('.modern-select, .mobile-language-dropdown');
@@ -288,24 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initAnimations();
 
-    // Utility function for search (placeholder)
-    function performSearch(query) {
-        // Implement your search logic here
-        console.log('Searching for:', query);
-        
-        // Example search results display
-        if (searchResults) {
-            searchResults.innerHTML = `
-                <div class="search-result-item">
-                    <a href="#" class="search-result-link">
-                        <div class="search-result-title">Search result for "${query}"</div>
-                        <div class="search-result-description">This is a placeholder search result.</div>
-                    </a>
-                </div>
-            `;
-            searchResults.style.display = 'block';
-        }
-    }
+    // Search function removed
 
     // Add loading states for buttons
     function addLoadingState(button) {

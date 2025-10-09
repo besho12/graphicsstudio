@@ -63,4 +63,8 @@ class Service extends Model {
         return $this->hasMany(Project::class, 'service_id');
     }
 
+    public function faqs(): ?HasMany {
+        return $this->hasMany(\Modules\Faq\app\Models\Faq::class, 'service_id');
+    }
+
 }

@@ -1,0 +1,179 @@
+/* HERO MOBILE TEXT POSITION FIX - Move hero text higher on mobile devices */
+
+/* Mobile specific text positioning adjustments */
+@media (max-width: 768px) {
+    /* Move hero content higher on mobile */
+    .hero-content,
+    .hero-style4,
+    .hero-style3 {
+        top: 35% !important;
+        transform: translateY(-35%) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Move hero content even higher on smaller screens */
+    .hero-content,
+    .hero-style4,
+    .hero-style3 {
+        top: 30% !important;
+        transform: translateY(-30%) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Move hero content to upper third on very small screens */
+    .hero-content,
+    .hero-style4,
+    .hero-style3 {
+        top: 25% !important;
+        transform: translateY(-25%) !important;
+    }
+}
+
+/* Additional adjustments for better mobile readability */
+@media (max-width: 768px) {
+    /* Ensure proper spacing and readability */
+    .hero-title,
+    .hero-content h1,
+    .hero-style4 h1,
+    .hero-style3 h1 {
+        margin-bottom: 16px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-text,
+    .hero-content p,
+    .hero-style4 p,
+    .hero-style3 p {
+        margin-bottom: 20px !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Ensure buttons have proper spacing */
+    .hero-content .btn,
+    .hero-style4 .btn,
+    .hero-style3 .btn,
+    .btn-group {
+        margin-top: 24px !important;
+    }
+}
+
+/* Hero 1 specific adjustments */
+@media (max-width: 768px) {
+    .hero-1 .hero-content {
+        top: 35% !important;
+        transform: translateY(-35%) !important;
+        padding-top: 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-1 .hero-content {
+        top: 30% !important;
+        transform: translateY(-30%) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-1 .hero-content {
+        top: 25% !important;
+        transform: translateY(-25%) !important;
+    }
+}
+
+/* Hero 3 specific adjustments */
+@media (max-width: 768px) {
+    .hero-3 .hero-style3 {
+        top: 35% !important;
+        transform: translateY(-35%) !important;
+        padding-top: 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-3 .hero-style3 {
+        top: 30% !important;
+        transform: translateY(-30%) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-3 .hero-style3 {
+        top: 25% !important;
+        transform: translateY(-25%) !important;
+    }
+}
+
+/* Hero 4 specific adjustments */
+@media (max-width: 768px) {
+    .hero-4 .hero-style4,
+    .hero-4 .bg-theme {
+        top: 35% !important;
+        transform: translateY(-35%) !important;
+        padding-top: 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-4 .hero-style4,
+    .hero-4 .bg-theme {
+        top: 30% !important;
+        transform: translateY(-30%) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-4 .hero-style4,
+    .hero-4 .bg-theme {
+        top: 25% !important;
+        transform: translateY(-25%) !important;
+    }
+}
+
+/* Override any conflicting positioning from other CSS files */
+@media (max-width: 768px) {
+    .hero-wrapper .hero-content,
+    .hero-wrapper .hero-style3,
+    .hero-wrapper .hero-style4,
+    .hero-wrapper .bg-theme {
+        position: absolute !important;
+        top: 35% !important;
+        transform: translateY(-35%) !important;
+        left: 15px !important;
+        right: 15px !important;
+        z-index: 10 !important;
+        background: transparent !important;
+        padding: 25px 20px !important;
+        max-width: calc(100% - 30px) !important;
+        width: auto !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-wrapper .hero-content,
+    .hero-wrapper .hero-style3,
+    .hero-wrapper .hero-style4,
+    .hero-wrapper .bg-theme {
+        top: 30% !important;
+        transform: translateY(-30%) !important;
+        left: 12px !important;
+        right: 12px !important;
+        padding: 20px 15px !important;
+        max-width: calc(100% - 24px) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-wrapper .hero-content,
+    .hero-wrapper .hero-style3,
+    .hero-wrapper .hero-style4,
+    .hero-wrapper .bg-theme {
+        top: 25% !important;
+        transform: translateY(-25%) !important;
+        left: 10px !important;
+        right: 10px !important;
+        padding: 18px 12px !important;
+        max-width: calc(100% - 20px) !important;
+    }
+}

@@ -30,7 +30,9 @@ class FaqController extends Controller
     {
         checkAdminHasPermissionAndThrowException('faq.create');
 
-        return view('faq::create');
+        $services = Service::get();
+
+        return view('faq::create', compact('services'));
     }
 
     public function store(FaqRequest $request)

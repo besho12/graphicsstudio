@@ -5,7 +5,10 @@
                 <div class="sec_title_static">
                     <div class="sec_title_wrap">
                         <div class="title-area">
-                            <h2 class="sec-title">{{ __('What We Can Do for Our Clients') }}</h2>
+                            <h2 class="sec-title">{{ $serviceSection?->getTranslation(app()->getLocale())?->content?->title ?? __('What We Can Do for Our Clients') }}</h2>
+                            @if($serviceSection?->getTranslation(app()->getLocale())?->content?->sub_title)
+                                <p class="sec-text">{{ $serviceSection?->getTranslation(app()->getLocale())?->content?->sub_title }}</p>
+                            @endif
                         </div>
                     </div>
                 </div>
