@@ -64,72 +64,18 @@
             </div>
         </div>
 
+        <!-- Project Image Section -->
+        <div class="portfolio-image-section">
+            <div class="container">
+                <div class="portfolio-main-image-wrapper">
+                    <img src="{{ asset($project?->image) }}" alt="{{ $project?->title }}" class="portfolio-main-image">
+                </div>
+            </div>
+        </div>
+
         <!-- Main Content -->
         <div class="portfolio-main-content">
             <div class="container">
-                <!-- Gallery Section -->
-                <div class="portfolio-gallery-section">
-                    <div class="portfolio-gallery-wrapper">
-                        @if($project?->images && $project->images->count() > 0)
-                        <!-- Multi-Image Gallery Grid -->
-                        <div class="portfolio-gallery-grid">
-                            <div class="gallery-main-image">
-                                <img id="mainPortfolioImage" src="{{ asset($project?->image) }}" alt="{{ $project?->title }}" class="main-portfolio-image">
-                                <div class="image-zoom-overlay">
-                                    <button class="zoom-btn" data-image-src="{{ asset($project?->image) }}">
-                                        <i class="fas fa-search-plus"></i>
-                                    </button>
-                                </div>
-                                <div class="gallery-nav-controls">
-                                    <button class="gallery-nav-btn prev-btn" data-action="previous">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </button>
-                                    <button class="gallery-nav-btn next-btn" data-action="next">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </button>
-                                </div>
-                                <div class="gallery-counter">
-                                    <span id="currentImageIndex">1</span> / <span id="totalImages">{{ $project->images->count() + 1 }}</span>
-                                </div>
-                                <button class="full-view-btn" type="button" data-action="full-view">
-                                    <i class="fas fa-expand"></i>
-                                    <span>{{ __('Full View') }}</span>
-                                </button>
-                            </div>
-                            
-                            <div class="gallery-sidebar">
-                                <div class="gallery-thumbnail-grid">
-                                    <div class="gallery-thumbnail active" data-index="0" data-image-src="{{ asset($project?->image) }}">
-                                        <img src="{{ asset($project?->image) }}" alt="{{ $project?->title }}">
-                                        <div class="thumbnail-overlay"></div>
-                                    </div>
-                                    @foreach($project->images as $index => $image)
-                                    <div class="gallery-thumbnail" data-index="{{ $index + 1 }}" data-image-src="{{ asset($image->large_image) }}">
-                                         <img src="{{ asset($image->small_image) }}" alt="{{ $project?->title }}">
-                                         <div class="thumbnail-overlay"></div>
-                                     </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        @else
-                        <!-- Single Image Display -->
-                        <div class="portfolio-single-image">
-                            <img id="mainPortfolioImage" src="{{ asset($project?->image) }}" alt="{{ $project?->title }}" class="main-portfolio-image">
-                            <div class="image-zoom-overlay">
-                                <button class="zoom-btn" data-image-src="{{ asset($project?->image) }}">
-                                    <i class="fas fa-search-plus"></i>
-                                </button>
-                            </div>
-                            <button class="full-view-btn" type="button" data-action="full-view">
-                                <i class="fas fa-expand"></i>
-                                <span>{{ __('Full View') }}</span>
-                            </button>
-                        </div>
-                        @endif
-                    </div>
-                </div>
-
                 <!-- Details Grid -->
                 <div class="portfolio-details-grid">
                     <div class="row">
@@ -228,6 +174,63 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Section -->
+                <div class="portfolio-gallery-section">
+                    <div class="portfolio-gallery-wrapper">
+                        <div class="gallery-section-header">
+                            <h2 class="gallery-section-title">{{ __('Project Gallery') }}</h2>
+                        </div>
+                        @if($project?->images && $project->images->count() > 0)
+                        <!-- Multi-Image Gallery Grid -->
+                        <div class="portfolio-gallery-grid">
+                            <div class="gallery-main-image">
+                                <img id="mainPortfolioImage" src="{{ asset($project?->image) }}" alt="{{ $project?->title }}" class="main-portfolio-image">
+                                <div class="image-zoom-overlay">
+                                    <button class="zoom-btn" data-image-src="{{ asset($project?->image) }}">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="gallery-nav-controls">
+                                    <button class="gallery-nav-btn prev-btn" data-action="previous">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="gallery-nav-btn next-btn" data-action="next">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                            
+                            <div class="gallery-sidebar">
+                                <div class="gallery-thumbnail-grid">
+                                    <div class="gallery-thumbnail active" data-index="0" data-image-src="{{ asset($project?->image) }}">
+                                        <img src="{{ asset($project?->image) }}" alt="{{ $project?->title }}">
+                                        <div class="thumbnail-overlay"></div>
+                                    </div>
+                                    @foreach($project->images as $index => $image)
+                                    <div class="gallery-thumbnail" data-index="{{ $index + 1 }}" data-image-src="{{ asset($image->large_image) }}">
+                                         <img src="{{ asset($image->small_image) }}" alt="{{ $project?->title }}">
+                                         <div class="thumbnail-overlay"></div>
+                                     </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        @else
+                        <!-- Single Image Display -->
+                        <div class="portfolio-single-image">
+                            <img id="mainPortfolioImage" src="{{ asset($project?->image) }}" alt="{{ $project?->title }}" class="main-portfolio-image">
+                            <div class="image-zoom-overlay">
+                                <button class="zoom-btn" data-image-src="{{ asset($project?->image) }}">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -414,6 +417,32 @@
     overflow: hidden;
 }
 
+/* Project Image Section */
+.portfolio-image-section {
+    background: #1a252f;
+    padding: 60px 0;
+    border-bottom: 1px solid #34495e;
+}
+
+.portfolio-main-image-wrapper {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.portfolio-main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-main-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
 .portfolio-hero-section::before {
     content: '';
     position: absolute;
@@ -532,6 +561,36 @@
 /* Gallery Section */
 .portfolio-gallery-section {
     margin-bottom: 80px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Gallery Section Header */
+.gallery-section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gallery-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.gallery-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border-radius: 2px;
 }
 
 .portfolio-gallery-wrapper {
@@ -544,17 +603,23 @@
 /* Multi-Image Gallery Grid */
 .portfolio-gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 200px;
-    gap: 30px;
+    grid-template-columns: 1fr 150px;
+    gap: 20px;
     align-items: start;
+    justify-items: center;
 }
 
 .gallery-main-image {
     position: relative;
     border-radius: 15px;
     overflow: hidden;
-    background: #34495e;
-    height: 420px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .main-portfolio-image {
@@ -642,43 +707,9 @@
     transform: none;
 }
 
-/* Gallery Counter */
-.gallery-counter {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-}
 
-/* Full View Button */
-.full-view-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    color: #ffffff;
-    font-weight: 600;
-    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
-    transition: all 0.3s ease;
-    z-index: 2;
-}
 
-.full-view-btn:hover {
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
-    box-shadow: 0 10px 24px rgba(52, 152, 219, 0.45);
-}
+
 
 /* Gallery Sidebar */
 .gallery-sidebar {
@@ -688,21 +719,25 @@
 
 .gallery-thumbnail-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    max-height: 500px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
 .gallery-thumbnail {
     width: 100%;
-    height: 80px;
-    border-radius: 10px;
+    aspect-ratio: 1;
+    border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80px;
 }
 
 .gallery-thumbnail.active {
@@ -739,8 +774,13 @@
     position: relative;
     border-radius: 15px;
     overflow: hidden;
-    background: #34495e;
-    height: 420px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 /* Legacy Thumbnail Gallery (for backward compatibility) */
@@ -1158,8 +1198,25 @@
         gap: 15px;
     }
     
+    .portfolio-image-section {
+        padding: 40px 0;
+    }
+    
+    .portfolio-main-image-wrapper {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
     .portfolio-main-content {
         padding: 60px 0;
+    }
+    
+    .gallery-section-header {
+        margin-bottom: 20px;
+    }
+    
+    .gallery-section-title {
+        font-size: 2rem;
     }
     
     .portfolio-gallery-wrapper,
@@ -1176,34 +1233,37 @@
     
     .portfolio-gallery-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
+        justify-items: center;
+    }
+    
+    .gallery-main-image,
+    .portfolio-single-image {
+        max-width: 300px;
     }
     
     .gallery-sidebar {
         order: -1;
     }
 
-    .gallery-main-image,
-    .portfolio-single-image {
-        height: 300px;
-    }
-    
     .gallery-thumbnail-grid {
         grid-template-columns: repeat(4, 1fr);
         max-height: none;
+        gap: 8px;
+        justify-items: center;
     }
     
     .gallery-thumbnail {
-        height: 60px;
+        max-width: 60px;
     }
     
     .thumbnail-scroll-container {
-        gap: 10px;
+        gap: 8px;
     }
     
     .portfolio-thumbnail {
-        width: 80px;
-        height: 60px;
+        width: 60px;
+        height: 45px;
     }
     
     .nav-link {
@@ -1219,6 +1279,20 @@
     
     .section-title {
         font-size: 1.5rem;
+    }
+    
+    .gallery-main-image,
+    .portfolio-single-image {
+        max-width: 250px;
+    }
+    
+    .gallery-thumbnail {
+        max-width: 50px;
+    }
+    
+    .gallery-thumbnail-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
     }
     
     .portfolio-gallery-wrapper,
@@ -1237,11 +1311,6 @@
         width: 35px;
         height: 35px;
         font-size: 14px;
-    }
-
-    .gallery-main-image,
-    .portfolio-single-image {
-        height: 220px;
     }
 }
 </style>
@@ -1287,16 +1356,7 @@ function initializeGallery() {
         nextBtn.addEventListener('click', nextImage);
     }
 
-    // Add event listener for Full View button
-    const fullViewBtn = document.querySelector('.full-view-btn');
-    if (fullViewBtn) {
-        fullViewBtn.addEventListener('click', function() {
-            const mainImage = document.getElementById('mainPortfolioImage');
-            if (mainImage && mainImage.src) {
-                openImageModal(mainImage.src);
-            }
-        });
-    }
+
     
     // Add event listeners for zoom buttons
     const zoomBtns = document.querySelectorAll('.zoom-btn');
@@ -1325,8 +1385,7 @@ function initializeGallery() {
         modalClose.addEventListener('click', closeImageModal);
     }
     
-    // Update counter
-    updateGalleryCounter();
+
 }
 
 // Image Gallery Functions
@@ -1348,8 +1407,7 @@ function changeMainImage(imageSrc, thumbnailElement, index) {
             zoomBtn.setAttribute('data-image-src', imageSrc);
         }
         
-        // Update counter
-        updateGalleryCounter();
+
     }
 }
 
@@ -1377,17 +1435,7 @@ function nextImage() {
     }
 }
 
-function updateGalleryCounter() {
-    const currentIndexElement = document.getElementById('currentImageIndex');
-    const totalImagesElement = document.getElementById('totalImages');
-    
-    if (currentIndexElement) {
-        currentIndexElement.textContent = currentImageIndex + 1;
-    }
-    if (totalImagesElement) {
-        totalImagesElement.textContent = galleryImages.length;
-    }
-}
+
 
 function openImageModal(imageSrc) {
     const modal = document.getElementById('imageModal');

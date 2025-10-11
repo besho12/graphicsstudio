@@ -74,14 +74,6 @@
                                                     required="false" />
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <x-admin.form-editor id="description" name="description"
-                                                    label="{{ __('Description') }}" value="{!! $projectSection?->getTranslation($code)?->content?->description !!}"
-                                                    required="false" data-translate="true"/>
-                                                <small>{{ __('use \ for break and {} for bold') }}</small>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="text-center col-12">

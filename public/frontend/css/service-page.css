@@ -150,6 +150,32 @@
 .service-card-body {
     flex: 1;
     margin-bottom: 25px;
+    overflow: hidden;
+}
+
+/* Desktop specific fixes for service card footer visibility */
+@media (min-width: 769px) {
+    .modern-service-card {
+        height: auto;
+        min-height: 450px;
+        max-height: none;
+    }
+    
+    .service-card-body {
+        flex: 0 1 auto;
+        max-height: 280px;
+        overflow: hidden;
+    }
+    
+    .service-card-footer {
+        margin-top: auto !important;
+        flex-shrink: 0 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
 }
 
 .service-title {

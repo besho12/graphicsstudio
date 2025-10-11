@@ -39,11 +39,35 @@ class BrandsSectionController extends Controller
     public function update(BrandsSectionRequest $request)
     {
         checkAdminHasPermissionAndThrowException('section.management');
-        $code = $request->code;
-        $brandsSection = Section::getByName('brands_section');
+        $section = Section::getByName('brands_section');
 
-        $this->updateSectionTranslation($brandsSection, $request, $code);
+        // Update translated content
+        $content = $this->updateSectionContent($section?->content, $request, ['title', 'sub_title']);
+        
+        // Ensure content is never null
+        if (empty($content)) {
+            $content = [
+                'title' => $request->title ?? '',
+                'sub_title' => $request->sub_title ?? ''
+            ];
+        }
 
-        return $this->redirectWithMessage(RedirectType::UPDATE->value, 'admin.brands-section.index', ['code' => $code]);
+        $translation = SectionTranslation::where('section_id', $section->id)->exists();
+
+        if (!$translation) {
+            // Create initial translations for all languages with the content structure
+            $languages = Language::all();
+            foreach ($languages as $language) {
+                SectionTranslation::create([
+                    'section_id' => $section->id,
+                    'lang_code' => $language->code,
+                    'content' => $content
+                ]);
+            }
+        }
+
+        $this->updateTranslations($section, $request, $request->validated(), ['content' => $content]);
+
+        return $this->redirectWithMessage(RedirectType::UPDATE->value);
     }
 }

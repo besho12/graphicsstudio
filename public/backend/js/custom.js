@@ -33,9 +33,9 @@
         tinymce.init({
             selector: ".summernote-img",
             plugins:
-                "anchor autolink charmap link image lists searchreplace visualblocks fullscreen table",
+                "anchor autolink charmap link lists searchreplace visualblocks fullscreen table",
             toolbar:
-                "blocks fontsize  | bold italic underline | link| image | alignleft aligncenter alignright alignjustify lineheight | numlist bullist",
+                "blocks fontsize  | bold italic underline | link | alignleft aligncenter alignright alignjustify lineheight | numlist bullist",
             menubar: false,
             tinycomments_mode: "embedded",
             tinycomments_author: "Author name",

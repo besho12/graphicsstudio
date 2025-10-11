@@ -548,7 +548,6 @@
                             <h4 class="project-title-enhanced">
                                 <a href="{{ route('single.portfolio', $project?->slug) }}">{{ $project?->title }}</a>
                             </h4>
-                            <p class="project-description-enhanced">{{ Str::limit($project?->description, 120) }}</p>
                             <div class="project-footer-enhanced">
                                 <a href="{{ route('single.portfolio', $project?->slug) }}" class="project-cta-link">
                                     <span>{{ __('View Project') }}</span>
@@ -556,16 +555,7 @@
                                         <i class="fas fa-arrow-right"></i>
                                     </div>
                                 </a>
-                                <div class="project-engagement">
-                                    <div class="engagement-item">
-                                        <i class="fas fa-heart"></i>
-                                        <span>{{ rand(15, 99) }}</span>
-                                    </div>
-                                    <div class="engagement-item">
-                                        <i class="fas fa-eye"></i>
-                                        <span>{{ rand(100, 999) }}</span>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -579,13 +569,13 @@
                 </a>
             </div>
             
-            <div class="projects-cta-section">
+            <div class="projects-cta-section space-bottom">
                 <div class="cta-content">
                     <h3>{{ __('Like What You See?') }}</h3>
                     <p>{{ __('Ready to start your own project? Let\'s discuss how we can bring your vision to life.') }}</p>
                 </div>
                 <div class="cta-actions">
-                    <a href="#contact" class="cta-btn primary">
+                    <a href="#contact-form-section" class="cta-btn primary">
                         <span>{{ __('Start Your Project') }}</span>
                         <i class="fas fa-rocket"></i>
                     </a>
@@ -669,7 +659,7 @@
     </section>
 
     <!-- Contact Form Section -->
-    <div class="contact-form-section space-bottom">
+    <div id="contact-form-section" class="contact-form-section space-bottom">
         <div class="container">
             <div class="contact-form-wrapper">
                 <div class="contact-form-header">

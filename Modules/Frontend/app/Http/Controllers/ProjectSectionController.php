@@ -42,7 +42,7 @@ class ProjectSectionController extends Controller
         $section = Section::getByName('project_section');
 
         // Update translated content
-        $content = $this->updateSectionContent($section?->content, $request, ['title', 'sub_title', 'description']);
+        $content = $this->updateSectionContent($section?->content, $request, ['title', 'sub_title']);
 
         $translation = SectionTranslation::where('section_id', $section->id)->exists();
 
@@ -50,7 +50,7 @@ class ProjectSectionController extends Controller
             $this->generateTranslations(TranslationModels::Section, $section, 'section_id', $request);
         }
 
-        $this->updateTranslations($section, $request, $request->only('code'), ['content' => $content]);
+        $this->updateTranslations($section, $request, $request->validated(), ['content' => $content]);
 
         return $this->redirectWithMessage(RedirectType::UPDATE->value, 'admin.project-section.index', ['code' => $request->code]);
     }

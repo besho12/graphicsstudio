@@ -39,7 +39,7 @@
                             <div class="portfolio-image-overlay"></div>
                             <img 
                                 class="portfolio-image" 
-                                src="{{ asset($project->image) }}" 
+                                src="{{ asset(!empty($project->thumbnail) ? $project->thumbnail : $project->image) }}" 
                                 alt="{{ $project->title }}"
                                 loading="lazy"
                             >
@@ -50,15 +50,13 @@
                                         <span>{{ __('View Project') }}</span>
                                     </a>
                                 </div>
-                            </div>
                         </div>
-                        <div class="portfolio-content">
+                        <div class="portfolio-title-section">
                             <h3 class="portfolio-title">{{ $project->title }}</h3>
-                            <p class="portfolio-description">{{ Str::limit($project->description, 80) }}</p>
-                            <div class="portfolio-meta">
-                                <span class="portfolio-category-badge">{{ $project->project_category }}</span>
-                            </div>
+                            <span class="portfolio-category">{{ $project->project_category }}</span>
                         </div>
+                    </div>
+
                     </div>
                 @endforeach
             @else
@@ -303,6 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
     transition: all 0.4s ease;
     position: relative;
     group: hover;
+    height: 320px;
 }
 
 .portfolio-card-modern:hover {
@@ -313,7 +312,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .portfolio-image-wrapper {
     position: relative;
-    height: 250px;
+    width: 100%;
+    height: 50%;
     overflow: hidden;
 }
 
@@ -381,39 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 /* Portfolio Content */
-.portfolio-content {
-    padding: 25px;
-}
 
-.portfolio-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 12px;
-    line-height: 1.3;
-}
-
-.portfolio-description {
-    color: #94a3b8;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.portfolio-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.portfolio-category-badge {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-}
 
 /* Empty State */
 .portfolio-empty-state {
@@ -530,5 +498,37 @@ document.addEventListener('DOMContentLoaded', function() {
     .filter-btn {
         padding: 10px 20px;
     }
+}
+
+/* Portfolio Title Section */
+.portfolio-title-section {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.portfolio-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+.portfolio-category {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 </style>

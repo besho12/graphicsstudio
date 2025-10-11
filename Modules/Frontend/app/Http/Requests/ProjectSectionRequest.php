@@ -15,7 +15,6 @@ class ProjectSectionRequest extends FormRequest
             'code' => ['required', 'string'],
             'title' => ['required', 'string', 'max:255'],
             'sub_title' => ['nullable', 'string', 'max:255'],
-            'description' => ['nullable', 'string', 'max:1000'],
         ];
     }
 

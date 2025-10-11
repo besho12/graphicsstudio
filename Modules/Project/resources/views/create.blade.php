@@ -60,6 +60,9 @@
                                                             name="image"
                                                             :label="__('Main Project Image')" 
                                                             :button_label="__('Choose Project Image')"
+                                                            div_id="project-image-preview"
+                                                            label_id="project-image-label"
+                                                            input_id="project-image-upload"
                                                             required="true" />
                                                         <small class="form-text text-primary mt-2">
                                                             <i class="fas fa-info-circle"></i> 
@@ -220,6 +223,17 @@
             label_field: "#image-label",
             label_default: "{{ __('Choose Thumbnail') }}",
             label_selected: "{{ __('Change Thumbnail') }}",
+            no_label: false,
+            success_callback: null
+        });
+
+        // Initialize project image preview
+        $.uploadPreview({
+            input_field: "#project-image-upload",
+            preview_box: "#project-image-preview",
+            label_field: "#project-image-label",
+            label_default: "{{ __('Choose Project Image') }}",
+            label_selected: "{{ __('Change Project Image') }}",
             no_label: false,
             success_callback: null
         });

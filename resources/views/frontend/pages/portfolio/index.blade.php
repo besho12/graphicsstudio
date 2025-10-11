@@ -43,7 +43,7 @@
                             <div class="portfolio-image-overlay"></div>
                             <img 
                                 class="portfolio-image" 
-                                src="{{ asset($project->image) }}" 
+                                src="{{ asset(!empty($project->thumbnail) ? $project->thumbnail : $project->image) }}" 
                                 alt="{{ $project->title }}"
                                 loading="lazy"
                             >
@@ -56,9 +56,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="portfolio-content">
+                        <div class="portfolio-title-section">
                             <h3 class="portfolio-title">{{ $project->title }}</h3>
-                            <p class="portfolio-category">{{ $project->project_category }}</p>
+                            <span class="portfolio-category">{{ $project->project_category }}</span>
                         </div>
                     </div>
                 @empty
@@ -174,6 +174,7 @@
                  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
                  position: relative;
                  border: 1px solid rgba(255, 255, 255, 0.1);
+                 height: 350px;
              }
 
              .portfolio-card-modern:hover {
@@ -183,7 +184,8 @@
 
             .portfolio-image-wrapper {
                 position: relative;
-                height: 280px;
+                width: 100%;
+                height: 50%;
                 overflow: hidden;
             }
 
@@ -258,26 +260,7 @@
                 box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
             }
 
-            .portfolio-content {
-                padding: 25px;
-                text-align: center;
-            }
 
-            .portfolio-title {
-                 font-size: 1.4rem;
-                 font-weight: 700;
-                 color: #ffffff;
-                 margin-bottom: 8px;
-                 line-height: 1.3;
-             }
-
-             .portfolio-category {
-                 color: rgba(255, 255, 255, 0.8);
-                 font-size: 0.95rem;
-                 margin: 0;
-                 text-transform: uppercase;
-                 letter-spacing: 0.5px;
-             }
 
             .empty-state {
                  grid-column: 1 / -1;
@@ -366,6 +349,38 @@
                 .portfolio-title {
                     font-size: 1.2rem;
                 }
+            }
+
+            /* Portfolio Title Section */
+            .portfolio-title-section {
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .portfolio-title {
+                font-size: 18px;
+                font-weight: 700;
+                color: white;
+                margin: 0 0 8px 0;
+                line-height: 1.3;
+            }
+
+            .portfolio-category {
+                background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                color: white;
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
             }
         </style>
         {{-- Client-side filtering (home screen behavior) --}}

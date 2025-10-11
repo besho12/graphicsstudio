@@ -12,8 +12,8 @@
                             <i class="fas fa-star card-icon"></i>
                         </div>
                         <div class="card-content">
-                            <h3 class="feature-title">{{ __('Premium Quality') }}</h3>
-                            <p class="feature-description">{{ __('We deliver exceptional quality in every project, ensuring your vision comes to life with precision and excellence.') }}</p>
+                            <h3 class="feature-title">{{ clean(processText($chooseUsSection?->translation?->content?->feature_title_1 ?? __('Premium Quality'))) }}</h3>
+                            <p class="feature-description">{{ clean(processText($chooseUsSection?->translation?->content?->feature_description_1 ?? __('We deliver exceptional quality in every project, ensuring your vision comes to life with precision and excellence.'))) }}</p>
                         </div>
                     </div>
                     
@@ -23,8 +23,8 @@
                             <i class="fas fa-clock card-icon"></i>
                         </div>
                         <div class="card-content">
-                            <h3 class="feature-title">{{ __('Fast Delivery') }}</h3>
-                            <p class="feature-description">{{ __('Quick turnaround times without compromising quality. We understand the importance of meeting deadlines.') }}</p>
+                            <h3 class="feature-title">{{ clean(processText($chooseUsSection?->translation?->content?->feature_title_2 ?? __('Fast Delivery'))) }}</h3>
+                            <p class="feature-description">{{ clean(processText($chooseUsSection?->translation?->content?->feature_description_2 ?? __('Quick turnaround times without compromising quality. We understand the importance of meeting deadlines.'))) }}</p>
                         </div>
                     </div>
                     
@@ -34,8 +34,8 @@
                             <i class="fas fa-users card-icon"></i>
                         </div>
                         <div class="card-content">
-                            <h3 class="feature-title">{{ __('Expert Team') }}</h3>
-                            <p class="feature-description">{{ __('Our experienced professionals bring creativity and technical expertise to every project we undertake.') }}</p>
+                            <h3 class="feature-title">{{ clean(processText($chooseUsSection?->translation?->content?->feature_title_3 ?? __('Expert Team'))) }}</h3>
+                            <p class="feature-description">{{ clean(processText($chooseUsSection?->translation?->content?->feature_description_3 ?? __('Our experienced professionals bring creativity and technical expertise to every project we undertake.'))) }}</p>
                         </div>
                     </div>
                 </div>

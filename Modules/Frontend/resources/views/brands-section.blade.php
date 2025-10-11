@@ -67,13 +67,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <div class="form-group">
-                                                <x-admin.form-editor id="sub_title" name="sub_title"
-                                                    label="{{ __('Sub Title') }}" value="{!! $brandsSection?->getTranslation($code)?->content?->sub_title !!}"
-                                                    required="false" data-translate="true"/>
-                                                <small>{{ __('use \ for break and {} for bold') }}</small>
-                                            </div>
-                                        </div>
+                            <div class="form-group">
+                                <x-admin.form-input id="sub_title" data-translate="true" name="sub_title"
+                                    label="{{ __('Sub Title') }}" placeholder="{{ __('Enter Sub Title') }}"
+                                    value="{{ $brandsSection?->getTranslation($code)?->content?->sub_title }}"
+                                    required="false" />
+                            </div>
+                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="text-center col-12">

@@ -11,7 +11,7 @@
 
 <label>{{ $label }} @if($required)<span class="text-danger">*</span>@endif</label>
 <div id="{{ $div_id }}" {{ $attributes->merge(['class' => 'image-preview']) }}
-    @if ($image) style="background-image: url({{ asset($image) }});" @endif>
+    @if ($image) style="background-image: url({{ asset($image) }}?v={{ time() }});" @endif>
     <label for="{{ $input_id }}" id="{{ $label_id }}">{{ $button_label }}</label>
     <input type="file" name="{{ $name }}" id="{{ $input_id }}">
 </div>

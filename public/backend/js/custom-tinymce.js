@@ -47,7 +47,7 @@
                     }
                 });
             },
-            plugins: "anchor autolink charmap link image lists searchreplace visualblocks wordcount ",
+            plugins: "anchor autolink charmap link lists searchreplace visualblocks wordcount ",
             toolbar: "blocks fontsize | bold italic underline | link | align lineheight | numlist bullist",
             tinycomments_mode: "embedded",
             tinycomments_author: "Author name",

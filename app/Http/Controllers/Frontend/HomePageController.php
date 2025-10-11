@@ -43,7 +43,7 @@ class HomePageController extends Controller {
             $query->select('faq_id', 'question', 'answer');
         }])->active()->latest()->take(4)->get();
 
-        $projects = Project::select('id', 'slug', 'image','project_date','service_id')->with([
+        $projects = Project::select('id', 'slug', 'image', 'thumbnail','project_date','service_id')->with([
             'translation' => function ($query) {
             $query->select('project_id', 'title', 'project_category');
         },
@@ -220,7 +220,7 @@ class HomePageController extends Controller {
     public function portfolios(Request $request): View {
         $per_age = cache('CustomPagination')?->portfolio_list ?? CustomPagination::where('section_name', 'Portfolio List')->value('item_qty');
         
-        $query = Project::select('id', 'slug', 'image')->with(['translation' => function ($query) {
+        $query = Project::select('id', 'slug', 'image', 'thumbnail')->with(['translation' => function ($query) {
             $query->select('project_id', 'title', 'project_category');
         }])->whereHas('service', function ($query) {
             $query->active();

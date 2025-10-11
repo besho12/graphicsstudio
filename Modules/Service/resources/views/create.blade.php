@@ -29,7 +29,7 @@
                                             <div class="form-group col-md-4">
                                                 <x-admin.form-image-preview />
                                                 <small class="form-text text-muted">
-                                                    <strong>{{ __('Recommended Size:') }}</strong> 800px × 450px (16:9 aspect ratio)<br>
+                                                    <strong>{{ __('Recommended Size:') }}</strong> 1296 × 700<br>
                                                     <em>{{ __('This image appears as the main thumbnail in service details page') }}</em>
                                                 </small>
                                             </div>
@@ -40,7 +40,7 @@
                                                     <input type="file" name="icon" id="icon-upload">
                                                 </div>
                                                 <small class="form-text text-muted">
-                                                    <strong>{{ __('Recommended Size:') }}</strong> 100px × 100px (1:1 aspect ratio)<br>
+                                                    <strong>{{ __('Recommended Size:') }}</strong> 100px × 100px (1:1 aspect ratio) or 40 x 40 SVG<br>
                                                     <em>{{ __('This icon appears in service cards and feature sections') }}</em>
                                                 </small>
                                                 @error('icon')

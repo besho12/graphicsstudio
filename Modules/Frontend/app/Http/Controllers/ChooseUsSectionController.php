@@ -61,7 +61,7 @@ class ChooseUsSectionController extends Controller {
             $this->generateTranslations(TranslationModels::Section, $section, 'section_id', $request);
         }
 
-        $this->updateTranslations($section, $request, $request->only('code'), ['content' => $content]);
+        $this->updateTranslations($section, $request, $request->validated(), ['content' => $content]);
 
         return $this->redirectWithMessage(RedirectType::UPDATE->value);
     }

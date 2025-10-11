@@ -1,13 +1,19 @@
 <div class="brands-area space-bottom">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-8 col-lg-10">
-                <div class="title-area text-center mb-50">
-                    <h2 class="sec-title text-white">{{ $brandsSection?->translation?->content?->title ?? __('Trusted by Leading Brands') }}</h2>
-            <p class="sec-text text-white opacity-75">{{ $brandsSection?->translation?->content?->sub_title ?? __('We are proud to work with some of the most innovative companies in the world') }}</p>
+        @if($brandsSection?->translation?->content?->title || $brandsSection?->translation?->content?->sub_title)
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10">
+                    <div class="title-area text-center mb-50">
+                        @if($brandsSection?->translation?->content?->title)
+                            <h2 class="sec-title text-white">{{ $brandsSection->translation->content->title }}</h2>
+                        @endif
+                        @if($brandsSection?->translation?->content?->sub_title)
+                            <p class="sec-text text-white opacity-75">{{ $brandsSection->translation->content->sub_title }}</p>
+                        @endif
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12">
                 <div class="brands-carousel-wrapper text-center">

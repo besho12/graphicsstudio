@@ -129,10 +129,47 @@ class ServiceController extends Controller {
             $service->save();
         }
 
+        // Filter only translatable fields for the translation table
+        $translatableFields = [
+            'title',
+            'short_description',
+            'description',
+            'seo_title',
+            'btn_text',
+            'seo_description',
+            'benefit_1_title',
+            'benefit_1_description',
+            'benefit_2_title',
+            'benefit_2_description',
+            'benefit_3_title',
+            'benefit_3_description',
+            'benefit_4_title',
+            'benefit_4_description',
+            'feature_1_title',
+            'feature_1_description',
+            'feature_1_highlight',
+            'feature_2_title',
+            'feature_2_description',
+            'feature_2_highlight',
+            'feature_3_title',
+            'feature_3_description',
+            'feature_3_highlight',
+            'process_1_title',
+            'process_1_description',
+            'process_2_title',
+            'process_2_description',
+            'process_3_title',
+            'process_3_description',
+            'process_4_title',
+            'process_4_description',
+        ];
+
+        $translationData = array_intersect_key($validatedData, array_flip($translatableFields));
+
         $this->updateTranslations(
             $service,
             $request,
-            $validatedData,
+            $translationData,
         );
 
         return $this->redirectWithMessage(RedirectType::UPDATE->value,'admin.service.index');

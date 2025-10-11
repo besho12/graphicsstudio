@@ -1928,7 +1928,7 @@
 }
 
 .project-title-enhanced {
-    margin-bottom: 12px;
+    margin-bottom: 24px;
 }
 
 .project-title-enhanced a {
@@ -2060,8 +2060,8 @@
 }
 
 .cta-btn.primary {
-    background: white;
-    color: #3b82f6;
+    background: #3b82f6;
+    color: white;
 }
 
 .cta-btn.secondary {

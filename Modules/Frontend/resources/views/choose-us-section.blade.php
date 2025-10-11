@@ -75,6 +75,65 @@
                                             </div>
                                         </div>
 
+                                        {{-- Feature Cards Section --}}
+                                        <div class="col-12">
+                                            <h5 class="mb-3">{{ __('Content Cards') }}</h5>
+                                        </div>
+                                        
+                                        {{-- Feature 1 --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <x-admin.form-input id="feature_title_1" data-translate="true" name="feature_title_1"
+                                                    label="{{ __('Feature 1 Title') }}" placeholder="{{ __('Enter Feature 1 Title') }}"
+                                                    value="{{ $chooseUsSection?->getTranslation($code)?->content?->feature_title_1 ?? '' }}"
+                                                    required="false" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <x-admin.form-textarea id="feature_description_1" data-translate="true" name="feature_description_1"
+                                                    label="{{ __('Feature 1 Description') }}" placeholder="{{ __('Enter Feature 1 Description') }}"
+                                                    value="{{ $chooseUsSection?->getTranslation($code)?->content?->feature_description_1 ?? '' }}"
+                                                    required="false" />
+                                            </div>
+                                        </div>
+
+                                        {{-- Feature 2 --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <x-admin.form-input id="feature_title_2" data-translate="true" name="feature_title_2"
+                                                    label="{{ __('Feature 2 Title') }}" placeholder="{{ __('Enter Feature 2 Title') }}"
+                                                    value="{{ $chooseUsSection?->getTranslation($code)?->content?->feature_title_2 ?? '' }}"
+                                                    required="false" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <x-admin.form-textarea id="feature_description_2" data-translate="true" name="feature_description_2"
+                                                    label="{{ __('Feature 2 Description') }}" placeholder="{{ __('Enter Feature 2 Description') }}"
+                                                    value="{{ $chooseUsSection?->getTranslation($code)?->content?->feature_description_2 ?? '' }}"
+                                                    required="false" />
+                                            </div>
+                                        </div>
+
+                                        {{-- Feature 3 --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <x-admin.form-input id="feature_title_3" data-translate="true" name="feature_title_3"
+                                                    label="{{ __('Feature 3 Title') }}" placeholder="{{ __('Enter Feature 3 Title') }}"
+                                                    value="{{ $chooseUsSection?->getTranslation($code)?->content?->feature_title_3 ?? '' }}"
+                                                    required="false" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <x-admin.form-textarea id="feature_description_3" data-translate="true" name="feature_description_3"
+                                                    label="{{ __('Feature 3 Description') }}" placeholder="{{ __('Enter Feature 3 Description') }}"
+                                                    value="{{ $chooseUsSection?->getTranslation($code)?->content?->feature_description_3 ?? '' }}"
+                                                    required="false" />
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3 {{ $code == $languages->first()->code ? '' : 'd-none' }}">

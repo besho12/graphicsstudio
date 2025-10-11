@@ -44,6 +44,80 @@
             @if ($code == $languages->first()->code)
                 @include('project::utilities.navbar')
             @endif
+            
+            <!-- Project Gallery Section -->
+            @if ($code == $languages->first()->code && $project->images && $project->images->count() > 0)
+                <div class="section-body">
+                    <div class="mt-4 row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-0">
+                                        <i class="fas fa-images me-2 text-primary"></i>{{ __('Project Gallery') }}
+                                        <span class="badge badge-info ms-2">{{ $project->images->count() }} {{ __('Images') }}</span>
+                                    </h4>
+                                    <div>
+                                        <a href="{{ route('admin.project.gallery', $project->id) }}" class="btn btn-success btn-sm">
+                                            <i class="fas fa-cog"></i> {{ __('Manage Gallery') }}
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        @foreach($project->images as $image)
+                                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+                                                <div class="gallery-image-item">
+                                                    <div class="image-wrapper">
+                                                        <img src="{{ asset($image->large_image) }}" 
+                                                             alt="Gallery Image {{ $loop->iteration }}" 
+                                                             class="img-fluid rounded shadow-sm gallery-preview-image"
+                                                             data-bs-toggle="modal" 
+                                                             data-bs-target="#imageModal{{ $image->id }}">
+                                                        <div class="image-overlay">
+                                                            <i class="fas fa-search-plus text-white"></i>
+                                                        </div>
+                                                    </div>
+                                                    <small class="text-muted d-block text-center mt-1">
+                                                        {{ __('Image') }} {{ $loop->iteration }}
+                                                    </small>
+                                                </div>
+                                                
+                                                <!-- Image Modal -->
+                                                <div class="modal fade" id="imageModal{{ $image->id }}" tabindex="-1" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">{{ __('Gallery Image') }} {{ $loop->iteration }}</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <img src="{{ asset($image->large_image) }}" 
+                                                                     alt="Gallery Image {{ $loop->iteration }}" 
+                                                                     class="img-fluid rounded">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    
+                                    @if($project->images->count() == 0)
+                                        <div class="text-center py-4">
+                                            <i class="fas fa-images fa-3x text-muted mb-3"></i>
+                                            <p class="text-muted">{{ __('No gallery images uploaded yet.') }}</p>
+                                            <a href="{{ route('admin.project.gallery', $project->id) }}" class="btn btn-primary">
+                                                <i class="fas fa-plus"></i> {{ __('Add Gallery Images') }}
+                                            </a>
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+            
             <div class="section-body">
                 <div class="mt-4 row">
                     <div class="col-12">
@@ -79,14 +153,30 @@
                                                             </h6>
                                                         </div>
                                                         <div class="card-body">
-                                                            <x-admin.form-image-preview name="thumbnail" :image="$project->thumbnail" required="0"/>
-                                                            <small class="form-text text-info mt-2">
-                                                                <i class="fas fa-info-circle"></i> 
-                                                                <strong>{{ __('Recommended Size') }}:</strong> 600×400px (3:2 ratio)
-                                                            </small>
-                                                            <small class="form-text text-muted d-block">
-                                                                {{ __('Small image for portfolio listing page') }}
-                                                            </small>
+                                                            <x-admin.form-image-preview 
+                                                                name="thumbnail" 
+                                                                :image="$project->thumbnail" 
+                                                                div_id="thumbnail-image-preview"
+                                                                label_id="thumbnail-image-label"
+                                                                input_id="thumbnail-image-upload"
+                                                                required="0"/>
+                                                            <div class="mt-2">
+                                                                <div class="alert alert-info py-2 px-3 mb-2">
+                                                                    <i class="fas fa-star text-warning"></i> 
+                                                                    <strong>{{ __('Perfect Universal Size') }}:</strong> 700×560px (5:4 ratio)
+                                                                </div>
+                                                                <small class="form-text text-success d-block">
+                                                                    <i class="fas fa-check-circle"></i> 
+                                                                    <strong>{{ __('Works perfectly on') }}:</strong> Desktop & Mobile devices
+                                                                </small>
+                                                                <small class="form-text text-primary d-block">
+                                                                    <i class="fas fa-file-image"></i> 
+                                                                    <strong>{{ __('Format') }}:</strong> JPEG, 85% quality, ~100KB
+                                                                </small>
+                                                                <small class="form-text text-muted d-block mt-1">
+                                                                    {{ __('This single format ensures optimal display across all devices with crisp retina quality.') }}
+                                                                </small>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -101,8 +191,14 @@
                                                             </h6>
                                                         </div>
                                                         <div class="card-body">
-                                                            <x-admin.form-image-preview name="image" :image="$project->image" required="0"/>
-                                                            <small class="form-text text-primary mt-2">
+                                            <x-admin.form-image-preview 
+                                                name="image" 
+                                                :image="$project->image" 
+                                                div_id="project-image-preview"
+                                                label_id="project-image-label"
+                                                input_id="project-image-upload"
+                                                required="0"/>
+                                            <small class="form-text text-primary mt-2">
                                                                 <i class="fas fa-info-circle"></i> 
                                                                 <strong>{{ __('Recommended Size') }}:</strong> 1200×800px (3:2 ratio)
                                                             </small>
@@ -253,11 +349,22 @@
         <script>
             // Initialize thumbnail image preview
             $.uploadPreview({
-                input_field: "#image-upload",
-                preview_box: "#image-preview",
-                label_field: "#image-label",
+                input_field: "#thumbnail-image-upload",
+                preview_box: "#thumbnail-image-preview",
+                label_field: "#thumbnail-image-label",
                 label_default: "{{ __('Choose Thumbnail') }}",
                 label_selected: "{{ __('Change Thumbnail') }}",
+                no_label: false,
+                success_callback: null
+            });
+
+            // Initialize project image preview
+            $.uploadPreview({
+                input_field: "#project-image-upload",
+                preview_box: "#project-image-preview",
+                label_field: "#project-image-label",
+                label_default: "{{ __('Choose Project Image') }}",
+                label_selected: "{{ __('Change Project Image') }}",
                 no_label: false,
                 success_callback: null
             });
@@ -318,9 +425,66 @@
                 overflow-y: auto;
             }
             
+            /* Project Gallery Styles */
+            .gallery-image-item {
+                position: relative;
+                transition: transform 0.3s ease;
+            }
+            
+            .gallery-image-item:hover {
+                transform: translateY(-5px);
+            }
+            
+            .image-wrapper {
+                position: relative;
+                overflow: hidden;
+                border-radius: 8px;
+                cursor: pointer;
+                aspect-ratio: 1;
+            }
+            
+            .gallery-preview-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+            
+            .image-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            
+            .image-wrapper:hover .image-overlay {
+                opacity: 1;
+            }
+            
+            .image-wrapper:hover .gallery-preview-image {
+                transform: scale(1.05);
+            }
+            
+            /* Badge styling */
+            .badge.badge-info {
+                background-color: #17a2b8;
+                color: white;
+            }
+            
             /* Responsive adjustments */
             @media (max-width: 768px) {
                 .col-md-6 {
+                    margin-bottom: 1rem;
+                }
+                
+                .gallery-image-item {
                     margin-bottom: 1rem;
                 }
             }

@@ -144,13 +144,13 @@ class ProjectController extends Controller {
         $project->tags = $request->tags ?? $project->tags;
 
         // Handle thumbnail image upload
-        if ($project && !empty($request->thumbnail)) {
+        if ($project && $request->hasFile('thumbnail')) {
             $file_name = file_upload($request->thumbnail, 'uploads/custom-images/', $project->thumbnail);
             $project->thumbnail = $file_name;
         }
 
         // Handle main project image upload
-        if ($project && !empty($request->image)) {
+        if ($project && $request->hasFile('image')) {
             $file_name = file_upload($request->image, 'uploads/custom-images/', $project->image);
             $project->image = $file_name;
         }

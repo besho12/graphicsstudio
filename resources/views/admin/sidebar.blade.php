@@ -132,7 +132,7 @@
                             checkAdminHasPermission('award.view')))
                     @include('frontend::sidebar')
                 @endif
-                @if (Module::isEnabled('Brand') && 1 == 2  && checkAdminHasPermission('brand.management'))
+                @if (Module::isEnabled('Brand') && checkAdminHasPermission('brand.management'))
                     @include('brand::sidebar')
                 @endif
             @endif
