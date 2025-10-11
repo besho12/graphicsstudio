@@ -15,6 +15,12 @@ class ChooseUsSectionRequest extends FormRequest
             'title'              => ['required', 'string', 'max:255'],
             'sub_title'          => ['nullable', 'string', 'max:1000'],
             'image'              => ['nullable', 'mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml', 'max:512'],
+            'feature_title_1'    => ['nullable', 'string', 'max:255'],
+            'feature_description_1' => ['nullable', 'string', 'max:500'],
+            'feature_title_2'    => ['nullable', 'string', 'max:255'],
+            'feature_description_2' => ['nullable', 'string', 'max:500'],
+            'feature_title_3'    => ['nullable', 'string', 'max:255'],
+            'feature_description_3' => ['nullable', 'string', 'max:500'],
         ];
     }
 

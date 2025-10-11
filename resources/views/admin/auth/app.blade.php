@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('backend/css/bootstrap-social.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/components.css') }}?v={{$setting?->version}}">
     <link rel="stylesheet" href="{{ asset('global/toastr/toastr.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('backend/css/bootstrap4-toggle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/bootstrap-toggle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/dev.css') }}?v={{$setting?->version}}">
     @if (session()->has('text_direction') && session()->get('text_direction') !== 'ltr')
         <link rel="stylesheet" href="{{ asset('backend/css/rtl.css') }}?v={{$setting?->version}}">
@@ -40,7 +40,7 @@
 
 
     <script src="{{ asset('backend/js/popper.min.js') }}"></script>
-    <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('backend/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('backend/js/jquery.nicescroll.min.js') }}"></script>
     <script src="{{ asset('backend/js/moment.min.js') }}"></script>
     <script src="{{ asset('backend/js/stisla.js') }}"></script>

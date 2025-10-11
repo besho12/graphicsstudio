@@ -309,7 +309,7 @@ class HomePageController extends Controller {
 
         $service = Service::select('id', 'slug', 'image','created_at')->with([
             'translation' => function ($query) {
-            $query->select('service_id', 'title','description','seo_title', 'seo_description');
+            $query->select('service_id', 'title','description','seo_title', 'seo_description', 'benefit_1_title', 'benefit_1_description', 'benefit_2_title', 'benefit_2_description', 'benefit_3_title', 'benefit_3_description', 'feature_1_title', 'feature_1_description', 'feature_1_highlight', 'feature_2_title', 'feature_2_description', 'feature_2_highlight', 'feature_3_title', 'feature_3_description', 'feature_3_highlight', 'process_1_title', 'process_1_description', 'process_2_title', 'process_2_description', 'process_3_title', 'process_3_description', 'process_4_title', 'process_4_description');
         }])
         ->with([
             'projects.translations',

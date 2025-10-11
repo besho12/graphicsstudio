@@ -66,9 +66,88 @@
                                     @method('PUT')
 
                                     <div class="row">
-                                        <div
-                                            class="form-group col-md-12 {{ $code == $languages->first()->code ? '' : 'd-none' }}">
-                                            <x-admin.form-image-preview :image="$project->image" required="0"/>
+                                        <!-- Image Upload Section -->
+                                        <div class="col-12 {{ $code == $languages->first()->code ? '' : 'd-none' }}">
+                                            <div class="row">
+                                                <!-- Project Thumbnail -->
+                                                <div class="col-md-4 mb-4">
+                                                    <div class="card border-info">
+                                                        <div class="card-header bg-info text-white">
+                                                            <h6 class="mb-0">
+                                                                <i class="fas fa-th-large me-2"></i>{{ __('Thumbnail Image') }}
+                                                                <span class="text-warning">*</span>
+                                                            </h6>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <x-admin.form-image-preview name="thumbnail" :image="$project->thumbnail" required="0"/>
+                                                            <small class="form-text text-info mt-2">
+                                                                <i class="fas fa-info-circle"></i> 
+                                                                <strong>{{ __('Recommended Size') }}:</strong> 600×400px (3:2 ratio)
+                                                            </small>
+                                                            <small class="form-text text-muted d-block">
+                                                                {{ __('Small image for portfolio listing page') }}
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Project Main Image -->
+                                                <div class="col-md-4 mb-4">
+                                                    <div class="card border-primary">
+                                                        <div class="card-header bg-primary text-white">
+                                                            <h6 class="mb-0">
+                                                                <i class="fas fa-image me-2"></i>{{ __('Project Image') }}
+                                                                <span class="text-warning">*</span>
+                                                            </h6>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <x-admin.form-image-preview name="image" :image="$project->image" required="0"/>
+                                                            <small class="form-text text-primary mt-2">
+                                                                <i class="fas fa-info-circle"></i> 
+                                                                <strong>{{ __('Recommended Size') }}:</strong> 1200×800px (3:2 ratio)
+                                                            </small>
+                                                            <small class="form-text text-muted d-block">
+                                                                {{ __('Main hero image for project details page') }}
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Gallery Images -->
+                                                <div class="col-md-4 mb-4">
+                                                    <div class="card border-success">
+                                                        <div class="card-header bg-success text-white">
+                                                            <h6 class="mb-0">
+                                                                <i class="fas fa-images me-2"></i>{{ __('Gallery Images') }}
+                                                                <small class="text-light">({{ __('Optional') }})</small>
+                                                            </h6>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="form-group">
+                                                                <input type="file" 
+                                                                       id="gallery-images-upload" 
+                                                                       name="gallery_images[]" 
+                                                                       class="form-control" 
+                                                                       multiple 
+                                                                       accept="image/*">
+                                                            </div>
+                                                            <small class="form-text text-success">
+                                                                <i class="fas fa-info-circle"></i> 
+                                                                <strong>{{ __('Recommended Size') }}:</strong> 1200×800px (3:2 ratio)
+                                                            </small>
+                                                            <small class="form-text text-muted d-block">
+                                                                {{ __('Additional images for project showcase and gallery') }}
+                                                            </small>
+                                                            
+                                                            <!-- Gallery Preview -->
+                                                            <div id="gallery-preview" class="mt-3" style="display: none;">
+                                                                <h6 class="text-muted">{{ __('Selected Images') }}:</h6>
+                                                                <div id="gallery-images-container" class="d-flex flex-wrap gap-2"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>{{ __('Title') }} <span class="text-danger">*</span></label>
@@ -172,16 +251,80 @@
     @if ($code == $languages->first()->code)
         <script src="{{ asset('backend/js/jquery.uploadPreview.min.js') }}"></script>
         <script>
+            // Initialize thumbnail image preview
             $.uploadPreview({
                 input_field: "#image-upload",
                 preview_box: "#image-preview",
                 label_field: "#image-label",
-                label_default: "{{ __('Choose Image') }}",
-                label_selected: "{{ __('Change Image') }}",
+                label_default: "{{ __('Choose Thumbnail') }}",
+                label_selected: "{{ __('Change Thumbnail') }}",
                 no_label: false,
                 success_callback: null
             });
+
+            // Gallery images preview functionality
+            $(document).ready(function() {
+                // Handle gallery images selection
+                $('#gallery-images-upload').on('change', function(e) {
+                    const files = e.target.files;
+                    const container = $('#gallery-images-container');
+                    const preview = $('#gallery-preview');
+                    
+                    // Clear previous previews
+                    container.empty();
+                    
+                    if (files.length > 0) {
+                        preview.show();
+                        
+                        Array.from(files).forEach((file, index) => {
+                            if (file.type.startsWith('image/')) {
+                                const reader = new FileReader();
+                                reader.onload = function(e) {
+                                    const imagePreview = `
+                                        <div class="position-relative" style="width: 80px; height: 80px;">
+                                            <img src="${e.target.result}" 
+                                                 class="img-thumbnail" 
+                                                 style="width: 80px; height: 80px; object-fit: cover;"
+                                                 title="${file.name}">
+                                            <small class="d-block text-center text-truncate" style="width: 80px; font-size: 10px;">
+                                                ${file.name.length > 12 ? file.name.substring(0, 12) + '...' : file.name}
+                                            </small>
+                                        </div>
+                                    `;
+                                    container.append(imagePreview);
+                                };
+                                reader.readAsDataURL(file);
+                            }
+                        });
+                    } else {
+                        preview.hide();
+                    }
+                });
+            });
         </script>
+
+        <style>
+            /* Custom styles for image upload cards */
+            .card.border-primary {
+                border-width: 2px !important;
+            }
+            .card.border-success {
+                border-width: 2px !important;
+            }
+            
+            /* Gallery preview styles */
+            #gallery-images-container {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .col-md-6 {
+                    margin-bottom: 1rem;
+                }
+            }
+        </style>
     @else
         <script>
             'use strict';

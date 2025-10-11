@@ -16,7 +16,7 @@ class Project extends Model {
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = ['slug', 'service_id', 'image', 'project_date','project_author', 'tags', 'status'];
+    protected $fillable = ['slug', 'service_id', 'image', 'thumbnail', 'project_date','project_author', 'tags', 'status'];
 
     public function getTitleAttribute(): ?string {
         return $this?->translation?->title;

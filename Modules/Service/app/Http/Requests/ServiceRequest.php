@@ -22,6 +22,31 @@ class ServiceRequest extends FormRequest
             'btn_text'          => 'required|string',
             'description'       => 'required',
             'short_description' => 'required|string|max:500',
+            'benefit_1_title'   => 'nullable|string|max:255',
+            'benefit_1_description' => 'nullable|string|max:500',
+            'benefit_2_title'   => 'nullable|string|max:255',
+            'benefit_2_description' => 'nullable|string|max:500',
+            'benefit_3_title' => 'nullable|string|max:255',
+            'benefit_3_description' => 'nullable|string|max:500',
+            'benefit_4_title' => 'nullable|string|max:255',
+            'benefit_4_description' => 'nullable|string|max:500',
+            'feature_1_title' => 'nullable|string|max:255',
+            'feature_1_description' => 'nullable|string|max:500',
+            'feature_1_highlight' => 'nullable|string|max:255',
+            'feature_2_title' => 'nullable|string|max:255',
+            'feature_2_description' => 'nullable|string|max:500',
+            'feature_2_highlight' => 'nullable|string|max:255',
+            'feature_3_title' => 'nullable|string|max:255',
+            'feature_3_description' => 'nullable|string|max:500',
+            'feature_3_highlight' => 'nullable|string|max:255',
+            'process_1_title' => 'nullable|string|max:255',
+            'process_1_description' => 'nullable|string|max:500',
+            'process_2_title' => 'nullable|string|max:255',
+            'process_2_description' => 'nullable|string|max:500',
+            'process_3_title' => 'nullable|string|max:255',
+            'process_3_description' => 'nullable|string|max:500',
+            'process_4_title' => 'nullable|string|max:255',
+            'process_4_description' => 'nullable|string|max:500',
         ];
 
         if ($this->isMethod('put')) {
@@ -79,6 +104,26 @@ class ServiceRequest extends FormRequest
             'seo_title.string'        => __('SEO title must be a string.'),
             'seo_description.max'     => __('SEO description may not be greater than 2000 characters.'),
             'seo_description.string'  => __('SEO description must be a string.'),
+
+            'benefit_1_title.string'  => __('Benefit 1 title must be a string.'),
+            'benefit_1_title.max'     => __('Benefit 1 title may not be greater than 255 characters.'),
+            'benefit_1_description.string' => __('Benefit 1 description must be a string.'),
+            'benefit_1_description.max' => __('Benefit 1 description may not be greater than 500 characters.'),
+
+            'benefit_2_title.string'  => __('Benefit 2 title must be a string.'),
+            'benefit_2_title.max'     => __('Benefit 2 title may not be greater than 255 characters.'),
+            'benefit_2_description.string' => __('Benefit 2 description must be a string.'),
+            'benefit_2_description.max' => __('Benefit 2 description may not be greater than 500 characters.'),
+
+            'benefit_3_title.string'  => __('Benefit 3 title must be a string.'),
+            'benefit_3_title.max'     => __('Benefit 3 title may not be greater than 255 characters.'),
+            'benefit_3_description.string' => __('Benefit 3 description must be a string.'),
+            'benefit_3_description.max' => __('Benefit 3 description may not be greater than 500 characters.'),
+
+            'benefit_4_title.string'  => __('Benefit 4 title must be a string.'),
+            'benefit_4_title.max'     => __('Benefit 4 title may not be greater than 255 characters.'),
+            'benefit_4_description.string' => __('Benefit 4 description must be a string.'),
+            'benefit_4_description.max' => __('Benefit 4 description may not be greater than 500 characters.'),
         ];
     }
 }

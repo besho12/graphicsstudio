@@ -96,32 +96,12 @@
                             <!-- Main Image Container -->
                             <div class="hero-image-container">
                                 <div class="image-frame">
-                                    <img src="{{ asset($service?->image) }}" alt="{{ $service?->title }}" class="hero-main-image" 
-                                        
-                                    {{-- <div class="image-overlay"></div> --}}
+                                    <img src="{{ asset($service?->image) }}" alt="{{ $service?->title }}" class="hero-main-image">
+                                    <div class="image-overlay"></div>
                                 </div>
                                 
-                                <!-- Floating Info Cards -->
-                                <div class="floating-info-card card-1">
-                                    <div class="info-icon">
-                                        <i class="fas fa-check-circle"></i>
-                                    </div>
-                                    <div class="info-content">
-                                        <span class="info-title">{{ __('Verified') }}</span>
-                                        <span class="info-subtitle">{{ __('Quality Assured') }}</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="floating-info-card card-2">
-                                    <div class="info-icon">
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div class="info-content">
-                                        <span class="info-title">5.0</span>
-                                        <span class="info-subtitle">{{ __('Rating') }}</span>
-                                    </div>
-                                </div>
-                                
+                                <!-- Simple Image -->
+                                <img src="{{ asset($service?->image) }}" alt="{{ $service?->title }}" class="hero-side-image" data-aos="zoom-in" data-aos-delay="800">
                                 
                             </div>
                         </div>
@@ -180,6 +160,17 @@
                                 <p>{{ __('Key advantages that make us your best choice') }}</p>
                             </div>
                             <div class="benefits-grid-overview-modern">
+                                @if($service && $service->translation && !empty($service->translation->benefit_1_title))
+                                <div class="benefit-card-overview-modern primary">
+                                    <div class="benefit-icon-overview-modern">
+                                        <i class="fas fa-award"></i>
+                                    </div>
+                                    <div class="benefit-content-overview-modern">
+                                        <h4>{{ $service->translation->benefit_1_title }}</h4>
+                                        <p>{{ $service->translation->benefit_1_description ?? __('Key benefit for our service') }}</p>
+                                    </div>
+                                </div>
+                                @else
                                 <div class="benefit-card-overview-modern primary">
                                     <div class="benefit-icon-overview-modern">
                                         <i class="fas fa-award"></i>
@@ -189,6 +180,19 @@
                                         <p>{{ __('Exceptional standards in every project') }}</p>
                                     </div>
                                 </div>
+                                @endif
+
+                                @if($service && $service->translation && !empty($service->translation->benefit_2_title))
+                                <div class="benefit-card-overview-modern secondary">
+                                    <div class="benefit-icon-overview-modern">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="benefit-content-overview-modern">
+                                        <h4>{{ $service->translation->benefit_2_title }}</h4>
+                                        <p>{{ $service->translation->benefit_2_description ?? __('Key benefit for our service') }}</p>
+                                    </div>
+                                </div>
+                                @else
                                 <div class="benefit-card-overview-modern secondary">
                                     <div class="benefit-icon-overview-modern">
                                         <i class="fas fa-clock"></i>
@@ -198,6 +202,19 @@
                                         <p>{{ __('Quick turnaround without compromising quality') }}</p>
                                     </div>
                                 </div>
+                                @endif
+
+                                @if($service?->translation?->benefit_3_title)
+                                <div class="benefit-card-overview-modern accent">
+                                    <div class="benefit-icon-overview-modern">
+                                        <i class="fas fa-headset"></i>
+                                    </div>
+                                    <div class="benefit-content-overview-modern">
+                                        <h4>{{ $service->translation->benefit_3_title }}</h4>
+                                        <p>{{ $service->translation->benefit_3_description ?? __('Key benefit for our service') }}</p>
+                                    </div>
+                                </div>
+                                @else
                                 <div class="benefit-card-overview-modern accent">
                                     <div class="benefit-icon-overview-modern">
                                         <i class="fas fa-headset"></i>
@@ -207,6 +224,20 @@
                                         <p>{{ __('Always available when you need us') }}</p>
                                     </div>
                                 </div>
+                                @endif
+
+                                <!-- Always show the fourth benefit as a fallback -->
+                                @if($service && $service->translation && !empty($service->translation->benefit_4_title))
+                                <div class="benefit-card-overview-modern success">
+                                    <div class="benefit-icon-overview-modern">
+                                        <i class="fas fa-shield-check"></i>
+                                    </div>
+                                    <div class="benefit-content-overview-modern">
+                                        <h4>{{ $service->translation->benefit_4_title }}</h4>
+                                        <p>{{ $service->translation->benefit_4_description }}</p>
+                                    </div>
+                                </div>
+                                @else
                                 <div class="benefit-card-overview-modern success">
                                     <div class="benefit-icon-overview-modern">
                                         <i class="fas fa-shield-check"></i>
@@ -216,6 +247,7 @@
                                         <p>{{ __('100% satisfaction or money back') }}</p>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
 
@@ -248,6 +280,26 @@
                 </div>
                 
                 <div class="features-grid-modern">
+                    <!-- Feature 1 -->
+                    @if($service && $service->translation && !empty($service->translation->feature_1_title))
+                    <div class="feature-card-modern">
+                        <div class="feature-card-header">
+                            <div class="feature-icon-modern">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>{{ $service->translation->feature_1_title }}</h4>
+                        </div>
+                        <div class="feature-card-body">
+                            <p>{{ $service->translation->feature_1_description }}</p>
+                        </div>
+                        <div class="feature-card-footer">
+                            <div class="feature-highlight">
+                                <i class="fas fa-certificate"></i>
+                                <span>{{ $service->translation->feature_1_highlight }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    @else
                     <div class="feature-card-modern">
                         <div class="feature-card-header">
                             <div class="feature-icon-modern">
@@ -265,7 +317,28 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     
+                    <!-- Feature 2 -->
+                    @if($service && $service->translation && !empty($service->translation->feature_2_title))
+                    <div class="feature-card-modern">
+                        <div class="feature-card-header">
+                            <div class="feature-icon-modern">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4>{{ $service->translation->feature_2_title }}</h4>
+                        </div>
+                        <div class="feature-card-body">
+                            <p>{{ $service->translation->feature_2_description }}</p>
+                        </div>
+                        <div class="feature-card-footer">
+                            <div class="feature-highlight">
+                                <i class="fas fa-stopwatch"></i>
+                                <span>{{ $service->translation->feature_2_highlight }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    @else
                     <div class="feature-card-modern">
                         <div class="feature-card-header">
                             <div class="feature-icon-modern">
@@ -283,7 +356,28 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     
+                    <!-- Feature 3 -->
+                    @if($service && $service->translation && !empty($service->translation->feature_3_title))
+                    <div class="feature-card-modern">
+                        <div class="feature-card-header">
+                            <div class="feature-icon-modern">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4>{{ $service->translation->feature_3_title }}</h4>
+                        </div>
+                        <div class="feature-card-body">
+                            <p>{{ $service->translation->feature_3_description }}</p>
+                        </div>
+                        <div class="feature-card-footer">
+                            <div class="feature-highlight">
+                                <i class="fas fa-phone"></i>
+                                <span>{{ $service->translation->feature_3_highlight }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    @else
                     <div class="feature-card-modern">
                         <div class="feature-card-header">
                             <div class="feature-icon-modern">
@@ -301,6 +395,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     
                    
                     </div>
@@ -319,34 +414,77 @@
                 </div>
                 
                 <div class="process-timeline">
-                    <div class="process-step">
-                        <div class="process-step-number">01</div>
-                        <div class="process-step-content">
-                            <h4>{{ __('Discovery & Planning') }}</h4>
-                            <p>{{ __('We start by understanding your requirements and creating a detailed project plan') }}</p>
+                    @if(!empty($service->translation->process_1_title))
+                        <div class="process-step">
+                            <div class="process-step-number">01</div>
+                            <div class="process-step-content">
+                                <h4>{{ $service->translation->process_1_title }}</h4>
+                                <p>{{ $service->translation->process_1_description }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-step-number">02</div>
-                        <div class="process-step-content">
-                            <h4>{{ __('Design & Development') }}</h4>
-                            <p>{{ __('Our expert team begins crafting your solution with attention to every detail') }}</p>
+                    @else
+                        <div class="process-step">
+                            <div class="process-step-number">01</div>
+                            <div class="process-step-content">
+                                <h4>{{ __('Discovery & Planning') }}</h4>
+                                <p>{{ __('We start by understanding your requirements and creating a detailed project plan') }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-step-number">03</div>
-                        <div class="process-step-content">
-                            <h4>{{ __('Review & Refinement') }}</h4>
-                            <p>{{ __('We review the work with you and make any necessary adjustments') }}</p>
+                    @endif
+
+                    @if(!empty($service->translation->process_2_title))
+                        <div class="process-step">
+                            <div class="process-step-number">02</div>
+                            <div class="process-step-content">
+                                <h4>{{ $service->translation->process_2_title }}</h4>
+                                <p>{{ $service->translation->process_2_description }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-step-number">04</div>
-                        <div class="process-step-content">
-                            <h4>{{ __('Delivery & Support') }}</h4>
-                            <p>{{ __('Final delivery with ongoing support to ensure your complete satisfaction') }}</p>
+                    @else
+                        <div class="process-step">
+                            <div class="process-step-number">02</div>
+                            <div class="process-step-content">
+                                <h4>{{ __('Design & Development') }}</h4>
+                                <p>{{ __('Our expert team begins crafting your solution with attention to every detail') }}</p>
+                            </div>
                         </div>
-                    </div>
+                    @endif
+
+                    @if(!empty($service->translation->process_3_title))
+                        <div class="process-step">
+                            <div class="process-step-number">03</div>
+                            <div class="process-step-content">
+                                <h4>{{ $service->translation->process_3_title }}</h4>
+                                <p>{{ $service->translation->process_3_description }}</p>
+                            </div>
+                        </div>
+                    @else
+                        <div class="process-step">
+                            <div class="process-step-number">03</div>
+                            <div class="process-step-content">
+                                <h4>{{ __('Review & Refinement') }}</h4>
+                                <p>{{ __('We review the work with you and make any necessary adjustments') }}</p>
+                            </div>
+                        </div>
+                    @endif
+
+                    @if(!empty($service->translation->process_4_title))
+                        <div class="process-step">
+                            <div class="process-step-number">04</div>
+                            <div class="process-step-content">
+                                <h4>{{ $service->translation->process_4_title }}</h4>
+                                <p>{{ $service->translation->process_4_description }}</p>
+                            </div>
+                        </div>
+                    @else
+                        <div class="process-step">
+                            <div class="process-step-number">04</div>
+                            <div class="process-step-content">
+                                <h4>{{ __('Delivery & Support') }}</h4>
+                                <p>{{ __('Final delivery with ongoing support to ensure your complete satisfaction') }}</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

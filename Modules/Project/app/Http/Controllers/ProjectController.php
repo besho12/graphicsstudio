@@ -66,6 +66,14 @@ class ProjectController extends Controller {
         checkAdminHasPermissionAndThrowException('project.management');
         $project = Project::create(array_merge($request->validated()));
 
+        // Handle thumbnail image upload
+        if ($project && $request->hasFile('thumbnail')) {
+            $file_name = file_upload($request->thumbnail, 'uploads/custom-images/', $project->thumbnail);
+            $project->thumbnail = $file_name;
+            $project->save();
+        }
+
+        // Handle main project image upload
         if ($project && $request->hasFile('image')) {
             $file_name = file_upload($request->image, 'uploads/custom-images/', $project->image);
             $project->image = $file_name;
@@ -135,10 +143,35 @@ class ProjectController extends Controller {
         $project->project_author = $request->project_author ?? $project->project_author;
         $project->tags = $request->tags ?? $project->tags;
 
+        // Handle thumbnail image upload
+        if ($project && !empty($request->thumbnail)) {
+            $file_name = file_upload($request->thumbnail, 'uploads/custom-images/', $project->thumbnail);
+            $project->thumbnail = $file_name;
+        }
+
+        // Handle main project image upload
         if ($project && !empty($request->image)) {
             $file_name = file_upload($request->image, 'uploads/custom-images/', $project->image);
             $project->image = $file_name;
         }
+
+        // Handle gallery images update
+        if ($project && $request->hasFile('gallery_images')) {
+            $images = $request->file('gallery_images');
+            $images = is_array($images) ? $images : [$images];
+
+            foreach ($images as $image) {
+                if ($image) {
+                    $file_name = file_upload($image, 'uploads/custom-images/');
+                    \Modules\Project\app\Models\ProjectImage::create([
+                        'project_id'  => $project->id,
+                        'large_image' => $file_name,
+                        'small_image' => $file_name,
+                    ]);
+                }
+            }
+        }
+
         $project->save();
 
         $this->updateTranslations(
