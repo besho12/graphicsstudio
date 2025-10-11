@@ -15,6 +15,13 @@ trait InstallerMethods
 {
     private function checkMinimumRequirements(): array
     {
+        $dbDriver = config('database.default');
+        $pdoExtension = match ($dbDriver) {
+            'mysql' => 'pdo_mysql',
+            'pgsql' => 'pdo_pgsql',
+            'sqlite' => 'pdo_sqlite',
+            default => 'pdo',
+        };
         $checks = [
             // Base requirements
             'php_version'         => [
@@ -53,10 +60,10 @@ trait InstallerMethods
                 'url'     => 'https://www.php.net/manual/en/book.openssl.php',
             ],
 
-            'extension_pdo_mysql' => [
-                'check'   => extension_loaded('pdo_mysql'),
-                'message' => 'The "pdo_mysql" extension is required for MySQL database access.',
-                'url'     => 'https://www.php.net/manual/en/ref.pdo-mysql.php',
+            'extension_pdo_driver' => [
+                'check'   => extension_loaded($pdoExtension),
+                'message' => 'The "' . $pdoExtension . '" extension is required for database access.',
+                'url'     => 'https://www.php.net/manual/en/book.pdo.php',
             ],
 
             'extension_tokenizer' => [

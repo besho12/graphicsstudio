@@ -42,11 +42,14 @@
                     <div class="footer-services-section">
                         <h4 class="footer-title-modern">{{__('Services')}}</h4>
                         <ul class="footer-menu-organized">
-                            <li><a href="#" class="footer-link-clean">{{__('Web Design')}}</a></li>
-                            <li><a href="#" class="footer-link-clean">{{__('Branding')}}</a></li>
-                            <li><a href="#" class="footer-link-clean">{{__('Digital Marketing')}}</a></li>
-                            <li><a href="#" class="footer-link-clean">{{__('Development')}}</a></li>
-                            <li><a href="#" class="footer-link-clean">{{__('Consulting')}}</a></li>
+                            @foreach(\Modules\Service\app\Models\Service::active()->take(6)->get() as $service)
+                                <li>
+                                    <a href="{{ route('single.service', $service->slug) }}" 
+                                       class="footer-link-clean">
+                                        {{ $service->title }}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
