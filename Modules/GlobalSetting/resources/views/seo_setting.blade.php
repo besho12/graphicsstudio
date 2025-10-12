@@ -18,7 +18,13 @@
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-md-3">
                                     <ul class="nav nav-pills flex-column" id="seo_tab" role="tablist">
-                                        @foreach ($pages as $index => $page)
+                                        @php
+                                            $hiddenPages = ['blog_page', 'team_page', 'faq_page', 'pricing_page', 'shop_page', 'cart_page', 'checkout_page', 'payment_page'];
+                                            $filteredPages = $pages->filter(function($page) use ($hiddenPages) {
+                                                return !in_array($page->page_name, $hiddenPages);
+                                            });
+                                        @endphp
+                                        @foreach ($filteredPages as $index => $page)
                                             <li class="nav-item border rounded mb-1">
                                                 <a class="nav-link {{ $index == 0 ? 'active' : '' }}"
                                                     id="error-tab-{{ $page->id }}" data-bs-toggle="tab"
@@ -32,7 +38,7 @@
                                 <div class="col-12 col-sm-12 col-md-9">
                                     <div class="border rounded">
                                         <div class="tab-content no-padding" id="settingsContent">
-                                            @foreach ($pages as $index => $page)
+                                            @foreach ($filteredPages as $index => $page)
                                                 <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }}"
                                                     id="errorTab-{{ $page->id }}" role="tabpanel"
                                                     aria-labelledby="error-tab-{{ $page->id }}">
