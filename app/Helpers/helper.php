@@ -28,7 +28,7 @@ use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 function file_upload(UploadedFile $file, string $path = 'uploads/custom-images/', string | null $oldFile = '', bool $optimize = false) {
     $extention = $file->getClientOriginalExtension();
     $file_name = 'wsus-img' . date('-Y-m-d-h-i-s-') . rand(999, 9999) . '.' . $extention;
-    $file_name = $path . $file_name;
+    $full_file_name = $path . $file_name;
     $file->move(public_path($path), $file_name);
 
     try {
@@ -37,13 +37,13 @@ function file_upload(UploadedFile $file, string $path = 'uploads/custom-images/'
         }
 
         if ($optimize) {
-            ImageOptimizer::optimize(public_path($file_name));
+            ImageOptimizer::optimize(public_path($full_file_name));
         }
     } catch (Exception $e) {
         Log::info($e->getMessage());
     }
 
-    return $file_name;
+    return $full_file_name;
 }
 // file upload method
 if (!function_exists('allLanguages')) {

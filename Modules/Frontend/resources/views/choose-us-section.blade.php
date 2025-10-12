@@ -136,10 +136,23 @@
 
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-3 {{ $code == $languages->first()->code ? '' : 'd-none' }}">
+                                        <div class="col-md-6 {{ $code == $languages->first()->code ? '' : 'd-none' }}">
                                             <div class="form-group">
                                                 <x-admin.form-image-preview name="image" :image="$chooseUsSection?->global_content?->image"
                                                     required="0" />
+                                                <div class="mt-2">
+                                                    <div class="alert alert-info py-2 px-3 mb-2">
+                                                        <i class="fas fa-star text-warning"></i> 
+                                                        <strong>{{ __('Perfect Thumbnail Size') }}:</strong> 838×710px (1.18:1 ratio)
+                                                    </div>
+                                                    <small class="form-text text-success d-block">
+                                                        <i class="fas fa-check-circle"></i> 
+                                                        <strong>{{ __('Works perfectly on') }}:</strong> Desktop & Mobile devices
+                                                    </small>
+                                                    <small class="form-text text-muted d-block mt-1">
+                                                        {{ __('This size ensures optimal display in the Choose Us section across all themes and devices.') }}
+                                                    </small>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="text-center col-12">
@@ -163,16 +176,18 @@
         $('#translate-btn').on('click', function() {
             translateAllTo("{{ $code }}");
         })
-        @if ($code == $languages->first()->code)
-            $.uploadPreview({
-                input_field: "#image-upload",
-                preview_box: "#image-preview",
-                label_field: "#image-label",
-                label_default: "{{ __('Choose Image') }}",
-                label_selected: "{{ __('Change Image') }}",
-                no_label: false,
-                success_callback: null
-            });
-        @endif
     </script>
+    @if ($code == $languages->first()->code)
+    <script>
+        $.uploadPreview({
+            input_field: "#image-upload",
+            preview_box: "#image-preview",
+            label_field: "#image-label",
+            label_default: "{{ __('Choose Image') }}",
+            label_selected: "{{ __('Change Image') }}",
+            no_label: false,
+            success_callback: null
+        });
+    </script>
+    @endif
 @endpush

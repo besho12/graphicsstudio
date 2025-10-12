@@ -287,15 +287,15 @@
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        background: white;
-        color: #1d4ed8;
+        background: #2563eb;
+        color: white;
         padding: 16px 32px;
         border-radius: 50px;
         text-decoration: none;
         font-weight: 600;
         font-size: 1.1rem;
         transition: all 0.3s ease;
-        border: 2px solid white;
+        border: 2px solid #2563eb;
     }
     
     .contact-btn-modern:hover {

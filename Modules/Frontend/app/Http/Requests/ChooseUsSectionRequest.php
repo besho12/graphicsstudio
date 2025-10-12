@@ -14,7 +14,7 @@ class ChooseUsSectionRequest extends FormRequest
         return [
             'title'              => ['required', 'string', 'max:255'],
             'sub_title'          => ['nullable', 'string', 'max:1000'],
-            'image'              => ['nullable', 'mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml', 'max:512'],
+            'image'              => ['nullable', 'mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml', 'max:3072'],
             'feature_title_1'    => ['nullable', 'string', 'max:255'],
             'feature_description_1' => ['nullable', 'string', 'max:500'],
             'feature_title_2'    => ['nullable', 'string', 'max:255'],
@@ -37,7 +37,7 @@ class ChooseUsSectionRequest extends FormRequest
 
 
             'image.image'               => __('The image must be an image.'),
-            'image.max'                 => __('The image may not be greater than 2048 kilobytes.'),
+            'image.max'                 => __('The image may not be greater than 3072 kilobytes.'),
 
         ];
     }

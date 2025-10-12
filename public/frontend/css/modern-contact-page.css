@@ -177,6 +177,13 @@
     letter-spacing: 0.5px;
 }
 
+.hero-stat-text {
+    font-size: 0.875rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* ===== MODERN CONTACT INFO CARDS ===== */
 .contact-info-section-modern {
     padding: var(--space-4xl) 0;
