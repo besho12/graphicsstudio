@@ -179,7 +179,8 @@
 
 .hero-stat-text {
     font-size: 0.875rem;
-    color: white;
+    color: #ffffff !important;
+    opacity: 1 !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }

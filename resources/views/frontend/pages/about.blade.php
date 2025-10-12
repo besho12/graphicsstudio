@@ -287,7 +287,7 @@
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        background: #2563eb;
+        background: linear-gradient(135deg, #0ea5e9, #0284c7);
         color: white;
         padding: 16px 32px;
         border-radius: 50px;
@@ -295,14 +295,16 @@
         font-weight: 600;
         font-size: 1.1rem;
         transition: all 0.3s ease;
-        border: 2px solid #2563eb;
+        border: 2px solid #0ea5e9;
+        box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
     }
     
     .contact-btn-modern:hover {
-        background: transparent;
+        background: linear-gradient(135deg, #0284c7, #0369a1);
         color: white;
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        border-color: #0284c7;
     }
     
     @media (max-width: 768px) {

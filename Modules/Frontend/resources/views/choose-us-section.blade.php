@@ -149,9 +149,7 @@
                                                         <i class="fas fa-check-circle"></i> 
                                                         <strong>{{ __('Works perfectly on') }}:</strong> Desktop & Mobile devices
                                                     </small>
-                                                    <small class="form-text text-muted d-block mt-1">
-                                                        {{ __('This size ensures optimal display in the Choose Us section across all themes and devices.') }}
-                                                    </small>
+
                                                 </div>
                                             </div>
                                         </div>
