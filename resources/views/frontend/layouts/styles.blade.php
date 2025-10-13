@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css?version=1.0.0') }}?v={{ $setting?->version }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/scroll-performance.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/css-marquee.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/simple-marquee.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/modern-marquee.css') }}">
     
     <!-- Simple Project Cards CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/css/simple-project-cards.css') }}">

@@ -1,0 +1,175 @@
+/* ========================================
+   MODERN MARQUEE COMPONENT - BLUE THEME
+   Fresh, contemporary design with smooth animations
+   ======================================== */
+
+/* Main Marquee Container */
+.modern-marquee {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 40px 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+}
+
+.modern-marquee::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.05) 50%, 
+        rgba(255, 255, 255, 0.1) 100%);
+    pointer-events: none;
+}
+
+/* Marquee Content Wrapper */
+.marquee-content {
+    display: flex;
+    animation: modernScroll 20s linear infinite;
+    white-space: nowrap;
+}
+
+/* Individual Marquee Items */
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 60px;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    min-width: fit-content;
+}
+
+.marquee-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Item Content */
+.marquee-item .icon {
+    font-size: 24px;
+    color: #64b5f6;
+    margin-right: 15px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.marquee-item .text {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+/* Animation Keyframes */
+@keyframes modernScroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Pause on Hover */
+.modern-marquee:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modern-marquee {
+        padding: 30px 0;
+    }
+    
+    .marquee-item {
+        margin-right: 40px;
+        padding: 12px 20px;
+    }
+    
+    .marquee-item .icon {
+        font-size: 20px;
+        margin-right: 12px;
+    }
+    
+    .marquee-item .text {
+        font-size: 16px;
+    }
+    
+    .marquee-content {
+        animation-duration: 25s;
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-marquee {
+        padding: 25px 0;
+    }
+    
+    .marquee-item {
+        margin-right: 30px;
+        padding: 10px 16px;
+    }
+    
+    .marquee-item .icon {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    
+    .marquee-item .text {
+        font-size: 14px;
+    }
+    
+    .marquee-content {
+        animation-duration: 30s;
+    }
+}
+
+/* Alternative Color Themes */
+.modern-marquee.theme-ocean {
+    background: linear-gradient(135deg, #0277BD 0%, #0288D1 100%);
+}
+
+.modern-marquee.theme-sunset {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+}
+
+.modern-marquee.theme-forest {
+    background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+}
+
+.modern-marquee.theme-dark {
+    background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+}
+
+/* Smooth Performance Optimizations */
+.modern-marquee,
+.marquee-content,
+.marquee-item {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .marquee-content {
+        animation-duration: 60s;
+    }
+}
+
+/* Focus States for Accessibility */
+.marquee-item:focus {
+    outline: 2px solid #64b5f6;
+    outline-offset: 2px;
+}
