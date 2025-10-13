@@ -8,12 +8,13 @@
 
 .marquee-wrap .marquee__group {
     white-space: nowrap;
-    animation: simpleMarquee 20s linear infinite;
+    animation: simpleMarquee 10s linear infinite;
+    width: 400%;
 }
 
 .marquee-wrap .marquee__group .m-item {
     display: inline-block !important;
-    margin-right: 40px !important;
+    margin-right: 50px !important;
 }
 
 .marquee-wrap .marquee__group .m-item span {
@@ -32,10 +33,10 @@
 
 @keyframes simpleMarquee {
     0% {
-        transform: translateX(100%);
+        transform: translateX(0%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-25%);
     }
 }
 
