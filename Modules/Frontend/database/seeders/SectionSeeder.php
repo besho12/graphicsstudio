@@ -461,26 +461,22 @@ class SectionSeeder extends Seeder {
                         'global_content' => [
                             'action_button_url' => '/portfolios',
                             'image' => 'uploads/custom-images/hero-4-1.jpg',
-                            'image_two' => 'uploads/custom-images/total_customer.png',
                         ],
                         'translations'   => [
                             'en' => [
                                 'title'     => 'A Digital\\Marketing\\Agency',
                                 'sub_title' => 'We are digital agency that helps businesses develop immersive and\\engaging user experiences that drive top level growth',
                                 'action_button_text' => 'View Our Works',
-                                'total_customers' => '10k+',
                             ],
                             'hi' => [
                                 'title'     => 'एक डिजिटल\\मार्केटिंग\\एजेंसी',
                                 'sub_title' => 'हम एक डिजिटल एजेंसी हैं जो व्यवसायों को इमर्सिव और आकर्षक उपयोगकर्ता अनुभव\\ विकसित करने में मदद करती है जो शीर्ष स्तर की वृद्धि को बढ़ावा देती है',
                                 'action_button_text' => 'हमारे कार्य देखें',
-                                'total_customers' => '10k+',
                             ],
                             'ar' => [
                                 'title'     => 'وكالة متخصصة في\\التسويق الرقمي\\وتطوير العلامات التجارية',
                                 'sub_title' => 'نحن وكالة رقمية تساعد الشركات على تطوير تجارب مستخدم\\ غامرة وجذابة تعمل على دفع النمو إلى أعلى مستوى',
                                 'action_button_text' => 'عرض أعمالنا',
-                                'total_customers' => '10k+',
 
                             ],
                         ],

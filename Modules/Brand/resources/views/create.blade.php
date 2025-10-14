@@ -58,6 +58,12 @@
                                                     <label for="image-upload" id="image-label">{{ __('Image') }}</label>
                                                     <input type="file" name="image" id="image-upload">
                                                 </div>
+                                                <div class="mt-2 p-2 bg-light border-left border-primary rounded" style="max-width: 300px;">
+                                                    <small class="text-muted d-flex align-items-center">
+                                                        <i class="fas fa-info-circle text-primary mr-2"></i>
+                                                        {{ __('Recommended: 164x35 pixels') }}
+                                                    </small>
+                                                </div>
                                                 @error('image')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror

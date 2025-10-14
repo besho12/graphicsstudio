@@ -80,43 +80,17 @@
                                         </div>
 
 
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <x-admin.form-input id="action_button_text" data-translate="true"
-                                                    name="action_button_text" label="{{ __('Button Text') }}"
-                                                    placeholder="{{ __('Enter Button Text') }}"
-                                                    value="{{ $heroSection?->getTranslation($code)?->content?->action_button_text }}"/>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4 {{ $code == $languages->first()->code ? '' : 'd-none' }}">
-                                            <div class="form-group">
-                                                <x-admin.form-input id="action_button_url" data-translate="true"
-                                                    name="action_button_url" label="{{ __('Button url') }}"
-                                                    placeholder="{{ __('Enter Button url') }}"
-                                                    value="{{ $heroSection?->global_content?->action_button_url }}" />
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <x-admin.form-input id="total_customers" data-translate="true"
-                                                    name="total_customers" label="{{ __('Total Customers') }}"
-                                                    placeholder="{{ __('Enter Total Customers') }}"
-                                                    value="{{ $heroSection?->getTranslation($code)?->content?->total_customers }}"/>
-                                            </div>
-                                        </div>
-
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3 {{ $code == $languages->first()->code ? '' : 'd-none' }}">
                                             <div class="form-group">
                                                 <x-admin.form-image-preview name="image" :image="$heroSection?->global_content?->image" required="0" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 {{ $code == $languages->first()->code ? '' : 'd-none' }}">
-                                            <div class="form-group">
-                                                <x-admin.form-image-preview div_id="image-preview-two" label_id="image-label-two" input_id="image-upload-two" name="image_two" :label="__('Total Customers')" :image="$heroSection?->global_content?->image_two" required="0" />
+                                                <div class="mt-2 p-2 bg-light border-left border-primary rounded" style="max-width: 300px;">
+                                                    <small class="text-muted d-flex align-items-center">
+                                                        <i class="fas fa-info-circle text-primary mr-2"></i>
+                                                        {{ __('Best quality: 7008x4672 pixels') }}
+                                                    </small>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="text-center col-12">
@@ -139,26 +113,20 @@
 
         $('#translate-btn').on('click', function() {
             translateAllTo("{{ $code }}");
-        })
-        @if ($code == $languages->first()->code)
-            $.uploadPreview({
-                input_field: "#image-upload",
-                preview_box: "#image-preview",
-                label_field: "#image-label",
-                label_default: "{{ __('Choose Image') }}",
-                label_selected: "{{ __('Change Image') }}",
-                no_label: false,
-                success_callback: null
-            });
-            $.uploadPreview({
-                input_field: "#image-upload-two",
-                preview_box: "#image-preview-two",
-                label_field: "#image-label-two",
-                label_default: "{{ __('Choose Image') }}",
-                label_selected: "{{ __('Change Image') }}",
-                no_label: false,
-                success_callback: null
-            });
-        @endif
+        });
     </script>
+    
+    @if ($code == $languages->first()->code)
+    <script>
+        $.uploadPreview({
+            input_field: "#image-upload",
+            preview_box: "#image-preview",
+            label_field: "#image-label",
+            label_default: "{{ __('Choose Image') }}",
+            label_selected: "{{ __('Change Image') }}",
+            no_label: false,
+            success_callback: null
+        });
+    </script>
+    @endif
 @endpush

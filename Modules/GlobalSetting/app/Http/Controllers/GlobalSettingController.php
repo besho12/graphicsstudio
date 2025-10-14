@@ -242,49 +242,10 @@ class GlobalSettingController extends Controller
     {
         checkAdminHasPermissionAndThrowException('setting.update');
         $request->validate([
-            'breadcrumb_image'                => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'contact_page_breadcrumb_image'   => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'team_page_breadcrumb_image'      => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'about_page_breadcrumb_image'     => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'faq_page_breadcrumb_image'       => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'pricing_page_breadcrumb_image'   => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'blog_page_breadcrumb_image'      => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
             'portfolio_page_breadcrumb_image' => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
             'service_page_breadcrumb_image'   => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'shop_page_breadcrumb_image'      => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'cart_page_breadcrumb_image'      => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'checkout_page_breadcrumb_image'  => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
-            'payment_page_breadcrumb_image'   => 'nullable|mimetypes:image/jpeg,image/png,image/gif,image/webp,image/svg+xml',
         ]);
 
-        if ($request->file('breadcrumb_image')) {
-            $file_name = file_upload($request->breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->breadcrumb_image);
-            Setting::where('key', 'breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('contact_page_breadcrumb_image')) {
-            $file_name = file_upload($request->contact_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->contact_page_breadcrumb_image);
-            Setting::where('key', 'contact_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('team_page_breadcrumb_image')) {
-            $file_name = file_upload($request->team_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->team_page_breadcrumb_image);
-            Setting::where('key', 'team_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('about_page_breadcrumb_image')) {
-            $file_name = file_upload($request->about_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->about_page_breadcrumb_image);
-            Setting::where('key', 'about_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('faq_page_breadcrumb_image')) {
-            $file_name = file_upload($request->faq_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->faq_page_breadcrumb_image);
-            Setting::where('key', 'faq_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('pricing_page_breadcrumb_image')) {
-            $file_name = file_upload($request->pricing_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->pricing_page_breadcrumb_image);
-            Setting::where('key', 'pricing_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('blog_page_breadcrumb_image')) {
-            $file_name = file_upload($request->blog_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->blog_page_breadcrumb_image);
-            Setting::where('key', 'blog_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
         if ($request->file('portfolio_page_breadcrumb_image')) {
             $file_name = file_upload($request->portfolio_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->portfolio_page_breadcrumb_image);
             Setting::where('key', 'portfolio_page_breadcrumb_image')->update(['value' => $file_name]);
@@ -292,22 +253,6 @@ class GlobalSettingController extends Controller
         if ($request->file('service_page_breadcrumb_image')) {
             $file_name = file_upload($request->service_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->service_page_breadcrumb_image);
             Setting::where('key', 'service_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('shop_page_breadcrumb_image')) {
-            $file_name = file_upload($request->shop_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->shop_page_breadcrumb_image);
-            Setting::where('key', 'shop_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('cart_page_breadcrumb_image')) {
-            $file_name = file_upload($request->cart_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->cart_page_breadcrumb_image);
-            Setting::where('key', 'cart_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('checkout_page_breadcrumb_image')) {
-            $file_name = file_upload($request->checkout_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->checkout_page_breadcrumb_image);
-            Setting::where('key', 'checkout_page_breadcrumb_image')->update(['value' => $file_name]);
-        }
-        if ($request->file('payment_page_breadcrumb_image')) {
-            $file_name = file_upload($request->payment_page_breadcrumb_image, 'uploads/custom-images/', $this->cachedSetting?->payment_page_breadcrumb_image);
-            Setting::where('key', 'payment_page_breadcrumb_image')->update(['value' => $file_name]);
         }
 
         Cache::forget('setting');

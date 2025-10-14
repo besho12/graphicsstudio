@@ -30,6 +30,31 @@
     font-size: 20px;
 }
 
+/* Star separator styling */
+.modern-marquee .marquee-content .marquee-item .marquee-separator {
+    color: #ffffff !important;
+    background: linear-gradient(45deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-size: 24px !important;
+    margin-left: 25px !important;
+    margin-right: 0 !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3) !important;
+    animation: starGlow 2s ease-in-out infinite alternate !important;
+}
+
+@keyframes starGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        transform: scale(1);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+        transform: scale(1.1);
+    }
+}
+
 @keyframes simpleMarquee {
     0% {
         transform: translateX(0%);
@@ -62,11 +87,20 @@
     .modern-marquee .marquee-content .marquee-item {
         margin-right: 30px !important;
     }
+    
+    .modern-marquee .marquee-content .marquee-item .marquee-separator {
+        font-size: 14px !important;
+        margin-left: 20px !important;
+    }
 }
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
     .modern-marquee .marquee-content {
         animation: none;
+    }
+    
+    .modern-marquee .marquee-content .marquee-item .marquee-separator {
+        animation: none !important;
     }
 }
