@@ -1,30 +1,14 @@
 @if (marquees()->count())
-<div class="modern-marquee">
-    <div class="marquee-content">
-        @foreach (marquees() as $marquee)
-            <div class="marquee-item">
-                <span class="text">{{ $marquee->title }}</span>
-                        <i class="fas fa-star-of-life marquee-separator"></i>
-            </div>
-        @endforeach
-        @foreach (marquees() as $marquee)
-            <div class="marquee-item">
-                <span class="text">{{ $marquee?->title }}</span>
-                        <i class="fas fa-star-of-life marquee-separator"></i>
-            </div>
-        @endforeach
-        @foreach (marquees() as $marquee)
-            <div class="marquee-item">
-                <span class="text">{{ $marquee?->title }}</span>
-                        <i class="fas fa-star-of-life marquee-separator"></i>
-            </div>
-        @endforeach
-        @foreach (marquees() as $marquee)
-            <div class="marquee-item">
-                <span class="text">{{ $marquee?->title }}</span>
-                        <i class="fas fa-star-of-life marquee-separator"></i>
-            </div>
-        @endforeach
+<div class="container-fluid p-0 overflow-hidden">
+    <div class="slider__marquee clearfix marquee-wrap">
+        <div class="marquee_mode marquee__group">
+            @foreach (marquees() as $marquee)
+                <h6 class="item m-item"><span><i class="fas fa-star-of-life"></i> {{$marquee?->title}}</span></h6>
+            @endforeach
+            @foreach (marquees() as $marquee)
+                <h6 class="item m-item"><span><i class="fas fa-star-of-life"></i> {{$marquee?->title}}</span></h6>
+            @endforeach
+        </div>
     </div>
 </div>
 @endif
