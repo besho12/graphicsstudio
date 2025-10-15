@@ -31,12 +31,13 @@ class GlobalSettingController extends Controller
     {
         checkAdminHasPermissionAndThrowException('setting.view');
 
+        $setting = $this->cachedSetting;
         $custom_paginations = CustomPagination::all();
         $all_timezones = WebsiteSettingEnum::allTimeZones();
         $all_time_format = WebsiteSettingEnum::allTimeFormat();
         $all_date_format = WebsiteSettingEnum::allDateFormat();
 
-        return view('globalsetting::settings.index', compact('custom_paginations', 'all_timezones', 'all_time_format', 'all_date_format'));
+        return view('globalsetting::settings.index', compact('setting', 'custom_paginations', 'all_timezones', 'all_time_format', 'all_date_format'));
     }
 
     public function update_general_setting(Request $request)
