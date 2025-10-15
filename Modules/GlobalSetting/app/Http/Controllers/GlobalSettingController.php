@@ -281,6 +281,30 @@ class GlobalSettingController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function update_footer_settings(Request $request)
+    {
+        checkAdminHasPermissionAndThrowException('setting.update');
+        $request->validate([
+            'company_description' => 'required|string|max:500',
+            'copyright_text' => 'required|string|max:1000',
+        ], [
+            'company_description.required' => __('Company Description is required'),
+            'company_description.max' => __('Company Description must not exceed 500 characters'),
+            'copyright_text.required' => __('Copyright Text is required'),
+            'copyright_text.max' => __('Copyright Text must not exceed 1000 characters'),
+        ]);
+
+        Setting::where('key', 'company_description')->update(['value' => $request->company_description]);
+        Setting::where('key', 'copyright_text')->update(['value' => $request->copyright_text]);
+
+        Cache::forget('setting');
+
+        $notification = __('Update Successfully');
+        $notification = ['message' => $notification, 'alert-type' => 'success'];
+
+        return redirect()->back()->with($notification);
+    }
+
     public function crediential_setting()
     {
         checkAdminHasPermissionAndThrowException('setting.view');

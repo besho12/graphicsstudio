@@ -31,6 +31,7 @@
                                     @include('globalsetting::settings.sections.custom-paginate')
                                     @include('globalsetting::settings.sections.default-avatar')
                                     @include('globalsetting::settings.sections.breadcrump')
+                                    @include('globalsetting::settings.sections.footer')
                                     @include('globalsetting::settings.sections.copyright')
                                     @include('globalsetting::settings.sections.search-engine-crawling')
                                     @include('globalsetting::settings.sections.maintenance-mode')

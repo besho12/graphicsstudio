@@ -24,6 +24,7 @@ case ShippingMethod = "Modules\Order\app\Models\ShippingMethodTranslation";
 case Product = "Modules\Shop\app\Models\ProductTranslation";
 case ProductCategory = "Modules\Shop\app\Models\ProductCategoryTranslation";
 case SubscriptionPlan = "Modules\Subscription\app\Models\SubscriptionPlanTranslation";
+case AboutFeature = "App\Models\AboutFeatureTranslation";
 
     public static function getAll(): array {
         return [
@@ -44,6 +45,7 @@ case SubscriptionPlan = "Modules\Subscription\app\Models\SubscriptionPlanTransla
             self::ProductCategory->value,
             self::Product->value,
             self::SubscriptionPlan->value,
+            self::AboutFeature->value,
         ];
     }
 

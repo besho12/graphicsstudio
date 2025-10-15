@@ -19,6 +19,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth:admi
         Route::put('update-default-avatar', 'update_default_avatar')->name('update-default-avatar');
         Route::put('update-breadcrumb', 'update_breadcrumb')->name('update-breadcrumb');
         Route::put('update-copyright-text', 'update_copyright_text')->name('update-copyright-text');
+        Route::put('update-footer-settings', 'update_footer_settings')->name('update-footer-settings');
         Route::put('update-maintenance-mode-status', 'update_maintenance_mode_status')->name('update-maintenance-mode-status');
         Route::put('update-maintenance-mode', 'update_maintenance_mode')->name('update-maintenance-mode');
 

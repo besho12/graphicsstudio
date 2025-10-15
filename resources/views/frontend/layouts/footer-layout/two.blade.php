@@ -12,7 +12,7 @@
                                 <img src="{{ asset($setting?->logo) }}" alt="{{$setting?->app_name}}" class="footer-logo-modern">
                             </div>
                             <h3 class="company-name">{{$setting?->app_name}}</h3>
-                            <p class="company-description">{{__('Creating exceptional digital experiences through innovative design and strategic thinking.')}}</p>
+                            <p class="company-description">{{ $setting?->company_description ?? __('Creating exceptional digital experiences through innovative design and strategic thinking.') }}</p>
                         </div>
                         
 
@@ -107,7 +107,10 @@
                 <div class="col-md-6">
                     <div class="copyright-modern">
                         <p class="copyright-text-modern">
-                            <a href="https://hamdiesolutions.com/" class="copyright-link-modern" target="_blank">Powered by © Hamdies Solutions</a>
+                            {{ $setting?->copyright_text ?? 'Powered by ' . ($setting?->app_name ?? 'Project Name') }}
+                            @if(!str_contains($setting?->copyright_text ?? '', 'href'))
+                                <a href="{{ route('home') }}" class="copyright-link-modern">{{ $setting?->app_name ?? 'Project Name' }}</a>
+                            @endif
                         </p>
                     </div>
                 </div>

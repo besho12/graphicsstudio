@@ -132,6 +132,15 @@
                             checkAdminHasPermission('award.view')))
                     @include('frontend::sidebar')
                 @endif
+                
+                {{-- About Features Management --}}
+                <li class="{{ isRoute('admin.about-features.*', 'active') }}">
+                    <a class="nav-link" href="{{ route('admin.about-features.index') }}">
+                        <i class="fas fa-star"></i>
+                        <span>{{ __('About Features') }}</span>
+                    </a>
+                </li>
+                
                 @if (Module::isEnabled('Brand') && checkAdminHasPermission('brand.management'))
                     @include('brand::sidebar')
                 @endif

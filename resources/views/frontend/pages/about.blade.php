@@ -394,45 +394,60 @@
                                 </div>
                                 
                                 <div class="features-grid">
-                                    <div class="feature-item-modern">
-                                        <div class="feature-icon-modern">
-                                            <i class="fas fa-lightbulb"></i>
+                                    @if($aboutFeatures && $aboutFeatures->count() > 0)
+                                        @foreach($aboutFeatures as $feature)
+                                            <div class="feature-item-modern">
+                                                <div class="feature-icon-modern">
+                                                    <i class="{{ $feature->icon ?? 'fas fa-star' }}"></i>
+                                                </div>
+                                                <div class="feature-content-modern">
+                                                    <h4>{{ $feature->title }}</h4>
+                                                    <p>{{ $feature->description }}</p>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <!-- Fallback to default features if no dynamic content -->
+                                        <div class="feature-item-modern">
+                                            <div class="feature-icon-modern">
+                                                <i class="fas fa-lightbulb"></i>
+                                            </div>
+                                            <div class="feature-content-modern">
+                                                <h4>{{__('Creative Innovation')}}</h4>
+                                                <p>{{__('Fresh ideas and innovative approaches to every project we undertake.')}}</p>
+                                            </div>
                                         </div>
-                                        <div class="feature-content-modern">
-                                            <h4>{{__('Creative Innovation')}}</h4>
-                                            <p>{{__('Fresh ideas and innovative approaches to every project we undertake.')}}</p>
+                                        
+                                        <div class="feature-item-modern">
+                                            <div class="feature-icon-modern">
+                                                <i class="fas fa-rocket"></i>
+                                            </div>
+                                            <div class="feature-content-modern">
+                                                <h4>{{__('Fast Delivery')}}</h4>
+                                                <p>{{__('Quick turnaround times without compromising on quality or attention to detail.')}}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="feature-item-modern">
-                                        <div class="feature-icon-modern">
-                                            <i class="fas fa-rocket"></i>
+                                        
+                                        <div class="feature-item-modern">
+                                            <div class="feature-icon-modern">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </div>
+                                            <div class="feature-content-modern">
+                                                <h4>{{__('Quality Assurance')}}</h4>
+                                                <p>{{__('Rigorous testing and quality control processes ensure perfect results.')}}</p>
+                                            </div>
                                         </div>
-                                        <div class="feature-content-modern">
-                                            <h4>{{__('Fast Delivery')}}</h4>
-                                            <p>{{__('Quick turnaround times without compromising on quality or attention to detail.')}}</p>
+                                        
+                                        <div class="feature-item-modern">
+                                            <div class="feature-icon-modern">
+                                                <i class="fas fa-headset"></i>
+                                            </div>
+                                            <div class="feature-content-modern">
+                                                <h4>{{__('24/7 Support')}}</h4>
+                                                <p>{{__('Continuous support and maintenance to keep your projects running smoothly.')}}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="feature-item-modern">
-                                        <div class="feature-icon-modern">
-                                            <i class="fas fa-shield-alt"></i>
-                                        </div>
-                                        <div class="feature-content-modern">
-                                            <h4>{{__('Quality Assurance')}}</h4>
-                                            <p>{{__('Rigorous testing and quality control processes ensure perfect results.')}}</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="feature-item-modern">
-                                        <div class="feature-icon-modern">
-                                            <i class="fas fa-headset"></i>
-                                        </div>
-                                        <div class="feature-content-modern">
-                                            <h4>{{__('24/7 Support')}}</h4>
-                                            <p>{{__('Continuous support and maintenance to keep your projects running smoothly.')}}</p>
-                                        </div>
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-lg-6">

@@ -19,7 +19,7 @@
         </div>
         
         <div class="row g-4 justify-content-center">
-            @foreach ($services->take(4) as $index => $service)
+            @foreach ($services as $index => $service)
                 <div class="col-lg-6 col-xl-3" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
                     <div class="feature-card-redesigned">
                         <!-- Service Icon -->
@@ -50,8 +50,8 @@
             @endforeach
         </div>
         
-        <!-- View All Services Button -->
-        @if($services->count() > 4)
+        <!-- Optional: View All Services Button (can be removed since all services are now shown) -->
+        {{-- @if($services->count() > 4)
             <div class="text-center">
                 <a href="{{ route('services') }}" class="view-all-services-btn">
                     <span>{{ __('View All Services') }}</span>
@@ -60,7 +60,7 @@
                     </svg>
                 </a>
             </div>
-        @endif
+        @endif --}}
     </div>
 </div>
 

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AboutFeatureController;
 use App\Http\Controllers\Admin\Auth\NewPasswordController;
 use App\Http\Controllers\Admin\TinymceImageUploadController;
 use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
@@ -44,6 +45,9 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'translatio
         Route::put('admin-status/{id}', [AdminController::class, 'changeStatus'])->name('admin.status');
         Route::view('settings','admin.settings.settings')->name('settings');
         Route::get('sync-modules', [AddonsController::class, 'syncModules'])->name('addons.sync');
+
+        // About Features Management
+        Route::resource('about-features', AboutFeatureController::class)->names('about-features');
 
         Route::post('tinymce-upload-image', [TinymceImageUploadController::class, 'upload']);
         Route::delete('tinymce-delete-image', [TinymceImageUploadController::class, 'destroy']);

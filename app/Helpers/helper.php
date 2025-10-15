@@ -220,9 +220,12 @@ if (!function_exists('currectUrlWithQuery')) {
 
 if (!function_exists('checkAdminHasPermission')) {
     function checkAdminHasPermission($permission): bool {
-        /** @var \App\Models\Admin $admin */
+        /** @var \App\Models\Admin|null $admin */
         $admin = Auth::guard('admin')->user();
-        return $admin->can($permission) ? true : false;
+        if (!$admin) {
+            return false;
+        }
+        return $admin->can($permission);
     }
 }
 

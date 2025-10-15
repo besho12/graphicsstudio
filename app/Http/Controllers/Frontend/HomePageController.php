@@ -89,7 +89,7 @@ class HomePageController extends Controller {
 
         $services = Service::select('id', 'slug', 'icon')->with(['translation' => function ($query) {
             $query->select('service_id', 'title', 'short_description', 'btn_text');
-        }])->active()->latest()->take(4)->get();
+        }])->active()->latest()->get();
 
         $servicefeatureSection = $sections->where('name', 'service_feature_section')->first();
 
@@ -166,8 +166,11 @@ class HomePageController extends Controller {
         ])->active()->latest()->take(4)->get();
         $teams = OurTeam::select('name', 'slug', 'designation', 'image')->active()->latest()->take(4)->get();
         $brands = Brand::select('name', 'image', 'url')->active()->take(8)->get();
+        
+        // Get about features for dynamic content
+        $aboutFeatures = \App\Models\AboutFeature::active()->ordered()->get();
 
-        return view('frontend.pages.about', compact('counterSection','chooseUsSection','teams','brands','awards'));
+        return view('frontend.pages.about', compact('counterSection','chooseUsSection','teams','brands','awards','aboutFeatures'));
 
     }
     public function faq(): View {
@@ -289,11 +292,9 @@ class HomePageController extends Controller {
         return view('frontend.pages.portfolio.details', compact('project','tagString', 'nextPost', 'prevPost'));
     }
     public function services(): View {
-        $per_age = cache('CustomPagination')?->service_list ?? CustomPagination::where('section_name', 'Service List')->value('item_qty');
-        
         $services = Service::select('id', 'slug', 'icon')->with(['translation' => function ($query) {
             $query->select('service_id', 'title', 'short_description', 'btn_text');
-        }])->active()->latest()->paginate($per_age);
+        }])->active()->latest()->get();
 
         $theme_name = DEFAULT_HOMEPAGE;
 

@@ -30,6 +30,10 @@
     <a class="nav-link" id="breadcrump-tab" data-bs-toggle="tab" href="#breadcrump_img_tab" role="tab"
         aria-controls="breadcrump" aria-selected="false">{{ __('Breadcrumb image') }}</a>
 </li>
+<li class="nav-item">
+    <a class="nav-link" id="footer-tab" data-bs-toggle="tab" href="#footer_tab" role="tab"
+        aria-controls="footer" aria-selected="false">{{ __('Footer Settings') }}</a>
+</li>
 {{-- <li class="nav-item">
     <a class="nav-link" id="copyright-text" data-bs-toggle="tab" href="#copyright_text_tab" role="tab"
         aria-controls="copyright" aria-selected="true">{{ __('Copyright Text') }}</a>

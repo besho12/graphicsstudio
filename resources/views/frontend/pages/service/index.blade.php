@@ -24,7 +24,6 @@
                                     <img src="{{ asset($service?->icon) }}" alt="{{ $service?->title }}" class="service-icon">
                                     <div class="icon-bg-effect"></div>
                                 </div>
-                                <div class="service-number">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</div>
                             </div>
                             <div class="service-card-body">
                                 <h4 class="service-title">
@@ -57,17 +56,6 @@
                     </div>
                 @endforelse
             </div>
-
-            <!-- Pagination -->
-            @if ($services->hasPages())
-                <div class="services-pagination mt-80">
-                    <div class="row justify-content-center">
-                        <div class="col-auto">
-                            {{ $services->onEachSide(0)->links('frontend.pagination.custom') }}
-                        </div>
-                    </div>
-                </div>
-            @endif
         </div>
     </div>
 
